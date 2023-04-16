@@ -1,6 +1,6 @@
 # Ratoru Homepage
 
-This is my personal website's 3rd iteration. You can find my blog and my past work there.
+This is my personal website's 3rd iteration. You can find my blog and my past work [there](https://ratoru.com).
 
 It also includes an RSS feed. For more information about RSS feeds in general, see [aboutfeeds.com](https://aboutfeeds.com/).
 
