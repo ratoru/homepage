@@ -1,25 +1,34 @@
 ---
-import { getEntryBySlug } from 'astro:content';
-import Layout from '../layouts/Layout.astro';
+import PageLayout from "../layouts/PageLayout.astro";
+import { SEO } from "astro-seo";
+import Hero from "../components/Hero.astro";
+import Work from "../components/Work.astro";
+import HonorableMentions from "../components/HonorableMentions.astro";
+import CTA from "../components/CTA.astro";
 
-const intro = await getEntryBySlug('docs', 'intro');
-const { Content } = await intro.render();
+const title = "Raphael - Homepage";
+const description = "Hi, I'm Raphael. A software engineer.";
 ---
 
-<Layout title={intro.data.title}>
-	<main>
-		<h1>{intro.data.title}</h1>
-		<Content />
-	</main>
-</Layout>
+<PageLayout wide>
+  <SEO
+    slot="meta"
+    title={title}
+    description={description}
+    openGraph={{
+      basic: {
+        title: title,
+        type: "website",
+        image: "https://ratoru.com/assets/portait.webp",
+      },
+    }}
+  />
+  <Fragment slot="main">
+    <Hero />
+    <Work />
+    <HonorableMentions />
+    <CTA />
+  </Fragment>
+</PageLayout>
 
-<style is:global>
-	table {
-		margin-block: 2rem;
-		margin-inline: auto;
-	}
-	table td {
-		padding-block: 0.3rem;
-		padding-inline: 0.5rem;
-	}
-</style>
+<style></style>

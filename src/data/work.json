@@ -1,0 +1,44 @@
+[
+  {
+    "name": "Empiric Network",
+    "type": "Internship",
+    "info": "Designed and implemented the website of the StarkNet oracle Empiric Network. Includes live price feeds, a command pallet, and a thorough content section. I also wrote upgradable smart contracts using proxies on StarkNet and GitHub Actions to test them.",
+    "tags": [
+      "ZK-Rollups",
+      "StarkNet",
+      "Smart Contracts",
+      "React",
+      "Tailwind CSS"
+    ],
+    "links": [
+      {
+        "website": "https://www.empiric.network/"
+      }
+    ],
+    "img": "/assets/empiric.webp"
+  },
+  {
+    "name": "Raycast Extensions",
+    "type": "Open Source",
+    "info": "Multiple open source Raycast extensions with over 11k downloads. Google Maps Search allows you to quickly open Google Maps directions, for example from your current location to your home.",
+    "tags": ["React", "Javascript", "Open Source"],
+    "links": [
+      {
+        "website": "https://www.raycast.com/ratoru"
+      }
+    ],
+    "img": "/assets/raycast-extension.webp"
+  },
+  {
+    "name": "Psetgroups",
+    "type": "Side Project",
+    "info": "Built to help Stanford students find problem set groups for their classes. Creates optimal matches using using Edmonds' blossom algorithm.",
+    "tags": ["Next.js", "Python", "Optimal Matching"],
+    "links": [
+      {
+        "website": "https://psetgroups.ratoru.com/"
+      }
+    ],
+    "img": "/assets/student.webp"
+  }
+]

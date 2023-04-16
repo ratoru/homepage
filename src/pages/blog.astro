@@ -1,0 +1,62 @@
+---
+import { getCollection } from "astro:content";
+import { SEO } from "astro-seo";
+import PageLayout from "../layouts/PageLayout.astro";
+const blogEntries = await getCollection("blog");
+const title = "Raphael - Blog";
+const description =
+  "Explore some of my reading. I focus on operating systems and life advice.";
+---
+
+<PageLayout wide={false}>
+  <SEO
+    slot="meta"
+    title={title}
+    description={description}
+    openGraph={{
+      basic: {
+        title: title,
+        type: "website",
+        image: "https://ratoru.com/assets/portait.webp",
+      },
+    }}
+  />
+  <section slot="main">
+    <ul>
+      {
+        blogEntries.map((post) => {
+          const formattedDate = new Date(post.data.date).toLocaleDateString(
+            "en-us",
+            {
+              year: "numeric",
+              month: "short",
+              day: "numeric",
+            }
+          );
+          return (
+            <li class="grid grid-cols-[1fr] md:grid-cols-[1fr_auto] mb-3 md:gap-2 items-start">
+              <div class="title">
+                <a
+                  href={`/blog/${post.slug}`}
+                  class="unset
+                          transition-[background-size] duration-300 
+                          bg-gradient-to-r bg-left-bottom bg-no-repeat
+                          bg-[length:0%_55%] hover:bg-[length:100%_55%] dark:bg-[length:0%_2px] hover:dark:bg-[length:100%_2px]
+                          from-primary-blue to-primary-blue dark:from-primary-blue dark:to-primary-blue
+                        "
+                >
+                  {post.data.title}
+                </a>
+              </div>
+              <div class="text-text-muted text-sm italic pt-1">
+                <time datetime={post.data.date.toISOString()}>
+                  {formattedDate}
+                </time>
+              </div>
+            </li>
+          );
+        })
+      }
+    </ul>
+  </section>
+</PageLayout>

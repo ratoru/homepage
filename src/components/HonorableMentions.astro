@@ -1,0 +1,94 @@
+---
+import honorableMentions from "../data/honorable-mentions.json";
+---
+
+<section
+  class="col-span-full grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-8 lg:grid-cols-12 py-12 space-y-6 md:py-24 lg:space-y-12 xl:py-40"
+>
+  <header
+    class="col-span-full space-y lg:space-y-2 leading-heading xl:flex xl:flex-col xl:items-center"
+  >
+    <p
+      class="uppercase tracking-wide leading-heading text-sm md:text-base lg:text-lg"
+    >
+      any other projects?
+    </p>
+    <h1 class="font-serif text-2xl md:text-3xl lg:text-5xl font-bold uppercase">
+      Honorable mentions
+    </h1>
+  </header>
+
+  <div
+    class="col-span-full grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-24 lg:grid-cols-12"
+  >
+    {
+      honorableMentions.map((h) => (
+        <div class="border-text-muted col-span-full leading-normal p-6 space-y-6 border-2 rounded-3xl md:space-y-8 md:py-6 md:px-8 md:col-span-2 lg:col-span-4 md:grid lg:hover:scale-[1.03] lg:transition-all lg:ease-out">
+          <div>
+            {h.links.map((link) => (
+              <div class="flex flex-row flex-nowrap justify-end space-x-4">
+                {link.github && (
+                  <a
+                    href={link.github}
+                    target="_blank"
+                    class="unset hover:text-text-link"
+                  >
+                    <span class="sr-only">GitHub</span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="feather feather-github"
+                    >
+                      <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+                    </svg>
+                  </a>
+                )}
+                {link.website && (
+                  <a
+                    href={link.website}
+                    target="_blank"
+                    class="unset hover:text-text-link"
+                  >
+                    <span class="sr-only">Website</span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="feather feather-external-link"
+                    >
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                      <polyline points="15 3 21 3 21 9" />
+                      <line x1="10" y1="14" x2="21" y2="3" />
+                    </svg>
+                  </a>
+                )}
+              </div>
+            ))}
+            <h2 class="mt-4 md:mt-6 text-lg font-bold md:text-xl text-text-bold">
+              {h.name}
+            </h2>
+            <p class="mt-3 md:mt-4 text-base text-text-body">{h.info}</p>
+          </div>
+          <div class="text-text-muted text-sm space-x-4 md:self-end">
+            {h.tags.map((tag) => {
+              return <span>{tag}</span>;
+            })}
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</section>

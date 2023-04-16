@@ -1,42 +1,14 @@
-# Astro Example: Markdoc (experimental)
+# Ratoru Homepage
 
-This starter showcases the experimental Markdoc integration.
+This is my personal website's 3rd iteration. You can find my blog and my past work there.
 
-```
-npm create astro@latest -- --template with-markdoc
-```
+It also includes an RSS feed. For more information about RSS feeds in general, see [aboutfeeds.com](https://aboutfeeds.com/).
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/with-markdoc)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/with-markdoc)
+## 🔨 Tools
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+My homepage was built using [Astro](https://docs.astro.build/en/getting-started/), Markdoc, and Tailwind CSS.
 
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```
-/
-├── public/
-├── src/
-│   └── content/
-        └── docs/
-│           └── intro.mdoc
-|       └── config.ts
-│   └── components/Aside.astro
-│   └── layouts/Layout.astro
-│   └── pages/index.astro
-|   └── env.d.ts
-├── astro.config.mjs
-├── markdoc.config.mjs
-├── README.md
-├── package.json
-└── tsconfig.json
-```
-
-Markdoc (`.mdoc`) files can be used in content collections. See `src/content/docs/` for an example file.
-
-You can also render Astro components from your Markdoc files using [tags](https://markdoc.dev/docs/tags). See the `markdoc.config.mjs` file for an example configuration.
+The blog is heavily inspired by [Blogster](https://github.com/flexdinesh/blogster).
 
 ## 🧞 Commands
 
@@ -50,7 +22,3 @@ All commands are run from the root of the project, from a terminal:
 | `npm run preview`      | Preview your build locally, before deploying     |
 | `npm run astro ...`    | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
