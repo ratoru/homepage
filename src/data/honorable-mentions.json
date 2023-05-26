@@ -10,24 +10,27 @@
     ]
   },
   {
-    "name": "Stanford Computer Science Research",
-    "info": "Tested a new language for implicit dataflow parallelism. Achieved a 20x reduction of run time by running parallel computations on GPUs using CUDA.",
-    "tags": ["CUDA", "Parallelism", "Research"],
+    "name": "An Airplane Journey",
+    "info": "An immersive web experience made with R3F and Drei. Explores 3D websites and Blender modeling skills. For someone special in my life. :)",
+    "tags": ["React Three Fiber", "GSAP", "Blender"],
     "links": [
       {
-        "website": "https://ratoru.com/assets/curis-research.png"
+        "github": "https://github.com/ratoru/airplane-journey",
+        "website": "https://fortracy.ratoru.com/"
       }
     ]
   },
   {
-    "name": "SpikeStats - Statistics for Spikeball",
-    "info": "SpikeStats provides you and your friends with all relevant statistics for your roundnet games. Just add a game result and we do the rest.",
-    "tags": ["Next.js", "Tailwind CSS", "First Project"],
+    "name": "Psetgroups",
+    "type": "Side Project",
+    "info": "Built to help Stanford students find problem set groups for their classes. Creates optimal matches using using Edmonds' blossom algorithm.",
+    "tags": ["Next.js", "Python", "Optimal Matching"],
     "links": [
       {
-        "github": "https://github.com/ratoru/spikestats",
-        "website": "https://spikestats.ratoru.com/"
+        "github": "https://github.com/ratoru/psetgroups",
+        "website": "https://psetgroups.ratoru.com/"
       }
-    ]
+    ],
+    "img": "/assets/student.webp"
   }
 ]

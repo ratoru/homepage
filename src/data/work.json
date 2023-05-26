@@ -30,15 +30,15 @@
     "img": "/assets/raycast-extension.webp"
   },
   {
-    "name": "Psetgroups",
-    "type": "Side Project",
-    "info": "Built to help Stanford students find problem set groups for their classes. Creates optimal matches using using Edmonds' blossom algorithm.",
-    "tags": ["Next.js", "Python", "Optimal Matching"],
+    "name": "Parallel Computing",
+    "type": "Stanford CS Research",
+    "info": "Tested a new language for implicit dataflow parallelism. Achieved a 20x reduction of run time by running parallel computations on GPUs using CUDA.",
+    "tags": ["CUDA", "Parallelism", "Research"],
     "links": [
       {
-        "website": "https://psetgroups.ratoru.com/"
+        "website": "https://ratoru.com/assets/curis-research.webp"
       }
     ],
-    "img": "/assets/student.webp"
+    "img": "/assets/curis-research.webp"
   }
 ]
