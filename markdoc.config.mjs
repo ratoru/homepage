@@ -1,11 +1,10 @@
-import { defineMarkdocConfig } from "@astrojs/markdoc/config";
-import Aside from "./src/components/posts/Aside.astro";
-import CodeBlock from "./src/components/posts/CodeBlock.astro";
+import { defineMarkdocConfig, component } from "@astrojs/markdoc/config";
 
 export default defineMarkdocConfig({
   tags: {
     aside: {
-      render: Aside,
+      // render: Aside,
+      render: component('./src/components/posts/Aside.astro'),
       attributes: {
         type: { type: String },
         title: { type: String },
@@ -14,7 +13,8 @@ export default defineMarkdocConfig({
   },
   nodes: {
     fence: {
-      render: CodeBlock,
+      // render: CodeBlock,
+      render: component('./src/components/posts/CodeBlock.astro'),
       attributes: {
         content: { type: String },
         language: { type: String },
