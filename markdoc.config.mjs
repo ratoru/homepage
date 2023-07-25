@@ -19,7 +19,7 @@ export default defineMarkdocConfig({
   ],
   tags: {
     aside: {
-      render: component('./src/components/posts/Aside.astro'),
+      render: component('./src/components/posts/Note.astro'),
       attributes: {
         type: { type: String },
         title: { type: String },
