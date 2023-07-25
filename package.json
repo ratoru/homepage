@@ -11,7 +11,6 @@
   },
   "dependencies": {
     "@astrojs/markdoc": "^0.4.3",
-    "@astrojs/prism": "^2.1.2",
     "@astrojs/rss": "^2.4.3",
     "@astrojs/tailwind": "^4.0.0",
     "@fontsource/alegreya": "^5.0.5",
