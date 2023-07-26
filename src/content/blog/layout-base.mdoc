@@ -5,6 +5,8 @@ tags: coding
 date: 2023-07-23
 ---
 
+![kyria-heatmap](/blog/layout/kyria-heatmap.webp)
+
 I have healthier wrists and am a more efficient typer because I designed my own keyboard layout.
 
 This guide will take you from having never heard about what a keyboard layout is all the way to using your custom layout on a mechanical keyboard via `QMK`. Even though the ergonomic keyboard community is very kind and helpful, most of the information is buried across Reddit, old blogs, and even older internet forums. I will walk you through all the necessary information a complete beginner needs to start building a custom layout.
@@ -29,12 +31,17 @@ Don't worry if these steps seem daunting. Nothing beats experimenting with all t
 
 If you are like me, you typed on a `Qwerty` layout your entire life; turns out `Qwerty` is garbage in terms of ergonomics. [^1]
 
-Certain letters and bigrams appear much more often in text or code than others. Unfortunately, `Qwerty` was not designed to make the most frequent letters and bigrams the most comfortable to hit. Naturally, many keyboard layouts have since been designed that optimize specifically for typing comfort. I recommend you watch [this video](https://youtu.be/gRtS-XACO6o?t=42) to get a quick overview of the most popular keyboard layouts and how they compare to `Qwerty`.
+Certain letters and bigrams appear much more often in text or code than others. Unfortunately, `Qwerty` was not designed to make the most frequent letters and bigrams the most comfortable to hit. Naturally, many keyboard layouts have since been designed that optimize specifically for typing comfort.
+
+The three most popular layouts are `Qwerty`, `Dvorak`, and `Colemak(-DH)`. The images below are heatmaps for these three layouts that were generated using 10000 sentences from Wikipedia. The first time I saw these heatmaps, I was shocked. I recommend you watch [this video](https://youtu.be/gRtS-XACO6o?t=42) to learn a little bit about the history of these (and other) layouts.
+
+![qwerty-heatmap](/blog/layout/qwerty-heatmap.webp)
+![dvorak-heatmap](/blog/layout/dvorak-heatmap.webp)
+![colemak-dh-heatmap](/blog/layout/colemak-dh-heatmap.webp)
 
 Unfortunately, every English keyboard runs on `Qwerty`, so switching layouts does have drawbacks. Read through Pascal Getreuer's excellent article on [alternate keyboard layouts](https://getreuer.info/posts/keyboards/alt-layouts/index.html)and decide whether you want to learn one. For lazy readers here is my quick summary. The primary motivation for switching layouts is improved typing comfort. Improving speed should not weigh into your decision. Additionally, note that learning a new layout is hard and you will have to use `qwerty` when using someone else's computer. On the other hand, alternate keyboard layouts like `Colemak-DH` and `Sturdy` are significantly more ergonomic than `qwerty`. If you want to switch layouts, but can't decide on a specific one, go with `Colemak-DH`. [Colemak-DH](https://colemakmods.github.io/mod-dh/) has been battle-tested by the community.
 
 > Your fingers on QWERTY move 2.2x more than on Colemak. QWERTY has 16x more same hand row jumping than Colemak. There are 35x more words you can type using only the home row on Colemak.
->
 > -- [colemak.com](https://colemak.com/)
 
 Personally, I am currently exploring switching to Colemak-DH. I also designed a custom layout that let's me use `hjkl` in `vim` to move around. If you'd like to switch, I recommend using [monkeytype.com](https://monkeytype.com/) and [keybr.com](https://www.keybr.com/) to practice. [^2] I recommend at least trying a different layout, although you won't get any good without a serious commitment.
