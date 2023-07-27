@@ -1,150 +1,203 @@
 ---
-// Adapted from Maggie Appleton
+// Source: https://github.com/kslstn/sidenotes
 interface Props {
-    idName: string;
+    idNumber: Number;
+    label: String;
 }
-const { idName } = Astro.props;
+const { idNumber, label } = Astro.props;
 ---
 
-<span class="footnote-container">
-  <label for={idName} class="margin-toggle footnote-number" />
-  <input type="checkbox" id={idName} class="margin-toggle">
-  <span class="footnote"><slot/></span>
+<span class="sidenote">
+  <input
+    aria-label="Show sidenote"
+    type="checkbox"
+    id=`sidenote__checkbox--${idNumber}`
+    class="sidenote__checkbox">
+  <label
+    tabindex="0"
+    title="Sidenote content"
+    aria-describedby=`sidenote-${idNumber}`
+    for=`sidenote__checkbox--${idNumber}`
+    class=`sidenote__button sidenote__button--number-${idNumber}`
+  >{label}</label>
+  <small
+    id="sidenote-${idNumber}`"
+    class=`sidenote__content sidenote__content--number-${idNumber}`>
+    <span class="sidenote__content-parenthesis
+    "> (sidenote: </span>
+    <slot />
+    <span class="sidenote__content-parenthesis">)</span>
+  </small>
 </span>
 
 <style>
-  /* Common styles for footnote */
-.footnote-container {
+.sidenote {
   display: inline;
-  position: relative;
 }
 
-.footnote {
-  /* float: right; */
-  height: 1rem;
-  overflow: visible;
-  clear: right;
-  margin-right: -38%;
-  width: 33%;
-  margin-top: 0;
-  margin-bottom: 0;
-  font-size: 14px; /* Use your desired font size */
-  opacity: 90%;
-  line-height: 1.5;
-  vertical-align: baseline;
-  position: relative;
-  border-left: 1px solid #ccc; /* Use your desired border color */
-  padding-left: 1em;
+/* * */
+.sidenote__button::after {
+  content: "\002a";
+  display: inline-block;
 }
 
-.footnote a::before,
-.footnote a:hover::before,
-.footnote a {
-  background: none;
-  transform: none;
+/* ⁑ */
+.sidenote__button--number-2::after {
+  content: "\2051";
 }
 
-.footnote a span {
-  font-size: 14px; /* Use your desired font size */
+/* ⁂ */
+.sidenote__button--number-3::after {
+  content: "\2042";
 }
 
-label {
-  cursor: pointer;
+/* ✝ */
+.sidenote__button--number-4::after {
+  content: "\2020";
 }
 
-.footnote-number {
-  counter-increment: footnote-counter;
+/* ‡ */
+.sidenote__button--number-5::after {
+  content: "\2021";
 }
 
-.footnote-number:after,
-.footnote:before {
-  position: relative;
-  vertical-align: baseline;
+/* ⁑⁑ */
+.sidenote__button--number-6::after {
+  content: "\2051\2051";
 }
 
-.footnote-number:after {
-  content: counter(footnote-counter);
-  padding: 0.15rem;
-  font-family: Arial, sans-serif;
-  font-size: 1rem;
-  color: #0066cc; /* Use your desired color */
-  font-weight: 600;
-  line-height: 0;
-  position: relative;
-  top: -6px;
-  left: 2px;
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  background: transparent;
-  transition: all 0.25s ease-in-out;
+/* ‡‡ */
+.sidenote__button--number-7::after {
+  content: "\2021\2021";
 }
 
-.footnote:before {
-  content: counter(footnote-counter);
-  font-size: 1rem;
-  top: -0.1rem;
-  font-weight: 600;
-  padding-right: 4px; /* Use your desired padding */
-  color: #0066cc; /* Use your desired color */
-  font-family: Arial, sans-serif;
-}
-
-blockquote .footnote {
-  margin-right: -82%;
-  min-width: 59%;
-  text-align: left;
-}
-
-label.footnote-number {
-  display: inline;
-  padding-right: 12px; /* Use your desired padding */
-}
-
-label.margin-toggle:not(.footnote-number) {
+.sidenote__checkbox {
   display: none;
 }
 
-input.margin-toggle {
-  display: none;
+/* Hidden, but accessible to browsers that don't do CSS (e.g. screenreaders, Pocket) */
+.sidenote__content-parenthesis {
+  position: absolute;
+  left: -99999px;
+  top: auto;
 }
 
-.footnote,
-.marginnote {
-  display: none;
-}
+/* For narrow viewports, the sidenote is hidden by default and shown when the checkbox is checked. */
+@media screen and (max-width: 1279px) {
 
-.margin-toggle:checked + .footnote {
-  display: block;
-  float: left;
-  left: 0;
-  clear: both;
-  width: 99%;
-  margin: 1rem 0;
-  height: auto;
-  position: relative;
-}
-
-/* Media query for smaller screens */
-@media (max-width: 1420px) {
-  label.margin-toggle:not(.footnote-number) {
-    display: inline;
+  .sidenote__checkbox~.sidenote__content {
+    /* Hidden, but accessible to browsers that don't do CSS (e.g. screenreaders, Pocket) */
+    position: absolute;
+    left: -99999px;
+    top: auto;
   }
 
-  .footnote,
-  .marginnote {
-    display: none;
-  }
-
-  .margin-toggle:checked + .footnote {
-    display: block;
-    float: left;
-    left: 0;
-    clear: both;
-    width: 99%;
-    margin: 1rem;
-    height: auto;
+  .sidenote__checkbox:checked~.sidenote__content {
+    /* override hidden-but-accessible */
     position: relative;
+    left: auto;
+
+    /* Don't break up line containing the sidenote */
+    float: left;
+    min-width: 100%;
+
+    display: block;
+    margin: 0.8rem 0;
+    padding: 0.8rem 1.6rem;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .sidenote__button {
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    text-decoration-color: rgb(var(--color-text-link));
+    cursor: pointer;
+  }
+
+  .sidenote__button:hover {
+    color: rgb(var(--color-text-link));
+  }
+
+  .sidenote__button:not(:hover):focus::after {
+    display: inline;
+    /* display:inline-block causes misalignment between focus ring and background. */
+  }
+
+  .sidenote__checkbox:checked~.sidenote__button::after {
+    content: none;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .sidenote {
+    --sidenote-width: 12rem;
+    --sidenote-margin: 4.8rem;
+    cursor: default;
+  }
+
+  .sidenote:hover .sidenote__button::after,
+  .sidenote:hover .sidenote__content::before {
+    color: rgb(var(--color-text-link));
+  }
+
+  .sidenote__content::before {
+    /* * */
+    content: "\002a";
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -2.5rem;
+
+    /* to align different types of asterisks we need a fixed width */
+    width: 2rem;
+  }
+
+  .sidenote__content {
+    display: block;
+    position: absolute;
+    right: 0;
+
+    /* Align sidenote top with main text */
+    /* margin-top: calc(-1.5*var(--text-size)); */
+    margin-top: -1.5rem;
+
+    margin-right: calc(-1*var(--sidenote-width) - 1*var(--sidenote-margin));
+    width: var(--sidenote-width);
+    font-size: var(--text-size); 
+  }
+
+  /* ⁑ */
+  .sidenote__content--number-2::before {
+    content: "\2051";
+  }
+
+  /* ⁂ */
+  .sidenote__content--number-3::before {
+    content: "\2042";
+  }
+
+  /* ✝ */
+  .sidenote__content--number-4::before {
+    content: "\2020";
+  }
+
+  /* ‡ */
+  .sidenote__content--number-5::before {
+    content: "\2021";
+  }
+
+  /* ⁑⁑ */
+  .sidenote__content--number-6::before {
+    content: "\2051\2051";
+  }
+
+  /* ‡‡ */
+  .sidenote__content--number-7::before {
+    content: "\2021\2021";
   }
 }
 </style>

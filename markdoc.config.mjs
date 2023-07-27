@@ -24,7 +24,8 @@ export default defineMarkdocConfig({
     footnote: {
       render: component("./src/components/posts/Footnote.astro"),
       attributes: {
-        idName: { type: String },
+        idNumber: { type: Number },
+        label: { type: String },
       },
     },
   },
