@@ -1,5 +1,5 @@
 import { defineMarkdocConfig, component } from "@astrojs/markdoc/config";
-import shiki from '@astrojs/markdoc/shiki';
+import shiki from "@astrojs/markdoc/shiki";
 
 export default defineMarkdocConfig({
   extends: [
@@ -7,7 +7,7 @@ export default defineMarkdocConfig({
       // Choose from Shiki's built-in themes (or add your own)
       // Default: 'github-dark'
       // https://github.com/shikijs/shiki/blob/main/docs/themes.md
-      theme: 'one-dark-pro',
+      theme: "one-dark-pro",
       // Enable word wrap to prevent horizontal scrolling
       // Default: false
       wrap: true,
@@ -19,10 +19,12 @@ export default defineMarkdocConfig({
   ],
   tags: {
     aside: {
-      render: component('./src/components/posts/Note.astro'),
+      render: component("./src/components/posts/Note.astro"),
+    },
+    footnote: {
+      render: component("./src/components/posts/Footnote.astro"),
       attributes: {
-        type: { type: String },
-        title: { type: String },
+        idName: { type: String },
       },
     },
   },

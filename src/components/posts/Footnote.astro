@@ -1,0 +1,150 @@
+---
+// Adapted from Maggie Appleton
+interface Props {
+    idName: string;
+}
+const { idName } = Astro.props;
+---
+
+<span class="footnote-container">
+  <label for={idName} class="margin-toggle footnote-number" />
+  <input type="checkbox" id={idName} class="margin-toggle">
+  <span class="footnote"><slot/></span>
+</span>
+
+<style>
+  /* Common styles for footnote */
+.footnote-container {
+  display: inline;
+  position: relative;
+}
+
+.footnote {
+  /* float: right; */
+  height: 1rem;
+  overflow: visible;
+  clear: right;
+  margin-right: -38%;
+  width: 33%;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 14px; /* Use your desired font size */
+  opacity: 90%;
+  line-height: 1.5;
+  vertical-align: baseline;
+  position: relative;
+  border-left: 1px solid #ccc; /* Use your desired border color */
+  padding-left: 1em;
+}
+
+.footnote a::before,
+.footnote a:hover::before,
+.footnote a {
+  background: none;
+  transform: none;
+}
+
+.footnote a span {
+  font-size: 14px; /* Use your desired font size */
+}
+
+label {
+  cursor: pointer;
+}
+
+.footnote-number {
+  counter-increment: footnote-counter;
+}
+
+.footnote-number:after,
+.footnote:before {
+  position: relative;
+  vertical-align: baseline;
+}
+
+.footnote-number:after {
+  content: counter(footnote-counter);
+  padding: 0.15rem;
+  font-family: Arial, sans-serif;
+  font-size: 1rem;
+  color: #0066cc; /* Use your desired color */
+  font-weight: 600;
+  line-height: 0;
+  position: relative;
+  top: -6px;
+  left: 2px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: transparent;
+  transition: all 0.25s ease-in-out;
+}
+
+.footnote:before {
+  content: counter(footnote-counter);
+  font-size: 1rem;
+  top: -0.1rem;
+  font-weight: 600;
+  padding-right: 4px; /* Use your desired padding */
+  color: #0066cc; /* Use your desired color */
+  font-family: Arial, sans-serif;
+}
+
+blockquote .footnote {
+  margin-right: -82%;
+  min-width: 59%;
+  text-align: left;
+}
+
+label.footnote-number {
+  display: inline;
+  padding-right: 12px; /* Use your desired padding */
+}
+
+label.margin-toggle:not(.footnote-number) {
+  display: none;
+}
+
+input.margin-toggle {
+  display: none;
+}
+
+.footnote,
+.marginnote {
+  display: none;
+}
+
+.margin-toggle:checked + .footnote {
+  display: block;
+  float: left;
+  left: 0;
+  clear: both;
+  width: 99%;
+  margin: 1rem 0;
+  height: auto;
+  position: relative;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 1420px) {
+  label.margin-toggle:not(.footnote-number) {
+    display: inline;
+  }
+
+  .footnote,
+  .marginnote {
+    display: none;
+  }
+
+  .margin-toggle:checked + .footnote {
+    display: block;
+    float: left;
+    left: 0;
+    clear: both;
+    width: 99%;
+    margin: 1rem;
+    height: auto;
+    position: relative;
+  }
+}
+</style>
