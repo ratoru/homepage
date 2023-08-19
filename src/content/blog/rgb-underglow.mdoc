@@ -32,6 +32,7 @@ This guide is for RGB lighting (= underglow). This feature is different (and req
 Start by adding the following to your `rules.mk`. The last two lines were necessary for my keymap to work properly, but depend on your exact setup.
 
 ```c
+// file: rules.mk
 RGBLIGHT_ENABLE = yes
 RGB_MATRIX_ENABLE = no  // add this if you are not using per-key lighting.
 WS2812_DRIVER = vendor  // add this if you are using a RP2040-based controller.
@@ -40,6 +41,7 @@ WS2812_DRIVER = vendor  // add this if you are using a RP2040-based controller.
 Throughout this guide, I will use `#ifdef RGBLIGHT_ENABLE` to make our keymap compilable with and without RGB light support. Let's add the general configuration to `config.h`:
 
 ```c
+// file: config.h
 #ifdef RGBLIGHT_ENABLE
 #define RGB_SLEEP               // Turns off keyboard once host goes to sleep.
 #define RGBLIGHT_LIMIT_VAL 128  // Limits max brightness to save energy.
@@ -55,6 +57,7 @@ Throughout this guide, I will use `#ifdef RGBLIGHT_ENABLE` to make our keymap co
 Let's start by simply enabling the LEDs without saving any settings to the EEPROM. All of the following code snippets will be added to `keymap.c` and wrapped with `#ifdef RGBLIGHT_ENABLE`.
 
 ```c
+// file: keymap.c
 void keyboard_post_init_user(void) {
     rgblight_enable_noeeprom(); // Enables RGB, without saving settings.
     rgblight_sethsv_noeeprom(HSV_PINK);
@@ -67,6 +70,7 @@ void keyboard_post_init_user(void) {
 You can change the underglow color of your keyboard depending on what layer you are on. This can also be done without using the EEPROM, even though the QMK docs do not mention it. Add the following function below the `keyboard_post_init_user` function above. If you have the layer names defined, you can replace `1, 2, 3, ...` with the layer names. They are just `enum`s after all.
 
 ```c
+// file: keymap.c
 layer_state_t layer_state_set_user(layer_state_t state) {
     switch (get_highest_layer(state)) {
      case 1:
@@ -94,6 +98,7 @@ layer_state_t layer_state_set_user(layer_state_t state) {
 If your computer goes to sleep, you probably want to save some energy and turn off the keyboard's RGB underglow, too. Since we are using `_noeeprom()` functions, we need to manually do that. Add this below the `layer_state_set_user` function.
 
 ```c
+// file: keymap.c
 void suspend_power_down_user(void) {
     // code will run multiple times while keyboard is suspended
     rgblight_disable_noeeprom();
@@ -109,9 +114,10 @@ void suspend_wakeup_init_user(void) {
 
 ## Custom RGB Keycodes
 
-The RGB keycodes in the QMK docs use EEPROM settings to affect the LEDs. You can write your own RGB keycodes by defining custom keycodes and calling the corresponding `_noeeprom()` function when the keycode gets resolved. Here is an example:
+The RGB keycodes in the QMK docs use EEPROM settings to affect the LEDs. You can write your own RGB keycodes by defining custom keycodes and calling the corresponding `_noeeprom()` function when the keycode gets processed. Here is an example:
 
 ```c
+// file: keymap.c
 bool process_record_user(uint16_t keycode, keyrecord_t* record) {
   switch (keycode) {
     #ifdef RGBLIGHT_ENABLE
