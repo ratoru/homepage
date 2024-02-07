@@ -1,12 +1,12 @@
 import rss from "@astrojs/rss";
 import { getCollection } from "astro:content";
 
-export async function get() {
+export async function GET(context) {
   const posts = await getCollection("blog");
   return rss({
     title: "Raphael - Blog",
     description: "My thoughts around life and operating systems.",
-    site: "https://www.ratoru.com",
+    site: context.site,
     items: posts.map((post) => ({
       title: post.data.title,
       pubDate: post.data.date,
