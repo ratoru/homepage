@@ -13,7 +13,10 @@ export async function GET(context) {
       description: post.data.description,
       link: `/blog/${post.slug}/`,
     })),
-    customData: `<language>en-us</language>`,
+    customData: [
+      '<language>en-us</language>',
+      `<atom:link href="${new URL('rss.xml', context.site)}" rel="self" type="application/rss+xml" />`
+    ].join(''),
     stylesheet: '/rss/styles.xsl',
   });
 }
