@@ -10,7 +10,7 @@ export default defineMarkdocConfig({
       theme: "one-dark-pro",
       // Enable word wrap to prevent horizontal scrolling
       // Default: false
-      wrap: true,
+      wrap: false,
       // Pass custom languages
       // Note: Shiki has countless langs built-in, including `.astro`!
       // https://github.com/shikijs/shiki/blob/main/docs/languages.md
@@ -26,6 +26,12 @@ export default defineMarkdocConfig({
       attributes: {
         idNumber: { type: Number },
         label: { type: String },
+      },
+    },
+    math: {
+      render: component("./src/components/posts/Math.astro"),
+      attributes: {
+        formula: { type: String },
       },
     },
   },

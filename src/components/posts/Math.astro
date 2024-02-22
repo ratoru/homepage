@@ -1,0 +1,23 @@
+---
+import katex from "katex";
+
+interface Props {
+  formula: string;
+}
+
+const { formula } = Astro.props;
+const math = katex.renderToString(formula, {
+  throwOnError: false,
+});
+---
+
+<div class="text-center">
+  <span set:html={math} />
+</div>
+
+<link
+  rel="stylesheet"
+  href="/styles/katex.min.css"
+  integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV"
+  crossorigin="anonymous"
+/>

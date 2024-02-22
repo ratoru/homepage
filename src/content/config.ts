@@ -7,6 +7,7 @@ const blog = defineCollection({
       invalid_type_error: "title must be a string",
     }),
     description: z.optional(z.string()),
+    tags: z.optional(z.array(z.string())),
     date: z.date({
       required_error: "Required frontmatter missing: date",
       invalid_type_error:
