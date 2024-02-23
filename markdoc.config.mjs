@@ -1,5 +1,6 @@
 import { defineMarkdocConfig, component } from "@astrojs/markdoc/config";
 import shiki from "@astrojs/markdoc/shiki";
+// import { transformerNotationDiff, transformerNotationHighlight, transformerNotationFocus, } from '@shikijs/transformers'
 
 export default defineMarkdocConfig({
   extends: [
@@ -15,6 +16,12 @@ export default defineMarkdocConfig({
       // Note: Shiki has countless langs built-in, including `.astro`!
       // https://github.com/shikijs/shiki/blob/main/docs/languages.md
       langs: [],
+      // https://shiki.style/packages/transformers
+      // transformers: [
+      //   transformerNotationDiff(),
+      //   transformerNotationHighlight(),
+      //   transformerNotationFocus(),
+      // ],
     }),
   ],
   tags: {
