@@ -30,7 +30,7 @@ What you can expect in this post:
 We rely on Simplified Molecular-Input Line-Entry System (SMILES) notation to represent the drugs in our datasets. SMILES notation provides a compact textual representation of molecular structures, making it a suitable input for machine learning models.
 We will take this representation a step further by converting SMILES strings into graph structures, where atoms represent nodes, and bonds represent edges. These molecular graphs will serve as the foundation for our graph neural network(s), which will perform a graph-level prediction task. Here is an example of the SMILES code conversion.
 
-![3-ethyl-5-phenylimidazolidine-2,4-dione represented by SMILES string 'CCN1C(=O)NC(c2ccccc2)C1=O' being converted into networkx graphical form for training](/blog/gnns/smile.webp)
+![3-ethyl-5-phenylimidazolidine-2,4-dione represented by SMILES string 'CCN1C(=O)NC(c2ccccc2)C1=O' being converted into networkx graphical form for training](../../assets/blog/gnns/smile.webp)
 
 Accurate toxicity prediction not only accelerates the drug discovery process but also safeguards human health by identifying compounds with undesirable side effects early in development. A more sophisticated model than what we will be building could be used during drug development to predict whether a given drug will get approved before investing money and resources into its development and testing.
 
@@ -129,7 +129,7 @@ Graph-level prediction tasks like ours usually follow these three steps.
 
 Sometimes Step 1 is decomposed into a separate class, which is then invoked in the GNN graph prediction class. There is no need to train the decomposed class separately. In our case, we will have only one class for all 3 steps. Our architecture looks like this.
 
-![GNN Architecture](/blog/gnns/full_architecture.webp)
+![GNN Architecture](../../assets/blog/gnns/full_architecture.webp)
 
 Since we want to make our code as reusable as possible, we can build our class agnostic of the underlying message passing architecture. Our class will receive message_pass as a passed in parameter. The parameter is a [message passing function](https://medium.com/r/?url=https%3A%2F%2Fpytorch-geometric.readthedocs.io%2Fen%2Flatest%2Fmodules%2Fnn.html%23convolutional-layers) of type `MessagePassing`. This will allow us to reuse the same class for different models since PyG conveniently already has `GCNConv`, `SAGEConv`, and `GATConv` for us!
 
@@ -336,7 +336,7 @@ def test(self, model, loader: DataLoader):
 
 Since we want to optimize our GPU utilization, we are going to batch the graphs before inputting them into a GNN. Our graphs in the datasets are small, so this is good idea. PyTorch Geometric achieves parallelization across a number of examples by stacking adjacency matrices in a diagonal fashion (creating a giant graph that holds multiple isolated subgraphs). Node and target features are simply concatenated in the node dimension: {% footnote %} Source [Stanford CS 224W](https%3A%2F%2Fcolab.research.google.com%2Fdrive%2F1I8a0DfQ3fI7Njc62__mVXUlcAleUclnb%3Fusp%3Dsharing%23scrollTo%3DqeORu4Zrs8Zy) {% /footnote %}
 
-![Graph Batch, Source: CS 224W Colab 3](/blog/gnns/graph_batch.webp)
+![Graph Batch, Source: CS 224W Colab 3](../../assets/blog/gnns/graph_batch.webp)
 
 Here are the key advantages of this over other batching procedures:
 
@@ -359,9 +359,9 @@ The area under the ROC curve (AUC) is a single scalar value that quantifies the 
 
 So let's see how our models did on the AMES data set!
 
-![GCN on AMES](/blog/gnns/gcn_ames.webp)
-![GAT on AMES](/blog/gnns/gat_ames.webp)
-![GraphSage on AMES](/blog/gnns/graphsage_ames.webp)
+![GCN on AMES](../../assets/blog/gnns/gcn_ames.webp)
+![GAT on AMES](../../assets/blog/gnns/gat_ames.webp)
+![GraphSage on AMES](../../assets/blog/gnns/graphsage_ames.webp)
 
 Success! All of our models achieved some sort of success when it came to learning which drug compounds were toxic. All models were able to drive down loss while bringing up both testing and training accuracy. Additionally, according to ROC curves, our models are outperforming random classifiers by a big margin!
 
@@ -375,13 +375,13 @@ Some other observations you may have had are about the training stability. Overa
 
 The above graphs are using `BatchNorm`. We also ran all three models using `GraphNorm` and saw more stable training without an increase in performance. To keep this post at a reasonable size, we decided not to include all the corresponding graphs. Feel free to check them out in the Colab. Here is a direct comparison between two runs of our GCN with the different norms.
 
-![GCN using BatchNorm vs GraphNorm](/blog/gnns/batchnorm_vs_graphnorm.webp)
+![GCN using BatchNorm vs GraphNorm](../../assets/blog/gnns/batchnorm_vs_graphnorm.webp)
 
 ## When GNNs do not work…
 
 Now, let's explore an interesting failure case of GNNs and how one would go about investigating the issue. For this purpose, we are going to use a new dataset. The ClinTox dataset includes over 1,400 drugs that have failed clinical trials for toxicity reasons and drugs that are associated with successful trials. Our GAT achieves a 92% test set accuracy on this dataset. One might conclude that our model is doing an excellent job! Yet, the graphs tell a different story. There is basically no learning happening! Additionally, the ROC curve suggests that our model does not perform better than random guessing. What could be going on?
 
-![GAT Performance on ClinTox dataset](/blog/gnns/gat_clintox.webp)
+![GAT Performance on ClinTox dataset](../../assets/blog/gnns/gat_clintox.webp)
 
 A good starting point is taking a closer look at the dataset. Luckily, we already implemented ways to explore the dataset in the ToxicDataset class earlier. In comparison to the `AMES` dataset there are significantly less drugs/graphs in this dataset (almost 7x less). Furthermore, the ratio of toxic drugs compared to the rest of the data is significantly lower.
 
@@ -393,7 +393,7 @@ Let's look at another metric: **Recall**. We want our model to catch toxic drugs
 
 Here is a recall graph for out GAT on the `ClinTox` data:
 
-![GAT Recall on ClinTox](/blog/gnns/gat_recall_clintox.webp)
+![GAT Recall on ClinTox](../../assets/blog/gnns/gat_recall_clintox.webp)
 
 Looking at the recall values, we aren't doing very well. The test recall stays at 0, and our train recall never gets above 0.011. As we train, our model is not getting any better at retrieving the relevant elements!
 
@@ -437,7 +437,7 @@ def run_eval(self, model, model_name: str, dataset: ToxicDataset, batch_size: in
 
 Let's look at the results with weighted loss.
 
-![GAT with weighted loss on ClinTox](/blog/gnns/gat_weighted_clintox.webp)
+![GAT with weighted loss on ClinTox](../../assets/blog/gnns/gat_weighted_clintox.webp)
 
 With weighted loss, we are doing much better. The maximum test set accuracy has gone up from 0.926 to 0.943, the testing set recall has gone up from 0 to 0.833, and the ROC-AUC score has increased from 0.50, to 0.83!
 
@@ -469,4 +469,3 @@ We hope you enjoyed this blog post!
 - [6] Kipf, Thomas N., and Max Welling. "Semi-supervised classification with graph convolutional networks." arXiv preprint arXiv:1609.02907 (2016).
 - [7] Hamilton, Will, Zhitao Ying, and Jure Leskovec. "Inductive representation learning on large graphs." Advances in neural information processing systems 30 (2017).
 - [8] Veličković, Petar, et al. "Graph attention networks." arXiv preprint arXiv:1710.10903 (2017).
-

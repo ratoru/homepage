@@ -1,5 +1,7 @@
 ---
 import PageLayout from "../layouts/PageLayout.astro";
+import { Image } from "astro:assets";
+import astronautImage from "../assets/main/astronaut.webp";
 ---
 
 <PageLayout wide>
@@ -7,9 +9,9 @@ import PageLayout from "../layouts/PageLayout.astro";
     slot="main"
     class="flex flex-col items-center mx-auto space-y-6 max-w-3xl md:space-y-8"
   >
-    <img
+    <Image
       class="lg:h-[430px]"
-      src="/assets/astronaut.webp"
+      src={astronautImage}
       alt="Astronaout floating in space"
     />
     <h1

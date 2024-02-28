@@ -1,8 +1,13 @@
+---
+import { Image } from "astro:assets";
+import portraitImage from "../assets/main/portrait.webp";
+---
+
 <footer
   class="flex flex-col items-center p-8 border-t border-text-muted sm:flex-row"
 >
   <a href="/" class="unset">
-    <img src="/assets/portrait.webp" class="h-12" alt="Raphael's Avatar" />
+    <Image src={portraitImage} alt="Raphael's Avatar" class="h-12 w-9" />
   </a>
   <p
     class="mt-4 text-text-muted text-sm sm:pl-4 sm:mt-0 sm:ml-4 sm:border-l sm:border-text-muted"

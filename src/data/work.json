@@ -15,7 +15,7 @@
         "website": "https://www.empiric.network/"
       }
     ],
-    "img": "/assets/empiric.webp"
+    "img": "/src/assets/main/work/empiric.webp"
   },
   {
     "name": "Raycast Extensions",
@@ -27,7 +27,7 @@
         "website": "https://www.raycast.com/ratoru"
       }
     ],
-    "img": "/assets/raycast-extension.webp"
+    "img": "/src/assets/main/work/raycast-extension.webp"
   },
   {
     "name": "Parallel Computing",
@@ -39,6 +39,6 @@
         "website": "https://ratoru.com/assets/curis-research.webp"
       }
     ],
-    "img": "/assets/curis-research.webp"
+    "img": "/src/assets/main/work/curis-research.webp"
   }
 ]

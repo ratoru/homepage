@@ -1,5 +1,11 @@
 ---
 import work from "../data/work.json";
+
+import type { ImageMetadata } from "astro";
+import { Image } from "astro:assets";
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/assets/main/work/*.{jpeg,jpg,png,gif,webp}"
+);
 ---
 
 <section
@@ -21,9 +27,9 @@ import work from "../data/work.json";
     {
       work.map((work) => (
         <div class="space-y-6 items-center flex flex-col lg:flex-row lg:even:flex-row-reverse relative">
-          <img
-            src={work.img}
-            alt="project image"
+          <Image
+            src={images[work.img]()}
+            alt={`${work.name}'s project image`}
             class="shadow-2xl rounded-xl md:rounded-3xl saturate-0 transition-all duration-200 ease-in-out hover:saturate-100 lg:h-[430px] lg:w-[590px] lg:object-cover"
           />
           <div class="space-y-6 md:w-3/4 md:self-start lg:p-16">
