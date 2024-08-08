@@ -3,7 +3,7 @@ import { getCollection } from "astro:content";
 import getSortedPosts from "@utils/getSortedPosts";
 import { SITE } from "@config";
 
-export async function GET() {
+export async function GET(context: any) {
   const posts = await getCollection("blog");
   const sortedPosts = getSortedPosts(posts);
   return rss({
@@ -16,5 +16,10 @@ export async function GET() {
       description: data.description,
       pubDate: new Date(data.modDate ?? data.pubDate),
     })),
+    customData: [
+      "<language>en-us</language>",
+      `<atom:link href="${new URL("rss.xml", context.site)}" rel="self" type="application/rss+xml" />`,
+    ].join(""),
+    stylesheet: "/rss/styles.xsl",
   });
 }
