@@ -8,6 +8,7 @@ import Hr from "@components/blog/Hr.astro";
 import Card from "@components/blog/Card";
 import Socials from "@components/blog/Socials.astro";
 import getSortedPosts from "@utils/getSortedPosts";
+import { getReadingTime } from "@utils/readingTime";
 import { SITE, SOCIALS } from "@config";
 
 const posts = await getCollection("blog");
@@ -71,11 +72,12 @@ const socialCount = SOCIALS.filter((social) => social.active).length;
           <section id="featured">
             <h2>Featured</h2>
             <ul>
-              {featuredPosts.map(({ data, slug }) => (
+              {featuredPosts.map(({ data, slug, body }) => (
                 <Card
                   href={`/blog/${slug}/`}
                   frontmatter={data}
                   secHeading={false}
+                  timeToRead={getReadingTime(body)}
                 />
               ))}
             </ul>
@@ -91,12 +93,13 @@ const socialCount = SOCIALS.filter((social) => social.active).length;
           <h2>Recent Posts</h2>
           <ul>
             {recentPosts.map(
-              ({ data, slug }, index) =>
+              ({ data, slug, body }, index) =>
                 index < SITE.postPerIndex && (
                   <Card
                     href={`/blog/${slug}/`}
                     frontmatter={data}
                     secHeading={false}
+                    timeToRead={getReadingTime(body)}
                   />
                 ),
             )}

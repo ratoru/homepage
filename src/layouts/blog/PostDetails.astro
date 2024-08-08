@@ -9,6 +9,7 @@ import { slugifyStr } from "@utils/slugify";
 import ShareLinks from "@components/blog/ShareLinks.astro";
 import RelatedPosts from "@components/blog/RelatedPosts.astro";
 import { SITE } from "@config";
+import { getReadingTime } from "@utils/readingTime";
 
 export interface Props {
   post: CollectionEntry<"blog">;
@@ -68,6 +69,7 @@ const layoutProps = {
     <Datetime
       pubDatetime={pubDate}
       modDatetime={modDate}
+      timeToRead={getReadingTime(post.body)}
       size="lg"
       className="my-2"
     />

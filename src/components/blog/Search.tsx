@@ -111,6 +111,7 @@ export default function SearchBar({ searchList }: Props) {
             <Card
               href={`/blog/${item.slug}/`}
               frontmatter={item.data}
+              timeToRead={undefined} // TODO: add actual time
               key={`${refIndex}-${item.slug}`}
             />
           ))}

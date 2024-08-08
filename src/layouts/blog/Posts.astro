@@ -7,6 +7,7 @@ import Footer from "@components/blog/Footer.astro";
 import Pagination from "@components/blog/Pagination.astro";
 import Card from "@components/blog/Card";
 import { SITE } from "@config";
+import { getReadingTime } from "@utils/readingTime";
 
 export interface Props {
   page: Page;
@@ -20,8 +21,12 @@ const { page } = Astro.props;
   <Main pageTitle="Posts" pageDesc="All the articles I've posted.">
     <ul>
       {
-        page.data.map(({ data, slug }) => (
-          <Card href={`/blog/${slug}/`} frontmatter={data} />
+        page.data.map(({ data, slug, body }) => (
+          <Card
+            href={`/blog/${slug}/`}
+            frontmatter={data}
+            timeToRead={getReadingTime(body)}
+          />
         ))
       }
     </ul>

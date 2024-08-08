@@ -8,11 +8,13 @@ interface DatetimesProps {
 interface Props extends DatetimesProps {
   size?: "sm" | "lg";
   className?: string;
+  timeToRead: string | undefined;
 }
 
 export default function Datetime({
   pubDatetime,
   modDatetime,
+  timeToRead,
   size = "sm",
   className = "",
 }: Props) {
@@ -43,6 +45,14 @@ export default function Datetime({
           modDatetime={modDatetime}
         />
       </span>
+      {timeToRead && (
+        <>
+          <span aria-hidden="true"> | </span>
+          <span className={`italic ${size === "sm" ? "text-sm" : "text-base"}`}>
+            {timeToRead}
+          </span>
+        </>
+      )}
     </div>
   );
 }
