@@ -11,8 +11,8 @@ export default defineMarkdocConfig({
     shiki({
       // For more themes, visit https://shiki.style/themes
       themes: {
-        light: "rose-pine-dawn",
-        dark: "one-dark-pro",
+        light: "one-dark-pro",
+        dark: "catppuccin-mocha",
       },
       // Enable word wrap to prevent horizontal scrolling
       // Default: false
