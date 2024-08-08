@@ -1,5 +1,5 @@
 ---
-import type { CollectionEntry } from "astro:content";
+import type { Page } from "astro";
 import Layout from "@layouts/blog/Layout.astro";
 import Main from "@layouts/blog/Main.astro";
 import Header from "@components/blog/Header.astro";
@@ -9,12 +9,10 @@ import Card from "@components/blog/Card";
 import { SITE } from "@config";
 
 export interface Props {
-  currentPage: number;
-  totalPages: number;
-  paginatedPosts: CollectionEntry<"blog">[];
+  page: Page;
 }
 
-const { currentPage, totalPages, paginatedPosts } = Astro.props;
+const { page } = Astro.props;
 ---
 
 <Layout title={`Posts | ${SITE.title}`}>
@@ -22,19 +20,19 @@ const { currentPage, totalPages, paginatedPosts } = Astro.props;
   <Main pageTitle="Posts" pageDesc="All the articles I've posted.">
     <ul>
       {
-        paginatedPosts.map(({ data, slug }) => (
-          <Card href={`/posts/${slug}/`} frontmatter={data} />
+        page.data.map(({ data, slug }) => (
+          <Card href={`/blog/${slug}/`} frontmatter={data} />
         ))
       }
     </ul>
   </Main>
 
   <Pagination
-    {currentPage}
-    {totalPages}
-    prevUrl={`/posts${currentPage - 1 !== 1 ? "/" + (currentPage - 1) : ""}/`}
-    nextUrl={`/posts/${currentPage + 1}/`}
+    currentPage={page.currentPage}
+    totalPages={page.lastPage}
+    prevUrl={page.url.prev}
+    nextUrl={page.url.next}
   />
 
-  <Footer noMarginTop={totalPages > 1} />
+  <Footer noMarginTop={page.lastPage > 1} />
 </Layout>
