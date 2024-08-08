@@ -1,6 +1,6 @@
 # Ratoru Homepage
 
-This is my personal website's 3rd iteration. You can find my blog and my past work [there](https://ratoru.com).
+This is my personal website's 4th iteration. You can find my blog and my past work [there](https://ratoru.com).
 
 It also includes an RSS feed. For more information about RSS feeds in general, see [aboutfeeds.com](https://aboutfeeds.com/).
 
@@ -8,7 +8,7 @@ It also includes an RSS feed. For more information about RSS feeds in general, s
 
 My homepage was built using [Astro](https://docs.astro.build/en/getting-started/), Markdoc, and Tailwind CSS.
 
-The blog is heavily inspired by [Blogster](https://github.com/flexdinesh/blogster).
+The blog is based on [Astro-Paper](https://github.com/satnaing/astro-paper).
 
 ## 🧞 Commands
 

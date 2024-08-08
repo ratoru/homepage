@@ -1,31 +1,42 @@
 ---
-import PageLayout from "../layouts/PageLayout.astro";
-import { Image } from "astro:assets";
-import astronautImage from "../assets/main/astronaut.webp";
+import { SITE } from "@config";
+import Layout from "@layouts/blog/Layout.astro";
+import Header from "@components/blog/Header.astro";
+import Footer from "@components/blog/Footer.astro";
+import LinkButton from "@components/blog/LinkButton.astro";
 ---
 
-<PageLayout wide>
-  <div
-    slot="main"
-    class="flex flex-col items-center mx-auto space-y-6 max-w-3xl md:space-y-8"
-  >
-    <Image
-      class="lg:h-[430px]"
-      src={astronautImage}
-      alt="Astronaout floating in space"
-    />
-    <h1
-      class="font-serif text-2xl md:text-3xl lg:text-5xl font-bold uppercase text-text-bold"
-    >
-      Lost in space
-    </h1>
-    <p class="text-text-base">
-      You thought this mission to the moon would be a quick six month thing.
-      Your neighbor offered to look after your dog. Your high school math
-      teacher was impressed. He once said you wouldn&apos;t amount to anything.
-      You sure showed him. But now here you are, fifty feet from your spaceship
-      with no way to get back. Your dog will be so sad. Your math teacher will
-      be so smug. Pretty devastating.
-    </p>
-  </div>
-</PageLayout>
+<Layout title={`404 Not Found | ${SITE.title}`}>
+  <Header />
+
+  <main id="main-content">
+    <div class="not-found-wrapper">
+      <h1>404</h1>
+      <span aria-hidden="true">¯\_(ツ)_/¯</span>
+      <p>Page Not Found</p>
+      <LinkButton
+        href="/"
+        className="my-6 text-lg underline decoration-dashed underline-offset-8"
+      >
+        Go back home
+      </LinkButton>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  #main-content {
+    @apply mx-auto flex max-w-3xl flex-1 items-center justify-center;
+  }
+  .not-found-wrapper {
+    @apply mb-14 flex flex-col items-center justify-center;
+  }
+  .not-found-wrapper h1 {
+    @apply text-9xl font-bold text-skin-accent;
+  }
+  .not-found-wrapper p {
+    @apply mt-4 text-2xl sm:text-3xl;
+  }
+</style>
