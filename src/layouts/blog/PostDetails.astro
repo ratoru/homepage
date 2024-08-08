@@ -7,13 +7,15 @@ import Datetime from "@components/blog/Datetime";
 import type { CollectionEntry } from "astro:content";
 import { slugifyStr } from "@utils/slugify";
 import ShareLinks from "@components/blog/ShareLinks.astro";
+import RelatedPosts from "@components/blog/RelatedPosts.astro";
 import { SITE } from "@config";
 
 export interface Props {
   post: CollectionEntry<"blog">;
+  relatedPosts: CollectionEntry<"blog">[];
 }
 
-const { post } = Astro.props;
+const { post, relatedPosts } = Astro.props;
 
 const {
   title,
@@ -95,6 +97,7 @@ const layoutProps = {
       <ShareLinks />
     </div>
   </main>
+  {relatedPosts.length > 0 && <RelatedPosts relatedPosts={relatedPosts} />}
   <Footer />
 </Layout>
 
