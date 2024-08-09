@@ -6,7 +6,7 @@ export const SITE: Site = {
   profile: "https://ratoru.com",
   desc: "Master's student at Stanford with a passion for software engineering and design.",
   title: "Raphael - Homepage",
-  ogImage: "astropaper-og.jpg",
+  ogImage: "assets/portrait.webp",
   lightAndDarkMode: true,
   postPerIndex: 4,
   postPerPage: 5,
@@ -36,6 +36,12 @@ export const SOCIALS: SocialObjects = [
     name: "LinkedIn",
     href: "https://www.linkedin.com/in/ratoru/",
     linkTitle: "Ratoru on LinkedIn",
+    active: true,
+  },
+  {
+    name: "Homepage",
+    href: "https://ratoru.com/",
+    linkTitle: "Ratoru's Homepage",
     active: true,
   },
 ];
