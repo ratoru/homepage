@@ -59,7 +59,11 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
               return (
                 <div class="space-x-4 w-min">
                   {link.website && (
-                    <a href={link.website} target="_blank" class="bg-none">
+                    <a
+                      href={link.website}
+                      target="_blank"
+                      class="bg-none hover:text-skin-accent hover:rotate-6"
+                    >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
