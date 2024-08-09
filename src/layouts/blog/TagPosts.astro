@@ -1,6 +1,6 @@
 ---
 import { type CollectionEntry } from "astro:content";
-import Layout from "@layouts/blog/Layout.astro";
+import Layout from "@layouts/Layout.astro";
 import Main from "@layouts/blog/Main.astro";
 import Header from "@components/blog/Header.astro";
 import Footer from "@components/blog/Footer.astro";
@@ -20,7 +20,7 @@ export interface Props {
 const { currentPage, totalPages, paginatedPosts, tag, tagName } = Astro.props;
 ---
 
-<Layout title={`Tag: ${tagName} | ${SITE.title}`}>
+<Layout title={`Tag: ${tagName} | ${SITE.title}`} isBlog={true}>
   <Header activeNav="tags" />
   <Main
     pageTitle={[`Tag:`, `${tagName}`]}

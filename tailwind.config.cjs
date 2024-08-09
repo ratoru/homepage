@@ -51,7 +51,7 @@ module.exports = {
       },
       fontFamily: {
         sans: ["Inter", "sans"],
-        serif: ["Alegreya", "serif"],
+        serif: ["Alegreya Variable", "serif"],
         mono: ["Iosevka Aile", "monospace"],
       },
 

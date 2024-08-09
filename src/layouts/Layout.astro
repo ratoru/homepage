@@ -1,5 +1,7 @@
 ---
 import "@fontsource/iosevka-aile";
+import "@fontsource-variable/alegreya";
+import "@fontsource-variable/inter";
 
 import { LOCALE, SITE } from "@config";
 import "@styles/base.css";
@@ -17,6 +19,7 @@ export interface Props {
   pubDate?: Date;
   modDate?: Date | null;
   scrollSmooth?: boolean;
+  isBlog?: boolean;
 }
 
 const {
@@ -29,6 +32,7 @@ const {
   pubDate,
   modDate,
   scrollSmooth = false,
+  isBlog = true,
 } = Astro.props;
 
 const socialImageURL = new URL(
@@ -127,7 +131,11 @@ const structuredData = {
 
     <script is:inline src="/toggle-theme.js"></script>
   </head>
-  <body>
+  <body
+    class={isBlog
+      ? "blog font-mono"
+      : "mx-auto min-h-screen px-6 sm:px-8 max-w-7xl"}
+  >
     <slot />
   </body>
 </html>

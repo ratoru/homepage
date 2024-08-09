@@ -1,6 +1,6 @@
 ---
 import type { Page } from "astro";
-import Layout from "@layouts/blog/Layout.astro";
+import Layout from "@layouts/Layout.astro";
 import Main from "@layouts/blog/Main.astro";
 import Header from "@components/blog/Header.astro";
 import Footer from "@components/blog/Footer.astro";
@@ -16,7 +16,7 @@ export interface Props {
 const { page } = Astro.props;
 ---
 
-<Layout title={`Posts | ${SITE.title}`}>
+<Layout title={`Posts | ${SITE.title}`} isBlog={true}>
   <Header activeNav="posts" />
   <Main pageTitle="Posts" pageDesc="All the articles I've posted.">
     <ul>
