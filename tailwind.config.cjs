@@ -18,6 +18,7 @@ module.exports = {
           base: withOpacity("--color-text-base"),
           accent: withOpacity("--color-accent"),
           inverted: withOpacity("--color-fill"),
+          muted: withOpacity("--color-text-muted"),
         },
       },
       backgroundColor: {
@@ -49,6 +50,8 @@ module.exports = {
         transparent: "transparent",
       },
       fontFamily: {
+        sans: ["Inter", "sans"],
+        serif: ["Alegreya", "serif"],
         mono: ["Iosevka Aile", "monospace"],
       },
 
