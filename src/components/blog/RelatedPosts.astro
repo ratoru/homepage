@@ -1,0 +1,29 @@
+---
+import type { CollectionEntry } from "astro:content";
+import Hr from "./Hr.astro";
+import Card from "./Card.tsx";
+import { getReadingTime } from "@utils/readingTime";
+
+export interface Props {
+  relatedPosts: CollectionEntry<"blog">[];
+}
+
+const { relatedPosts } = Astro.props;
+---
+
+<section id="related">
+  <Hr noPadding />
+  <h2 class="mt-6 font-bold text-2xl">Keep Reading</h2>
+  <ul>
+    {
+      relatedPosts.map(({ data, slug, body }) => (
+        <Card
+          href={`/blog/${slug}/`}
+          frontmatter={data}
+          secHeading={false}
+          timeToRead={getReadingTime(body)}
+        />
+      ))
+    }
+  </ul>
+</section>

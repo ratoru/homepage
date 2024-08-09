@@ -1,34 +1,19 @@
 ---
-import PageLayout from "../layouts/PageLayout.astro";
-import { SEO } from "astro-seo";
-import Hero from "../components/Hero.astro";
-import Work from "../components/Work.astro";
-import HonorableMentions from "../components/HonorableMentions.astro";
-import CTA from "../components/CTA.astro";
+import LandingLayout from "@layouts/landing/LandingLayout.astro";
+import Hero from "@components/landing/Hero.astro";
+import Work from "@components/landing/Work.astro";
+import HonorableMentions from "@components/landing/HonorableMentions.astro";
+import CTA from "@components/landing/CTA.astro";
 
 const title = "Raphael - Homepage";
 const description = "Hi, I'm Raphael. A software engineer.";
 ---
 
-<PageLayout wide>
-  <SEO
-    slot="meta"
-    title={title}
-    description={description}
-    openGraph={{
-      basic: {
-        title: title,
-        type: "website",
-        image: "https://ratoru.com/assets/portait.webp",
-      },
-    }}
-  />
+<LandingLayout title={title} description={description}>
   <Fragment slot="main">
     <Hero />
     <Work />
     <HonorableMentions />
     <CTA />
   </Fragment>
-</PageLayout>
-
-<style></style>
+</LandingLayout>

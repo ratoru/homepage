@@ -1,6 +1,6 @@
 # Ratoru Homepage
 
-This is my personal website's 3rd iteration. You can find my blog and my past work [there](https://ratoru.com).
+This is my personal website's 4th iteration. You can find my blog and my past work [there](https://ratoru.com).
 
 It also includes an RSS feed. For more information about RSS feeds in general, see [aboutfeeds.com](https://aboutfeeds.com/).
 
@@ -8,7 +8,7 @@ It also includes an RSS feed. For more information about RSS feeds in general, s
 
 My homepage was built using [Astro](https://docs.astro.build/en/getting-started/), Markdoc, and Tailwind CSS.
 
-The blog is heavily inspired by [Blogster](https://github.com/flexdinesh/blogster).
+The blog is based on [Astro-Paper](https://github.com/satnaing/astro-paper).
 
 ## 🧞 Commands
 
@@ -22,3 +22,10 @@ All commands are run from the root of the project, from a terminal:
 | `npm run preview`      | Preview your build locally, before deploying     |
 | `npm run astro ...`    | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro --help` | Get help using the Astro CLI                     |
+
+## Future Changes
+
+- [ ] Add styling for Shiki Transformers.
+- [ ] Add TOC for Markdoc.
+- [ ] Rework blog css solution.
+
