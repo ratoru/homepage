@@ -50,7 +50,7 @@ module.exports = {
         transparent: "transparent",
       },
       fontFamily: {
-        sans: ["Inter", "sans"],
+        sans: ["Iosevka Aile", "sans"],
         serif: ["Alegreya Variable", "serif"],
         mono: ["Iosevka Aile", "monospace"],
       },

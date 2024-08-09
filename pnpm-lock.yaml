@@ -20,9 +20,6 @@ importers:
       '@fontsource-variable/alegreya':
         specifier: ^5.0.14
         version: 5.0.14
-      '@fontsource-variable/inter':
-        specifier: ^5.0.20
-        version: 5.0.20
       '@fontsource/iosevka':
         specifier: ^5.0.11
         version: 5.0.11
@@ -483,9 +480,6 @@ packages:
 
   '@fontsource-variable/alegreya@5.0.14':
     resolution: {integrity: sha512-T+s9g/HKZOi9V8Cr4IOkmQNAoUJ+i2ZsdZSWKhcFOIf4facJA51VgvdzWQVJyWq0+kYJhN+4XrLQjSN2DEqmyA==}
-
-  '@fontsource-variable/inter@5.0.20':
-    resolution: {integrity: sha512-dhzG4Zls/tIrf8h0FhTNi8jT/uFwNhdTY2vKe6DYqoXDYOfEcTVZDyh1hKml1rlLT44Y7OoKoGz8w7czDW7twQ==}
 
   '@fontsource/iosevka-aile@5.0.11':
     resolution: {integrity: sha512-uK87Z0bhEwoegWw5OWMGHkyXCQfB5Y1oA9lH1c25S0AaMBSWxMGRQG5X6q6VYPlTk+/+/QrQQkPRoF05RGYIgQ==}
@@ -3293,8 +3287,6 @@ snapshots:
   '@eslint/object-schema@2.1.4': {}
 
   '@fontsource-variable/alegreya@5.0.14': {}
-
-  '@fontsource-variable/inter@5.0.20': {}
 
   '@fontsource/iosevka-aile@5.0.11': {}
 
