@@ -1,0 +1,27 @@
+---
+import { socialLinks } from "@/site.config";
+import { Icon } from "astro-icon/components";
+---
+
+<ul class="flex flex-1 items-center gap-x-2 sm:flex-initial">
+	{
+		socialLinks.map(({ friendlyName, link, name }) => (
+			<li class="flex">
+				<a
+					class="hover:text-accent group-inline-block p-2 hover:rotate-6 sm:p-1"
+					href={link}
+					rel="noreferrer "
+					target="_blank"
+				>
+					<Icon
+						aria-hidden="true"
+						class="inline-block size-6 scale-125 fill-transparent stroke-current stroke-2 opacity-90 group-hover:fill-transparent sm:scale-110"
+						focusable="false"
+						name={name}
+					/>
+					<span class="sr-only">{friendlyName}</span>
+				</a>
+			</li>
+		))
+	}
+</ul>

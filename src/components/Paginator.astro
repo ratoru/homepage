@@ -1,0 +1,45 @@
+---
+import type { Page } from "astro";
+
+interface Props {
+	page: Page;
+}
+
+const { page } = Astro.props;
+---
+
+{
+	page.lastPage > 1 && (
+		<nav class="mt-8 flex w-full items-center justify-center gap-x-4" aria-label="Pagination">
+			{page.url.prev ? (
+				<a
+					class="hover:text-accent py-2 select-none"
+					data-astro-prefetch
+					href={page.url.prev}
+					aria-label="Previous"
+				>
+					← &nbsp;&nbsp;Prev
+				</a>
+			) : (
+				<span class="opacity-50" aria-disabled="true">
+					← &nbsp;&nbsp;Prev
+				</span>
+			)}
+			{page.currentPage} / {page.lastPage}
+			{page.url.next ? (
+				<a
+					class="hover:text-accent py-2 select-none"
+					data-astro-prefetch
+					href={page.url.next}
+					aria-label="Next"
+				>
+					Next &nbsp;&nbsp;→
+				</a>
+			) : (
+				<span class="opacity-50" aria-disabled="true">
+					Next &nbsp;&nbsp;→
+				</span>
+			)}
+		</nav>
+	)
+}

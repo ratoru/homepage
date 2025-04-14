@@ -1,19 +1,21 @@
 ---
-import LandingLayout from "@layouts/landing/LandingLayout.astro";
-import Hero from "@components/landing/Hero.astro";
-import Work from "@components/landing/Work.astro";
-import HonorableMentions from "@components/landing/HonorableMentions.astro";
-import CTA from "@components/landing/CTA.astro";
+import CTA from "@/components/landing/CTA.astro";
+import Hero from "@/components/landing/Hero.astro";
+import HonorableMentions from "@/components/landing/HonorableMentions.astro";
+import Work from "@/components/landing/Work.astro";
+import LandingLayout from "@/layouts/LandingLayout.astro";
+import type { SiteMeta } from "@/types";
 
-const title = "Raphael - Homepage";
-const description = "Hi, I'm Raphael. A software engineer.";
+const meta: SiteMeta = {
+	title: "Raphael - Homepage",
+	description: "Hi, I'm Raphael. A software engineer.",
+	ogImage: "/assets/portrait.webp",
+};
 ---
 
-<LandingLayout title={title} description={description}>
-  <Fragment slot="main">
-    <Hero />
-    <Work />
-    <HonorableMentions />
-    <CTA />
-  </Fragment>
+<LandingLayout meta={meta}>
+	<Hero />
+	<Work />
+	<HonorableMentions />
+	<CTA />
 </LandingLayout>

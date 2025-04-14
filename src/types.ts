@@ -1,21 +1,44 @@
-import type socialIcons from "@assets/socialIcons";
+export interface SiteConfig {
+	author: string;
+	date: {
+		locale: string | string[] | undefined;
+		options: Intl.DateTimeFormatOptions;
+	};
+	description: string;
+	lang: string;
+	ogLocale: string;
+	title: string;
+	url: string;
+}
 
-export type Site = {
-  website: string;
-  author: string;
-  profile: string;
-  desc: string;
-  title: string;
-  ogImage?: string;
-  lightAndDarkMode: boolean;
-  postPerIndex: number;
-  postPerPage: number;
-  scheduledPostMargin: number;
-};
+export interface SiteMeta {
+	articleDate?: string | undefined;
+	description?: string;
+	ogImage?: string | undefined;
+	title: string;
+}
 
-export type SocialObjects = {
-  name: keyof typeof socialIcons;
-  href: string;
-  active: boolean;
-  linkTitle: string;
-}[];
+export interface Author {
+	name: string;
+	photo: string;
+	type: string;
+	url: string;
+}
+
+export interface Content {
+	"content-type": string;
+	html: string;
+	text: string;
+	value: string;
+}
+
+export interface Rels {
+	canonical: string;
+}
+
+export interface Summary {
+	"content-type": string;
+	value: string;
+}
+
+export type AdmonitionType = "tip" | "note" | "important" | "caution" | "warning";

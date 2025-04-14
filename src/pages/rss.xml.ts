@@ -1,25 +1,24 @@
+import { getAllPosts } from "@/data/post";
+import { siteConfig } from "@/site.config";
 import rss from "@astrojs/rss";
-import { getCollection } from "astro:content";
-import getSortedPosts from "@utils/getSortedPosts";
-import { SITE } from "@config";
 
-export async function GET(context: any) {
-  const posts = await getCollection("blog");
-  const sortedPosts = getSortedPosts(posts);
-  return rss({
-    title: SITE.title,
-    description: SITE.desc,
-    site: SITE.website,
-    items: sortedPosts.map(({ data, slug }) => ({
-      link: `posts/${slug}/`,
-      title: data.title,
-      description: data.description,
-      pubDate: new Date(data.modDate ?? data.pubDate),
-    })),
-    customData: [
-      "<language>en-us</language>",
-      `<atom:link href="${new URL("rss.xml", context.site)}" rel="self" type="application/rss+xml" />`,
-    ].join(""),
-    stylesheet: "/rss/styles.xsl",
-  });
-}
+export const GET = async () => {
+	const posts = await getAllPosts();
+
+	return rss({
+		title: siteConfig.title,
+		description: siteConfig.description,
+		site: import.meta.env.SITE,
+		items: posts.map((post) => ({
+			title: post.data.title,
+			description: post.data.description,
+			pubDate: post.data.publishDate,
+			link: `posts/${post.id}/`,
+		})),
+		customData: [
+			"<language>en-us</language>",
+			`<atom:link href="${new URL("rss.xml", siteConfig.url)}" rel="self" type="application/rss+xml" />`,
+		].join(""),
+		stylesheet: "/rss/styles.xsl",
+	});
+};

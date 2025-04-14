@@ -1,44 +1,38 @@
 [
-  {
-    "name": "Empiric Network",
-    "type": "Internship",
-    "info": "Designed and implemented the website of the StarkNet oracle Empiric Network. Includes live price feeds, a command pallet, and a thorough content section. I also wrote upgradable smart contracts using proxies on StarkNet and GitHub Actions to test them.",
-    "tags": [
-      "ZK-Rollups",
-      "StarkNet",
-      "Smart Contracts",
-      "React",
-      "Tailwind CSS"
-    ],
-    "links": [
-      {
-        "website": "https://www.empiric.network/"
-      }
-    ],
-    "img": "/src/assets/main/work/empiric.webp"
-  },
-  {
-    "name": "Raycast Extensions",
-    "type": "Open Source",
-    "info": "Multiple open source Raycast extensions with over 14k downloads. Google Maps Search allows you to quickly open Google Maps directions, for example from your current location to your home.",
-    "tags": ["React", "Javascript", "Open Source"],
-    "links": [
-      {
-        "website": "https://www.raycast.com/ratoru"
-      }
-    ],
-    "img": "/src/assets/main/work/raycast-extension.webp"
-  },
-  {
-    "name": "Parallel Computing",
-    "type": "Stanford CS Research",
-    "info": "Tested a new language for implicit dataflow parallelism. Achieved a 20x reduction of run time by running parallel computations on GPUs using CUDA.",
-    "tags": ["CUDA", "Parallelism", "Research"],
-    "links": [
-      {
-        "website": "https://ratoru.com/assets/curis-research.webp"
-      }
-    ],
-    "img": "/src/assets/main/work/curis-research.webp"
-  }
+	{
+		"name": "Verkada",
+		"type": "Full Time",
+		"info": "Won internal award for 'most likely to improve users's security' by improving runtime Kubernetes security. Developed agentic workflows to make the security team more efficient.",
+		"tags": ["Security", "AI Agents", "Kubernetes", "Terraform"],
+		"links": [
+			{
+				"website": "https://www.verkada.com/"
+			}
+		],
+		"img": "/src/assets/main/work/verkada.webp"
+	},
+	{
+		"name": "Raycast Extensions",
+		"type": "Open Source",
+		"info": "Multiple open source Raycast extensions with over 15k downloads. Google Maps Search allows you to quickly open Google Maps directions, for example from your current location to your home.",
+		"tags": ["React", "Javascript", "Open Source"],
+		"links": [
+			{
+				"website": "https://www.raycast.com/ratoru"
+			}
+		],
+		"img": "/src/assets/main/work/raycast-extension.webp"
+	},
+	{
+		"name": "Parallel Computing",
+		"type": "Stanford CS Research",
+		"info": "Tested a new language for implicit dataflow parallelism. Achieved a 20x reduction of run time by running parallel computations on GPUs using CUDA.",
+		"tags": ["CUDA", "Parallelism", "Research"],
+		"links": [
+			{
+				"website": "https://ratoru.com/assets/curis-research.webp"
+			}
+		],
+		"img": "/src/assets/main/work/curis-research.webp"
+	}
 ]
