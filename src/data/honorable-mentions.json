@@ -1,36 +1,36 @@
 [
-  {
-    "name": "Pintos - A simple operating system",
-    "info": "Pintos is a simple OS framework for the 80x86 architecture. I implemented basic support for kernel threads, loading and running user programs, a file system, and virtual memory.",
-    "tags": ["C", "OS", "File System", "Virtual Memory"],
-    "links": [
-      {
-        "website": "https://web.stanford.edu/class/cs140/projects/pintos/pintos.pdf"
-      }
-    ]
-  },
-  {
-    "name": "An Airplane Journey",
-    "info": "An immersive web experience made with R3F and Drei. Explores 3D websites and Blender modeling skills. For someone special in my life. :)",
-    "tags": ["React Three Fiber", "GSAP", "Blender"],
-    "links": [
-      {
-        "github": "https://github.com/ratoru/airplane-journey",
-        "website": "https://fortracy.ratoru.com/"
-      }
-    ]
-  },
-  {
-    "name": "Psetgroups",
-    "type": "Side Project",
-    "info": "Built to help Stanford students find problem set groups for their classes. Creates optimal matches using using Edmonds' blossom algorithm.",
-    "tags": ["Next.js", "Python", "Optimal Matching"],
-    "links": [
-      {
-        "github": "https://github.com/ratoru/psetgroups",
-        "website": "https://psetgroups.ratoru.com/"
-      }
-    ],
-    "img": "/assets/student.webp"
-  }
+	{
+		"name": "Pintos - A simple operating system",
+		"info": "Pintos is a simple OS framework for the 80x86 architecture. I implemented basic support for kernel threads, loading and running user programs, a file system, and virtual memory.",
+		"tags": ["C", "OS", "File System", "Virtual Memory"],
+		"links": [
+			{
+				"website": "https://web.stanford.edu/class/cs140/projects/pintos/pintos.pdf"
+			}
+		]
+	},
+	{
+		"name": "An Airplane Journey",
+		"info": "An immersive web experience made with R3F and Drei. Explores 3D websites and Blender modeling skills. For someone special in my life. :)",
+		"tags": ["React Three Fiber", "GSAP", "Blender"],
+		"links": [
+			{
+				"github": "https://github.com/ratoru/airplane-journey",
+				"website": "https://fortracy.ratoru.com/"
+			}
+		]
+	},
+	{
+		"name": "Psetgroups",
+		"type": "Side Project",
+		"info": "Built to help Stanford students find problem set groups for their classes. Creates optimal matches using using Edmonds' blossom algorithm.",
+		"tags": ["Next.js", "Python", "Optimal Matching"],
+		"links": [
+			{
+				"github": "https://github.com/ratoru/psetgroups",
+				"website": "https://psetgroups.ratoru.com/"
+			}
+		],
+		"img": "/assets/student.webp"
+	}
 ]

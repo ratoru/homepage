@@ -1,0 +1,52 @@
+---
+import BaseHead from "@/components/BaseHead.astro";
+import SkipLink from "@/components/SkipLink.astro";
+import ThemeProvider from "@/components/ThemeProvider.astro";
+import Footer from "@/components/layout/Footer.astro";
+import Header from "@/components/layout/Header.astro";
+import { siteConfig } from "@/site.config";
+import type { SiteMeta } from "@/types";
+
+// Font setup
+import "@fontsource-variable/source-sans-3";
+import "@fontsource-variable/alegreya";
+
+interface Props {
+	meta: SiteMeta;
+}
+
+const {
+	meta: { articleDate, description = siteConfig.description, ogImage, title },
+} = Astro.props;
+---
+
+<html class="scroll-smooth" lang={siteConfig.lang}>
+	<head>
+		<BaseHead articleDate={articleDate} description={description} ogImage={ogImage} title={title} />
+	</head>
+	<body
+		class="bg-global-bg text-global-text mx-auto min-h-screen max-w-7xl px-4 pt-16 font-normal antialiased sm:px-8"
+	>
+		<ThemeProvider />
+		<SkipLink />
+		<Header />
+		<main id="main">
+			<slot />
+		</main>
+		<Footer />
+	</body>
+</html>
+<style>
+	body {
+		display: grid;
+		grid-template-areas:
+			"header"
+			"main"
+			"footer";
+		grid-template-rows: 5rem minmax(0, 1fr);
+		grid-template-columns: minmax(0, 1fr);
+	}
+	main {
+		grid-area: main;
+	}
+</style>

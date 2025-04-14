@@ -1,31 +1,20 @@
 # Ratoru Homepage
 
-This is my personal website's 4th iteration. You can find my blog and my past work [there](https://ratoru.com).
+This is my personal website's 5th iteration. You can find my blog and my past work [there](https://ratoru.com).
 
 It also includes an RSS feed. For more information about RSS feeds in general, see [aboutfeeds.com](https://aboutfeeds.com/).
 
 ## 🔨 Tools
 
-My homepage was built using [Astro](https://docs.astro.build/en/getting-started/), Markdoc, and Tailwind CSS.
-
-The blog is based on [Astro-Paper](https://github.com/satnaing/astro-paper).
+My homepage was built using [Astro](https://docs.astro.build/en/getting-started/) and Tailwind CSS.
 
 ## 🧞 Commands
 
-All commands are run from the root of the project, from a terminal:
-
-| Command                | Action                                           |
-| :--------------------- | :----------------------------------------------- |
-| `npm install`          | Installs dependencies                            |
-| `npm run dev`          | Starts local dev server at `localhost:3000`      |
-| `npm run build`        | Build your production site to `./dist/`          |
-| `npm run preview`      | Preview your build locally, before deploying     |
-| `npm run astro ...`    | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro --help` | Get help using the Astro CLI                     |
-
-## Future Changes
-
-- [ ] Add styling for Shiki Transformers.
-- [ ] Add TOC for Markdoc.
-- [ ] Rework blog css solution.
-
+| Command          | Action                                                         |
+| :--------------- | :------------------------------------------------------------- |
+| `pnpm install`   | Installs dependencies                                          |
+| `pnpm dev`       | Starts local dev server at `localhost:4321`                    |
+| `pnpm build`     | Build your production site to `./dist/`                        |
+| `pnpm postbuild` | Pagefind script to build the static search of your blog posts  |
+| `pnpm preview`   | Preview your build locally, before deploying                   |
+| `pnpm sync`      | Generate types based on your config in `src/content/config.ts` |

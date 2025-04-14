@@ -3,29 +3,25 @@
 ---
 
 <section
-  class="col-span-full space-y-6 flex flex-col items-center text-center lg:col-start-4 lg:col-end-10 xl:pt-0 pb-10 xl:pb-40"
+	class="col-span-full flex flex-col items-center space-y-6 pb-10 text-center lg:col-start-4 lg:col-end-10 xl:pt-0 xl:pb-40"
 >
-  <p class="text-lg font-bold md:text-xl">
-    Get in touch with me or check out my blog.
-  </p>
-  <div class="flex space-x-8">
-    <a
-      href="https://www.linkedin.com/in/ratoru/"
-      target="_blank"
-      class="unset button border-skin-accent"
-    >
-      Say Hi 👋
-    </a>
-    <a href="/blog" target="_blank" class="unset button border-skin-base">
-      Read 📚
-    </a>
-  </div>
+	<p class="text-lg font-bold md:text-xl">Get in touch with me or check out my blog!</p>
+	<div class="flex space-x-8">
+		<a
+			href="https://www.linkedin.com/in/ratoru/"
+			target="_blank"
+			class="text-global-text border-accent hover:bg-accent hover:text-global-bg hover:border-text-accent inline-block rounded-3xl border-2 px-6 py-4 text-base font-bold uppercase transition-all duration-300"
+			aria-label="Say hi on LinkedIn"
+		>
+			Say Hi 👋
+		</a>
+		<a
+			href="/blog"
+			target="_blank"
+			class="text-global-text border-global-text hover:bg-accent hover:text-global-bg hover:border-accent inline-block rounded-3xl border-2 px-6 py-4 text-base font-bold uppercase transition-all duration-300"
+			aria-label="Read my blog"
+		>
+			Read 📚
+		</a>
+	</div>
 </section>
-<style>
-  .button {
-    @apply inline-block py-4 px-6 rounded-3xl border-2 uppercase text-skin-base text-base font-bold;
-  }
-  .button:hover {
-    @apply bg-skin-accent text-skin-base transition-all duration-300 border-skin-accent;
-  }
-</style>

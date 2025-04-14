@@ -1,0 +1,123 @@
+---
+import Search from "@/components/Search.astro";
+import ThemeToggle from "@/components/ThemeToggle.astro";
+import { menuLinks } from "@/site.config";
+---
+
+<header class="group relative mb-16 flex items-center sm:mb-20 sm:ps-18" id="main-header">
+	<div class="flex sm:flex-col">
+		<a
+			aria-current={Astro.url.pathname === "/" ? "page" : false}
+			class="inline-flex items-center grayscale hover:filter-none sm:relative sm:inline-block"
+			href="/"
+		>
+			<svg
+				class="me-3 h-10 w-6 sm:absolute sm:-start-18 sm:me-0 sm:-mt-3 sm:h-20 sm:w-12"
+				viewBox="0 0 1450 1559"
+				version="1.1"
+				xmlns="http://www.w3.org/2000/svg"
+				style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"
+				><g id="g167"
+					><g id="g90"
+						><path
+							id="path110"
+							d="M153.661,837.806c-16.344,12.222 -32.689,24.455 -49.044,36.672c-3.634,2.716 -7.228,5.416 -10.161,8.416l-94.456,71.928l143.1,187.911l19.333,-14.722c-1.166,-2.372 -2.266,-4.672 -3.433,-6.933c-16.728,-32.456 -28.656,-66.372 -32.078,-103.006c-4.089,-43.628 5.372,-82.933 35.178,-116.405c21.25,-23.867 46.322,-43.073 71.667,-61.967c0.005,154.617 1.072,309.261 -1.134,463.85c-0.633,44.367 -7.861,89.461 -18.466,132.65c-13.661,55.622 -49.639,93.411 -107.634,106.867c-5.672,1.316 -10.877,4.672 -16.3,7.083c0.623,2.861 1.239,5.717 1.856,8.572c23.3,-1.583 46.705,-2.255 69.889,-4.894c162.705,-18.517 330.428,-117.395 323.644,-357.822c-5.1,-180.812 -0.583,-361.884 -1.511,-542.834c-0.005,-0.883 0,-1.755 0.011,-2.616c10.134,-7.373 20.3,-14.678 30.561,-21.856c12.684,-8.878 26.923,-15.172 42.539,-18.056c46.039,-8.505 88.861,-0.288 128.072,24.978c20.85,13.439 40.75,28.35 61.173,42.467c1.455,1.005 4.339,1.878 5.444,1.139c5.578,-3.706 10.789,-7.961 16.217,-12.1l-143.278,-188.145l-471.189,358.823Z"
+							style="fill:#ea9d34;fill-rule:nonzero;"></path></g
+					><g id="g112"
+						><path
+							id="path132"
+							d="M1040.52,421.45c-31.616,22.439 -69.816,29.339 -96.761,31.133c0.789,4.673 1.528,9.378 2.156,14.178c13,99.456 -26.895,175.9 -106.123,229.2c-71.2,47.895 -149.294,62.861 -231.583,63.839c-0.194,31.783 -0.25,63.544 -0.211,95.2c0.489,-0.078 0.983,-0.117 1.478,-0.194c36.75,-6.306 56.361,11.127 76.35,41.672c121.616,185.911 245.85,369.961 367.844,555.605c15.6,23.734 31.8,31.984 58.817,31.4c85.044,-1.844 170.139,-0.677 255.222,-0.677l81.822,-0l0,-45.617c-12.216,-2.678 -23.077,-6.322 -34.161,-7.295c-91.039,-8.005 -157.155,-52.927 -208.15,-133.572c-95.022,-150.261 -196.005,-296.422 -294.4,-444.366c-4.1,-6.162 -7.133,-13.095 -9.794,-18.056c50.355,-22.783 101.311,-40 146.539,-67.483c106.211,-64.545 146.055,-167.784 141.789,-292.011c-2.795,-81.362 -29.495,-147.889 -79.134,-197.273c-6.633,55.478 -31.194,115.567 -71.7,144.317"
+							style="fill:#575279;fill-rule:nonzero;"></path></g
+					><g id="g134"
+						><path
+							id="path154"
+							d="M12.217,164.294c17.361,24.55 30.733,33.223 43.166,32.295c152.056,-11.317 176.95,6.139 178.495,140.378c1.378,119.244 1.922,238.494 2.194,357.75l248.517,-189.25c0.283,-11.745 0.6,-23.484 0.972,-35.223c1.367,-43.244 16.372,-90.577 41.033,-128.072c101.967,-155.011 122.867,-155.428 303.1,-80.472c41.656,17.322 114.423,15.272 150.723,-6.272c32.816,-19.472 52.627,-79.461 47.555,-118.561c-9.383,-72.311 -78.072,-119.061 -155.694,-112.456c-74.256,6.322 -154.639,33.956 -214.434,73.056c-65.116,42.572 -109.633,109.111 -177.377,180.144l-0,-277.611c-168.534,59.128 -318.389,111.717 -468.25,164.294"
+							style="fill:#575279;fill-rule:nonzero;"></path></g
+					></g
+				></svg
+			>
+
+			<span class="font-serif text-xl font-bold sm:text-2xl">Rabbit Holes</span>
+		</a>
+		<nav
+			aria-label="Main menu"
+			class="bg-global-bg/85 text-accent sm:divide-accent absolute -inset-x-4 top-14 hidden flex-col items-end gap-y-4 rounded-md py-4 shadow backdrop-blur-sm group-[.menu-open]:z-50 group-[.menu-open]:flex sm:static sm:z-auto sm:-ms-4 sm:mt-1 sm:flex sm:flex-row sm:items-center sm:divide-x sm:rounded-none sm:bg-transparent sm:py-0 sm:shadow-none sm:backdrop-blur-none"
+			id="navigation-menu"
+		>
+			{
+				menuLinks.map((link) => (
+					<a
+						aria-current={Astro.url.pathname === link.path ? "page" : false}
+						class="px-4 py-4 underline-offset-2 hover:underline sm:py-0"
+						data-astro-prefetch
+						href={link.path}
+					>
+						{link.title}
+					</a>
+				))
+			}
+		</nav>
+	</div>
+	<Search />
+	<ThemeToggle />
+	<mobile-button>
+		<button
+			aria-expanded="false"
+			aria-haspopup="menu"
+			class="group relative ms-4 h-7 w-7 sm:invisible sm:hidden"
+			id="toggle-navigation-menu"
+			type="button"
+		>
+			<span class="sr-only">Open main menu</span>
+			<svg
+				aria-hidden="true"
+				class="absolute start-1/2 top-1/2 h-full w-full -translate-x-1/2 -translate-y-1/2 transition-all group-aria-expanded:scale-0 group-aria-expanded:opacity-0"
+				fill="none"
+				focusable="false"
+				id="line-svg"
+				stroke="currentColor"
+				stroke-width="1.5"
+				viewBox="0 0 24 24"
+				xmlns="http://www.w3.org/2000/svg"
+			>
+				<path d="M3.75 9h16.5m-16.5 6.75h16.5" stroke-linecap="round" stroke-linejoin="round"
+				></path>
+			</svg>
+			<svg
+				aria-hidden="true"
+				class="text-accent absolute start-1/2 top-1/2 h-full w-full -translate-x-1/2 -translate-y-1/2 scale-0 opacity-0 transition-all group-aria-expanded:scale-100 group-aria-expanded:opacity-100"
+				class="text-accent"
+				fill="none"
+				focusable="false"
+				id="cross-svg"
+				stroke="currentColor"
+				stroke-width="1.5"
+				viewBox="0 0 24 24"
+				xmlns="http://www.w3.org/2000/svg"
+			>
+				<path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"></path>
+			</svg>
+		</button>
+	</mobile-button>
+</header>
+
+<script>
+	import { toggleClass } from "@/utils/domElement";
+
+	class MobileNavBtn extends HTMLElement {
+		#menuOpen: boolean = false;
+
+		connectedCallback() {
+			const headerEl = document.getElementById("main-header")!;
+			const mobileButtonEl = this.querySelector<HTMLButtonElement>("button");
+
+			mobileButtonEl?.addEventListener("click", () => {
+				if (headerEl) toggleClass(headerEl, "menu-open");
+				this.#menuOpen = !this.#menuOpen;
+				mobileButtonEl.setAttribute("aria-expanded", this.#menuOpen.toString());
+			});
+		}
+	}
+
+	customElements.define("mobile-button", MobileNavBtn);
+</script>

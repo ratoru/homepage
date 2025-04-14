@@ -1,162 +1,66 @@
 ---
-import { getCollection } from "astro:content";
-import Layout from "@layouts/Layout.astro";
-import Header from "@components/blog/Header.astro";
-import Footer from "@components/blog/Footer.astro";
-import LinkButton from "@components/blog/LinkButton.astro";
-import Hr from "@components/blog/Hr.astro";
-import Card from "@components/blog/Card";
-import Socials from "@components/blog/Socials.astro";
-import getSortedPosts from "@utils/getSortedPosts";
-import { getReadingTime } from "@utils/readingTime";
-import { SITE, SOCIALS } from "@config";
+import type { CollectionEntry } from "astro:content";
+import PostPreview from "@/components/blog/PostPreview.astro";
+import { getAllPosts } from "@/data/post";
+import PageLayout from "@/layouts/Base.astro";
+import { collectionDateSort } from "@/utils/date";
+import { Icon } from "astro-icon/components";
 
-const posts = await getCollection("blog");
-
-const sortedPosts = getSortedPosts(posts);
-const featuredPosts = sortedPosts.filter(({ data }) => data.featured);
-const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
-
-const socialCount = SOCIALS.filter((social) => social.active).length;
+// Posts
+const MAX_POSTS = 5;
+const allPosts = await getAllPosts();
+const allPostsByDate = allPosts.sort(collectionDateSort) as CollectionEntry<"post">[];
+const featuredPosts = allPostsByDate.filter(({ data }) => data.featured);
+const recentPosts = allPostsByDate
+	.filter(({ data }) => !data.featured)
+	.slice(0, MAX_POSTS) as CollectionEntry<"post">[];
 ---
 
-<Layout isBlog={true}>
-  <Header />
-  <main id="main-content">
-    <section id="hero">
-      <h1>Rabbit Holes</h1>
-      <a
-        target="_blank"
-        href="/rss.xml"
-        class="rss-link"
-        aria-label="rss feed"
-        title="RSS Feed"
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" class="rss-icon"
-          ><path
-            d="M19 20.001C19 11.729 12.271 5 4 5v2c7.168 0 13 5.832 13 13.001h2z"
-          ></path><path
-            d="M12 20.001h2C14 14.486 9.514 10 4 10v2c4.411 0 8 3.589 8 8.001z"
-          ></path><circle cx="6" cy="18" r="2"></circle>
-        </svg>
-        <span class="sr-only">RSS Feed</span>
-      </a>
-
-      <p>
-        A broken clock is right twice a day. But if you just have one clock,
-        it’s impossible to tell exactly when the clock is right. So it could be
-        right at any moment. And that brings you to the crux of the
-        conceptualization. What is time? Nothing but an abyss. Clocks are just
-        false attempts to harness its power. It’s cruel really.
-      </p>
-      <p>
-        Here, I share my adventures through life and software engineering with
-        you. Down the rabit hole you go...
-      </p>
-      {
-        // only display if at least one social link is enabled
-        socialCount > 0 && (
-          <div class="social-wrapper">
-            <div class="social-links">Social Links:</div>
-            <Socials />
-          </div>
-        )
-      }
-    </section>
-
-    <Hr />
-
-    {
-      featuredPosts.length > 0 && (
-        <>
-          <section id="featured">
-            <h2>Featured</h2>
-            <ul>
-              {featuredPosts.map(({ data, slug, body }) => (
-                <Card
-                  href={`/blog/${slug}/`}
-                  frontmatter={data}
-                  secHeading={false}
-                  timeToRead={getReadingTime(body)}
-                />
-              ))}
-            </ul>
-          </section>
-          {recentPosts.length > 0 && <Hr />}
-        </>
-      )
-    }
-
-    {
-      recentPosts.length > 0 && (
-        <section id="recent-posts">
-          <h2>Recent Posts</h2>
-          <ul>
-            {recentPosts.map(
-              ({ data, slug, body }, index) =>
-                index < SITE.postPerIndex && (
-                  <Card
-                    href={`/blog/${slug}/`}
-                    frontmatter={data}
-                    secHeading={false}
-                    timeToRead={getReadingTime(body)}
-                  />
-                ),
-            )}
-          </ul>
-        </section>
-      )
-    }
-
-    <div class="all-posts-btn-wrapper">
-      <LinkButton href="/blog/all-posts/1/">
-        All Posts
-        <svg xmlns="http://www.w3.org/2000/svg"
-          ><path
-            d="m11.293 17.293 1.414 1.414L19.414 12l-6.707-6.707-1.414 1.414L15.586 11H6v2h9.586z"
-          ></path>
-        </svg>
-      </LinkButton>
-    </div>
-  </main>
-
-  <Footer />
-</Layout>
-
-<style>
-  /* ===== Hero Section ===== */
-  #hero {
-    @apply pb-6 pt-8;
-  }
-  #hero h1 {
-    @apply my-4 inline-block text-3xl font-bold sm:my-8 sm:text-5xl;
-  }
-  #hero .rss-link {
-    @apply mb-6;
-  }
-  #hero .rss-icon {
-    @apply mb-2 h-6 w-6 scale-110 fill-skin-accent sm:mb-3 sm:scale-125;
-  }
-  #hero p {
-    @apply my-2;
-  }
-  .social-wrapper {
-    @apply mt-4 flex flex-col sm:flex-row sm:items-center;
-  }
-  .social-links {
-    @apply mb-1 mr-2 whitespace-nowrap sm:mb-0;
-  }
-
-  /* ===== Featured & Recent Posts Sections ===== */
-  #featured,
-  #recent-posts {
-    @apply pb-6 pt-12;
-  }
-  #featured h2,
-  #recent-posts h2 {
-    @apply text-2xl font-semibold tracking-wide;
-  }
-  .all-posts-btn-wrapper {
-    @apply my-8 text-center;
-  }
-</style>
+<PageLayout meta={{ title: "Home" }}>
+	<section>
+		<div class="mb-6 flex items-center gap-3">
+			<h1 class="title">Rabbit Holes</h1>
+			<a class="text-accent" href="/rss.xml" target="_blank">
+				<span class="sr-only">RSS feed</span>
+				<Icon aria-hidden="true" class="h-6 w-6" focusable="false" name="tabler:rss" />
+			</a>
+		</div>
+		<p class="prose">
+			A broken clock is right twice a day. But if you just have one clock, it’s impossible to tell
+			exactly when the clock is right. So it could be right at any moment. And that brings you to
+			the crux of the conceptualization. What is time? Let's dive in...
+		</p>
+	</section>
+	{
+		featuredPosts.length > 0 && (
+			<section class="mt-16">
+				<h2 class="title text-accent mb-6 text-xl">
+					<a href="/posts/">Featured Posts</a>
+				</h2>
+				<ul class="space-y-4" role="list">
+					{featuredPosts.map((p) => (
+						<li class="grid gap-2 sm:grid-cols-[auto_1fr]">
+							<PostPreview post={p} />
+						</li>
+					))}
+				</ul>
+			</section>
+		)
+	}
+	{
+		recentPosts.length > 0 && (
+			<section class="mt-16">
+				<h2 class="title text-accent mb-6 text-xl">
+					<a href="/posts/">Recent Posts</a>
+				</h2>
+				<ul class="space-y-4" role="list">
+					{recentPosts.map((p) => (
+						<li class="grid gap-2 sm:grid-cols-[auto_1fr]">
+							<PostPreview post={p} />
+						</li>
+					))}
+				</ul>
+			</section>
+		)
+	}
+</PageLayout>
