@@ -39,6 +39,15 @@
 			--color-muted: oklch(70.7% 0.022 261.325);
 		}
 	}
+
+  :target {
+		scroll-margin-block: 5ex;
+	}
+
+	@view-transition {
+		navigation: auto;
+	}
+
 	h1,
 	h2,
 	h3,
