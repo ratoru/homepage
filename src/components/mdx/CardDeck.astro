@@ -1,0 +1,80 @@
+---
+import CardBack from "@/assets/mdx/Cardback.svg";
+import ClubsJ from "@/assets/mdx/ClubsJ.svg";
+import Hearts8 from "@/assets/mdx/Hearts8.svg";
+import SpadesA from "@/assets/mdx/SpadesA.svg";
+
+interface Props {
+	open: boolean;
+}
+
+const { open } = Astro.props;
+---
+
+<div class="flex w-full space-x-4">
+	<div class="card-container h-68 w-60 cursor-pointer perspective-distant">
+		<div class="card-flipper relative h-full w-full transition-transform duration-700 transform-3d">
+			<!-- Front of card -->
+			<div class="card-front absolute h-full w-full backface-hidden">
+				{open ? <SpadesA class="h-full w-full" /> : <CardBack class="h-full w-full" />}
+			</div>
+
+			<!-- Back of card -->
+			<div class="card-back absolute h-full w-full rotate-y-180 backface-hidden">
+				{open ? <CardBack class="h-full w-full" /> : <SpadesA class="h-full w-full" />}
+			</div>
+		</div>
+	</div>
+
+	<div class="card-container h-68 w-60 cursor-pointer perspective-distant">
+		<div class="card-flipper relative h-full w-full transition-transform duration-700 transform-3d">
+			<!-- Front of card -->
+			<div class="card-front absolute h-full w-full backface-hidden">
+				{open ? <ClubsJ class="h-full w-full" /> : <CardBack class="h-full w-full" />}
+			</div>
+
+			<!-- Back of card -->
+			<div class="card-back absolute h-full w-full rotate-y-180 backface-hidden">
+				{open ? <CardBack class="h-full w-full" /> : <ClubsJ class="h-full w-full" />}
+			</div>
+		</div>
+	</div>
+
+	<div class="card-container h-68 w-60 cursor-pointer perspective-distant">
+		<div class="card-flipper relative h-full w-full transition-transform duration-700 transform-3d">
+			<!-- Front of card -->
+			<div class="card-front absolute h-full w-full backface-hidden">
+				{open ? <Hearts8 class="h-full w-full" /> : <CardBack class="h-full w-full" />}
+			</div>
+
+			<!-- Back of card -->
+			<div class="card-back absolute h-full w-full rotate-y-180 backface-hidden">
+				{open ? <CardBack class="h-full w-full" /> : <Hearts8 class="h-full w-full" />}
+			</div>
+		</div>
+	</div>
+</div>
+
+<style>
+	/* Class that will be toggled with JavaScript */
+	.is-flipped {
+		transform: rotateY(180deg);
+	}
+</style>
+
+<script>
+	// Wait for the DOM to be fully loaded
+	document.addEventListener("DOMContentLoaded", () => {
+		// Get all card containers on the page
+		const cardContainers = document.querySelectorAll(".card-container");
+
+		// Add click event listener to each card
+		cardContainers.forEach((container) => {
+			container.addEventListener("click", () => {
+				// Toggle the flipped class on the card flipper element
+				const flipper = container.querySelector(".card-flipper");
+				flipper?.classList.toggle("is-flipped");
+			});
+		});
+	});
+</script>
