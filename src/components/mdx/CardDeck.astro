@@ -1,8 +1,10 @@
 ---
-import CardBack from "@/assets/mdx/Cardback.svg";
-import ClubsJ from "@/assets/mdx/ClubsJ.svg";
-import Hearts8 from "@/assets/mdx/Hearts8.svg";
-import SpadesA from "@/assets/mdx/SpadesA.svg";
+import { Image } from "astro:assets";
+
+import cardBack from "@/assets/mdx/Cardback.png";
+import clubsJ from "@/assets/mdx/ClubsJ.png";
+import hearts8 from "@/assets/mdx/Hearts8.png";
+import spadesA from "@/assets/mdx/SpadesA.png";
 
 interface Props {
 	open: boolean;
@@ -16,12 +18,24 @@ const { open } = Astro.props;
 		<div class="card-flipper relative h-full w-full transition-transform duration-700 transform-3d">
 			<!-- Front of card -->
 			<div class="card-front absolute h-full w-full backface-hidden">
-				{open ? <SpadesA class="h-full w-full" /> : <CardBack class="h-full w-full" />}
+				{
+					open ? (
+						<Image src={spadesA} alt="Ace of Spades" />
+					) : (
+						<Image src={cardBack} alt="Back of a Card" />
+					)
+				}
 			</div>
 
 			<!-- Back of card -->
 			<div class="card-back absolute h-full w-full rotate-y-180 backface-hidden">
-				{open ? <CardBack class="h-full w-full" /> : <SpadesA class="h-full w-full" />}
+				{
+					open ? (
+						<Image src={cardBack} alt="Back of a Card" />
+					) : (
+						<Image src={spadesA} alt="Ace of Spades" />
+					)
+				}
 			</div>
 		</div>
 	</div>
@@ -30,12 +44,24 @@ const { open } = Astro.props;
 		<div class="card-flipper relative h-full w-full transition-transform duration-700 transform-3d">
 			<!-- Front of card -->
 			<div class="card-front absolute h-full w-full backface-hidden">
-				{open ? <ClubsJ class="h-full w-full" /> : <CardBack class="h-full w-full" />}
+				{
+					open ? (
+						<Image src={clubsJ} alt="Jack of Clubs" />
+					) : (
+						<Image src={cardBack} alt="Back of a Card" />
+					)
+				}
 			</div>
 
 			<!-- Back of card -->
 			<div class="card-back absolute h-full w-full rotate-y-180 backface-hidden">
-				{open ? <CardBack class="h-full w-full" /> : <ClubsJ class="h-full w-full" />}
+				{
+					open ? (
+						<Image src={cardBack} alt="Back of a Card" />
+					) : (
+						<Image src={clubsJ} alt="Jack of Clubs" />
+					)
+				}
 			</div>
 		</div>
 	</div>
@@ -44,12 +70,24 @@ const { open } = Astro.props;
 		<div class="card-flipper relative h-full w-full transition-transform duration-700 transform-3d">
 			<!-- Front of card -->
 			<div class="card-front absolute h-full w-full backface-hidden">
-				{open ? <Hearts8 class="h-full w-full" /> : <CardBack class="h-full w-full" />}
+				{
+					open ? (
+						<Image src={hearts8} alt="Eight of Hearts" />
+					) : (
+						<Image src={cardBack} alt="Back of a Card" />
+					)
+				}
 			</div>
 
 			<!-- Back of card -->
 			<div class="card-back absolute h-full w-full rotate-y-180 backface-hidden">
-				{open ? <CardBack class="h-full w-full" /> : <Hearts8 class="h-full w-full" />}
+				{
+					open ? (
+						<Image src={cardBack} alt="Back of a Card" />
+					) : (
+						<Image src={hearts8} alt="Eight of Hearts" />
+					)
+				}
 			</div>
 		</div>
 	</div>
