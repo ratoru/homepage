@@ -1,7 +1,7 @@
 ---
 title: "Creating and flashing your keyboard firmware using QMK (3/3)"
 description: "Learn how to build an optimized keyboard layout. Part 3/3 covering how to actually create your keyboard layout and flash your keyboard with it."
-tags: ["coding", "qmk"]
+tags: ["keyboard", "qmk"]
 publishDate: 2023-07-25
 ---
 
@@ -30,7 +30,7 @@ Lastly, I recommend you decrease the size of your firmware by following [this gu
 
 ## Compile using GitHub Actions
 
-This compilaton method lets you avoid installing `qmk` on your local machine. You can see it at work in my [qmk repo](https://github.com/ratoru/qmk_keymap/tree/main). The QMK docs cover setting up the repository, well. Unfortunately, there is barely any information on how to customize it properly. If you get stuck, I recommend asking in the QMK Discord. In July 2023 you had to do the following steps to get custom macros to work with GitHub Actions:
+This compilaton method lets you avoid installing `qmk` on your local machine. You can see it at work in my [qmk repo](https://github.com/ratoru/qmk_userspace/tree/main). The QMK docs cover setting up the repository, well. Unfortunately, there is barely any information on how to customize it properly. If you get stuck, I recommend asking in the QMK Discord. In July 2023 you had to do the following steps to get custom macros to work with GitHub Actions:
 
 - Place `process_record_user` in `source.c`.
 - Add `SRC += source.c` to `rules.mk`.

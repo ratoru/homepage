@@ -1,7 +1,7 @@
 ---
 title: "Adding optimized layers to your keyboard layout (2/3)"
 description: "Learn how to build an optimized keyboard layout. Part 2/3 covering how to customize your layout and add new layers."
-tags: ["coding", "qmk"]
+tags: ["keyboard", "qmk"]
 publishDate: 2023-07-24
 ---
 
@@ -27,7 +27,7 @@ There are too many symbols and characters to fit on your small keyboard. That's 
 - [Precondition's keymap](https://github.com/precondition/dactyl-manuform-keymap). This keymap has great tricks.
 - [Pnohty](https://github.com/rayduck/pnohty/tree/master). `Colemak-DH` with an optimized layer for `Python`.
 - [Callum's keymap](https://github.com/callum-oakley/qmk_firmware/tree/master/users/callum). Alternative to home row mods.
-- [My keymap](https://github.com/ratoru/qmk_keymap). `Colemak-DH` with an optimized symbol layer for coding and a `vim` friendly navigation layer.
+- [My keymap](https://github.com/ratoru/qmk_userspace). `Colemak-DH` with an optimized symbol layer for coding and a `vim` friendly navigation layer.
 
 ## Additional layers
 

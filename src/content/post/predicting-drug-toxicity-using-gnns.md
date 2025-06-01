@@ -1,7 +1,7 @@
 ---
 title: "Predicting Drug Toxicity using GNNs"
 description: "Drugs can be toxic - and we can predict which ones are by using Graph Neural Networks."
-tags: ["Drug Toxicity", "PyTorch", "Graph Neural Networks"]
+tags: ["Graph Neural Networks"]
 publishDate: 2024-02-21
 featured: true
 ---
