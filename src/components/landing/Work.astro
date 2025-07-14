@@ -1,9 +1,9 @@
 ---
-import work from "@/data/work.json";
-
 import { Image } from "astro:assets";
 import type { ImageMetadata } from "astro";
 import { Icon } from "astro-icon/components";
+import work from "@/data/work.json";
+
 const images = import.meta.glob<{ default: ImageMetadata }>(
 	"/src/assets/main/work/*.{jpeg,jpg,png,gif,webp}",
 );

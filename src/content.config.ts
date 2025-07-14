@@ -5,8 +5,10 @@ function removeDupsAndLowerCase(array: string[]) {
 	return [...new Set(array.map((str) => str.toLowerCase()))];
 }
 
+const titleSchema = z.string().max(64);
+
 const baseSchema = z.object({
-	title: z.string().max(64),
+	title: titleSchema,
 });
 
 const post = defineCollection({
@@ -36,4 +38,12 @@ const post = defineCollection({
 		}),
 });
 
-export const collections = { post };
+const tag = defineCollection({
+	loader: glob({ base: "./src/content/tag", pattern: "**/*.{md,mdx}" }),
+	schema: z.object({
+		title: titleSchema.optional(),
+		description: z.string().optional(),
+	}),
+});
+
+export const collections = { post, tag };

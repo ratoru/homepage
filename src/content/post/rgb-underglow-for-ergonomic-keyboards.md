@@ -1,7 +1,7 @@
 ---
 title: The correct way of adding RGB underglow to your keyboard
 description: This guide shows you how set up no EEPROM rgb underglow and layer indication for your split keyboard.
-tags: ["keyboard", "qmk"]
+tags: ["keyboard"]
 publishDate: 2023-08-17
 ---
 

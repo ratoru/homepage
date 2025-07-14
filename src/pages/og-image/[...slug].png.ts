@@ -1,10 +1,10 @@
+import { Resvg } from "@resvg/resvg-js";
+import type { APIContext, InferGetStaticPropsType } from "astro";
+import satori, { type SatoriOptions } from "satori";
 import FiraCodeBold from "@/assets/fira-code-700.ttf";
 import FiraCode from "@/assets/fira-code-regular.ttf";
 import { getAllPosts } from "@/data/post";
 import { siteConfig } from "@/site.config";
-import { Resvg } from "@resvg/resvg-js";
-import type { APIContext, InferGetStaticPropsType } from "astro";
-import satori, { type SatoriOptions } from "satori";
 
 const ogOptions: SatoriOptions = {
 	// debug: true,

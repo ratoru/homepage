@@ -1,7 +1,7 @@
 ---
 title: "Creating and flashing your keyboard firmware using QMK (3/3)"
 description: "Learn how to build an optimized keyboard layout. Part 3/3 covering how to actually create your keyboard layout and flash your keyboard with it."
-tags: ["keyboard", "qmk"]
+tags: ["keyboard"]
 publishDate: 2023-07-25
 ---
 
