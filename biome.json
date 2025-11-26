@@ -1,5 +1,29 @@
 {
 	"$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+	"files": {
+		"includes": [
+			"**",
+			"!**/build",
+			"!**/node_modules",
+			"!**/.vercel",
+			"!**/.netlify",
+			"!**/.vscode",
+			"!**/.astro",
+			"!!**/dist"
+		]
+	},
+	"formatter": {
+		"enabled": true,
+		"indentStyle": "tab",
+		"lineEnding": "auto",
+		"lineWidth": 100,
+		"expand": "auto"
+	},
+	"vcs": {
+		"enabled": true,
+		"clientKind": "git",
+		"useIgnoreFile": true
+	},
 	"assist": {
 		"actions": {
 			"source": {
@@ -7,22 +31,12 @@
 			}
 		}
 	},
-	"formatter": {
-		"indentStyle": "tab",
-		"indentWidth": 2,
-		"lineWidth": 100,
-		"formatWithErrors": true,
-		"includes": ["**", "!**/*.astro"]
-	},
 	"linter": {
 		"enabled": true,
 		"rules": {
 			"recommended": true,
 			"a11y": {
 				"noSvgWithoutTitle": "off"
-			},
-			"suspicious": {
-				"noExplicitAny": "warn"
 			},
 			"style": {
 				"noParameterAssign": "error",
@@ -34,26 +48,40 @@
 				"noUnusedTemplateLiteral": "error",
 				"useNumberNamespace": "error",
 				"noInferrableTypes": "error",
-				"noUselessElse": "error"
+				"noUselessElse": "error",
+				"useImportType": "error"
+			},
+			"suspicious": {
+				"noExplicitAny": "warn"
 			}
 		}
 	},
 	"javascript": {
 		"formatter": {
 			"trailingCommas": "all",
-			"semicolons": "always"
+			"semicolons": "always",
+			"bracketSameLine": false
 		}
 	},
-	"vcs": {
-		"clientKind": "git",
-		"enabled": true,
-		"useIgnoreFile": true
+	"html": {
+		"formatter": {
+			"selfCloseVoidElements": "always"
+		}
+	},
+	"css": {
+		"parser": {
+			"tailwindDirectives": true
+		}
 	},
 	"overrides": [
 		{
 			"includes": ["**/*.astro"],
 			"linter": {
 				"rules": {
+					"style": {
+						"useConst": "off",
+						"useImportType": "off"
+					},
 					"correctness": {
 						"noUnusedVariables": "off",
 						"noUnusedImports": "off"

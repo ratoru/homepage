@@ -18,3 +18,7 @@ My homepage was built using [Astro](https://docs.astro.build/en/getting-started/
 | `pnpm postbuild` | Pagefind script to build the static search of your blog posts  |
 | `pnpm preview`   | Preview your build locally, before deploying                   |
 | `pnpm sync`      | Generate types based on your config in `src/content/config.ts` |
+
+## Credit
+
+Up to date with [Astro Theme Cactus](https://github.com/chrismwilliams/astro-theme-cactus/releases) v6.10.0.

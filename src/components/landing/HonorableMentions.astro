@@ -24,7 +24,7 @@ import honorableMentions from "@/data/honorable-mentions.json";
 					<div>
 						{h.links.map((link) => (
 							<div class="flex flex-row flex-nowrap justify-end space-x-4">
-								{link.github && (
+								{"github" in link && link.github && (
 									<a href={link.github} target="_blank" class="hover:text-accent hover:rotate-6">
 										<span class="sr-only">Project's GitHub</span>
 										<Icon

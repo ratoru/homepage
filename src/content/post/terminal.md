@@ -14,6 +14,8 @@ tags:
 My terminal setup has changed a lot since I wrote this article. To get the latest, check out my [dotfiles](https://github.com/ratoru/dotfiles).
 :::
 
+::github{repo="ratoru/dotfiles"}
+
 ### [Homebrew](https://brew.sh/) 🍺
 
 To start us off, we have the package manager Homebrew. Homebrew will take good care of the software you install. It allows for one-line install with `brew install ...` and allows you to quickly update all your packages with `brew update`. For a more complete list on how and why to use Homebrew please check out their website. We will be using Homebrew to install most of the things mentioned in this article.

@@ -24,60 +24,67 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
 
 	<div class="col-span-full space-y-12 md:space-y-16">
 		{
-			work.map((work) => (
-				<div class="relative flex flex-col items-center space-y-6 lg:flex-row lg:even:flex-row-reverse">
-					<Image
-						src={images[work.img]()}
-						alt={`${work.name}'s project image`}
-						class="rounded-xl shadow-2xl saturate-0 transition-all duration-200 ease-in-out hover:saturate-100 md:rounded-3xl lg:h-[430px] lg:w-[590px] lg:object-cover"
-					/>
-					<div class="space-y-6 md:w-3/4 md:self-start lg:p-16">
-						<div class="leading-heading space-y">
-							<span class="leading-heading text-muted font-mono text-sm tracking-wide uppercase md:text-base">
-								{work.type}
-							</span>
+			work.map((work) => {
+				const imageLoader = images[work.img];
+				if (!imageLoader) {
+					throw new Error(`Image not found: ${work.img}`);
+				}
+
+				return (
+					<div class="relative flex flex-col items-center space-y-6 lg:flex-row lg:even:flex-row-reverse">
+						<Image
+							src={imageLoader()}
+							alt={`${work.name}'s project image`}
+							class="rounded-xl shadow-2xl saturate-0 transition-all duration-200 ease-in-out hover:saturate-100 md:rounded-3xl lg:h-[430px] lg:w-[590px] lg:object-cover"
+						/>
+						<div class="space-y-6 md:w-3/4 md:self-start lg:p-16">
+							<div class="leading-heading space-y">
+								<span class="leading-heading text-muted font-mono text-sm tracking-wide uppercase md:text-base">
+									{work.type}
+								</span>
+								{work.links.map((link) => {
+									return (
+										<a href={link.website} target="_blank" class="unset block">
+											<h2 class="font-serif text-2xl font-medium md:text-4xl xl:w-4/6">
+												{work.name}
+											</h2>
+										</a>
+									);
+								})}
+							</div>
+							<p class="text-lg leading-normal">{work.info}</p>
+
+							<div class="text-muted space-x-4 font-mono text-sm leading-normal">
+								{work.tags.map((tag) => {
+									return <span>{tag}</span>;
+								})}
+							</div>
+
 							{work.links.map((link) => {
 								return (
-									<a href={link.website} target="_blank" class="unset block">
-										<h2 class="font-serif text-2xl font-medium md:text-4xl xl:w-4/6">
-											{work.name}
-										</h2>
-									</a>
+									<div class="w-min space-x-4">
+										{link.website && (
+											<a
+												href={link.website}
+												target="_blank"
+												class="hover:text-accent inline-block bg-none hover:rotate-6"
+											>
+												<span class="sr-only">Featured Website</span>
+												<Icon
+													aria-hidden="true"
+													class="h-6 w-6"
+													focusable="false"
+													name="tabler:external-link"
+												/>
+											</a>
+										)}
+									</div>
 								);
 							})}
 						</div>
-						<p class="text-lg leading-normal">{work.info}</p>
-
-						<div class="text-muted space-x-4 font-mono text-sm leading-normal">
-							{work.tags.map((tag) => {
-								return <span>{tag}</span>;
-							})}
-						</div>
-
-						{work.links.map((link) => {
-							return (
-								<div class="w-min space-x-4">
-									{link.website && (
-										<a
-											href={link.website}
-											target="_blank"
-											class="hover:text-accent inline-block bg-none hover:rotate-6"
-										>
-											<span class="sr-only">Featured Website</span>
-											<Icon
-												aria-hidden="true"
-												class="h-6 w-6"
-												focusable="false"
-												name="tabler:external-link"
-											/>
-										</a>
-									)}
-								</div>
-							);
-						})}
 					</div>
-				</div>
-			))
+				);
+			})
 		}
 	</div>
 </section>

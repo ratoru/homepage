@@ -160,7 +160,8 @@ export async function GET(context: APIContext) {
 		},
 		ogOptions,
 	);
-	const png = new Resvg(svg).render().asPng();
+	const pngBuffer = new Resvg(svg).render().asPng();
+	const png = new Uint8Array(pngBuffer);
 	return new Response(png, {
 		headers: {
 			"Cache-Control": "public, max-age=31536000, immutable",
