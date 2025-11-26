@@ -34,7 +34,7 @@ const post = defineCollection({
 				.or(z.date())
 				.optional()
 				.transform((val) => (val ? new Date(val) : undefined)),
-			featured: z.boolean().optional(),
+			pinned: z.boolean().default(false),
 		}),
 });
 

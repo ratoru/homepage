@@ -3,7 +3,7 @@ title: "30 Lessons I wish I knew before College"
 description: "30 lessons that would have been helpful to know before starting college."
 tags: ["life-advice", "health"]
 publishDate: 2023-09-24
-featured: true
+pinned: true
 ---
 
 1. [Use sunscreen](https://www.youtube.com/watch?v=sTJ7AzBIJoI).

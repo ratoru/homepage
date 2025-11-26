@@ -4,7 +4,7 @@ description: "Learn how to build an optimized keyboard layout. Part 1/3 covering
 tags: ["keyboard"]
 publishDate: 2023-07-23
 updatedDate: 2025-05-31
-featured: true
+pinned: true
 ---
 
 ![kyria-heatmap](../../assets/blog/layout/kyria-heatmap.webp)
