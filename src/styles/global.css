@@ -72,6 +72,12 @@
 	h6 {
 		font-family: var(--font-serif);
 	}
+
+	/* Center block-level math equations ($$...$$) */
+	p:has(> math:only-child) {
+		text-align: center;
+		margin: 1.5rem 0;
+	}
 }
 
 @layer components {
