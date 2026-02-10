@@ -1,0 +1,89 @@
+---
+import type { CollectionEntry } from "astro:content";
+import PostPreview from "@/components/blog/PostPreview.astro";
+import ViewAllPostsLink from "@/components/blog/ViewAllPostsLink.astro";
+import { collectionDateSort } from "@/utils/date";
+
+interface Props {
+	currentPost: CollectionEntry<"post">;
+	allPosts: CollectionEntry<"post">[];
+}
+
+const { currentPost, allPosts } = Astro.props;
+
+// Sort all posts chronologically (including current post for index lookup)
+const allPostsSorted = allPosts.filter((p) => !p.data.draft).sort(collectionDateSort);
+
+// Eligible posts exclude the current post
+const eligiblePosts = allPostsSorted.filter((p) => p.id !== currentPost.id);
+
+let relatedPosts: CollectionEntry<"post">[] = [];
+
+// Priority 1: Manual override from frontmatter
+if (currentPost.data.relatedPosts && currentPost.data.relatedPosts.length > 0) {
+	relatedPosts = eligiblePosts.filter((p) => currentPost.data.relatedPosts?.includes(p.id));
+}
+
+// Priority 2: Posts with same tags (prev/next in tag)
+if (relatedPosts.length < 2 && currentPost.data.tags.length > 0) {
+	// Get all posts with shared tags (including current post for proper indexing)
+	const postsWithSharedTags = allPostsSorted.filter((p) =>
+		p.data.tags.some((tag) => currentPost.data.tags.includes(tag)),
+	);
+
+	if (postsWithSharedTags.length > 1) {
+		const currentIndex = postsWithSharedTags.findIndex((p) => p.id === currentPost.id);
+
+		if (currentIndex !== -1) {
+			// Get previous and next posts in the tag-filtered list
+			const prev = postsWithSharedTags[currentIndex + 1]; // older post
+			const next = postsWithSharedTags[currentIndex - 1]; // newer post
+
+			if (next && !relatedPosts.find((p) => p.id === next.id)) {
+				relatedPosts.push(next);
+			}
+			if (prev && relatedPosts.length < 2 && !relatedPosts.find((p) => p.id === prev.id)) {
+				relatedPosts.push(prev);
+			}
+		}
+	}
+}
+
+// Priority 3: Chronological neighbors (fallback)
+if (relatedPosts.length < 2) {
+	const currentIndex = allPostsSorted.findIndex((p) => p.id === currentPost.id);
+
+	if (currentIndex !== -1) {
+		const prev = allPostsSorted[currentIndex + 1]; // older post
+		const next = allPostsSorted[currentIndex - 1]; // newer post
+
+		if (next && !relatedPosts.find((p) => p.id === next.id)) {
+			relatedPosts.push(next);
+		}
+		if (prev && relatedPosts.length < 2 && !relatedPosts.find((p) => p.id === prev.id)) {
+			relatedPosts.push(prev);
+		}
+	}
+}
+
+// Limit to 2 posts max
+relatedPosts = relatedPosts.slice(0, 2);
+---
+
+{
+	relatedPosts.length > 0 && (
+		<aside class="border-accent-2 mt-16 border-t border-dashed pt-12">
+			<section>
+				<h2 class="title mb-6 text-xl">Keep Reading</h2>
+				<ul class="space-y-4" role="list">
+					{relatedPosts.map((p) => (
+						<li class="grid gap-1 sm:grid-cols-[auto_1fr]">
+							<PostPreview post={p} />
+						</li>
+					))}
+					<ViewAllPostsLink />
+				</ul>
+			</section>
+		</aside>
+	)
+}
