@@ -1,0 +1,94 @@
+/* ---------------------------------------------------------
+   1. Counter Setup
+   --------------------------------------------------------- */
+.prose {
+	counter-reset: sidenote-counter;
+}
+
+/* ---------------------------------------------------------
+   2. Mobile / Tablet (Inline & Toggleable)
+   --------------------------------------------------------- */
+
+/* The Number Reference [1] */
+.sidenote-number {
+	@apply inline-block h-8 cursor-pointer align-baseline font-medium text-link;
+	counter-increment: sidenote-counter;
+}
+
+.sidenote-number::after {
+	@apply relative -top-2 left-0.5 text-[0.6rem] content-[counter(sidenote-counter)];
+}
+
+/* Hidden Toggle Logic */
+input.margin-toggle {
+	@apply hidden;
+}
+
+/* Clickable Label */
+label.margin-toggle {
+	@apply cursor-pointer select-none text-link;
+}
+
+/* Margin Note Symbol (⊕) */
+.marginnote label.margin-toggle {
+	@apply mx-0.5 inline text-base leading-none;
+}
+
+/* The Note Content (Hidden by default) */
+.sidenote-definition,
+.marginnote-definition {
+	@apply relative my-4 mx-[2.5%] float-left clear-both hidden w-[95%] border-l-2 border-gray-300 pl-2 text-sm text-muted dark:border-gray-700;
+}
+
+/* Show Content when Checkbox is Checked */
+.sidenote input.margin-toggle:checked + .sidenote-definition,
+.marginnote input.margin-toggle:checked + .marginnote-definition {
+	@apply block;
+}
+
+/* Number inside the expanded content */
+.sidenote-definition::before {
+	@apply relative -top-0.5 pr-1 text-[0.6rem] font-bold text-link content-[counter(sidenote-counter)];
+}
+
+/* ---------------------------------------------------------
+   3. Desktop (The Tufte Layout)
+   Triggered when screen is wide enough for 3 columns
+   Text column (65ch) + gutters (4rem) + sidenote (18rem) ≈ 1100px
+   --------------------------------------------------------- */
+
+@media (min-width: 1100px) {
+	.prose-sidenotes .sidenote-definition,
+	.prose-sidenotes .marginnote-definition {
+		@apply relative m-0 block clear-right float-right border-none p-0 text-xs leading-5 text-muted;
+
+		/* GEOMETRY:
+       - The note is inside the prose container
+       - We push it OUT to the right via negative margin
+       - It should be ~18rem wide with a 2rem gutter
+    */
+
+		width: 16rem; /* Width of the note in the margin */
+		margin-right: -18rem; /* Pull it out: -(width + gutter) */
+		padding-left: 0; /* Reset mobile padding */
+
+		/* Vertical alignment */
+		margin-top: 0.3rem;
+		vertical-align: baseline;
+	}
+
+	/* Disable Interactions */
+	.prose-sidenotes label.margin-toggle {
+		@apply pointer-events-none cursor-default;
+	}
+
+	/* Hide the ⊕ Symbol */
+	.prose-sidenotes .marginnote label.margin-toggle {
+		@apply hidden;
+	}
+
+	/* Desktop numbering style */
+	.prose-sidenotes .sidenote-definition::before {
+		@apply align-super text-xs;
+	}
+}
