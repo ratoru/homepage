@@ -4,7 +4,7 @@ import Footer from "@/components/layout/Footer.astro";
 import Header from "@/components/layout/Header.astro";
 import SkipLink from "@/components/SkipLink.astro";
 import ThemeProvider from "@/components/ThemeProvider.astro";
-import { siteConfig } from "@/site.config";
+import { siteConfig, socialLinks } from "@/site.config";
 import type { SiteMeta } from "@/types";
 
 // Font setup
@@ -17,11 +17,28 @@ interface Props {
 const {
 	meta: { articleDate, description = siteConfig.description, ogImage, title },
 } = Astro.props;
+
+// JSON-LD structured data for the website
+const websiteSchema = {
+	"@context": "https://schema.org",
+	"@type": "WebSite",
+	name: siteConfig.title,
+	description: siteConfig.description,
+	url: siteConfig.url,
+	inLanguage: siteConfig.lang,
+	author: {
+		"@type": "Person",
+		name: siteConfig.author,
+		url: siteConfig.url,
+		sameAs: socialLinks.map((link) => link.link),
+	},
+};
 ---
 
 <html class="scroll-smooth" lang={siteConfig.lang}>
 	<head>
 		<BaseHead articleDate={articleDate} description={description} ogImage={ogImage} title={title} />
+		<script is:inline type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
 	</head>
 	<body
 		class="bg-global-bg text-global-text mx-auto min-h-screen max-w-7xl px-4 pt-16 font-normal antialiased sm:px-8"

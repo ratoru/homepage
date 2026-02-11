@@ -4,6 +4,7 @@ import { type CollectionEntry, render } from "astro:content";
 import Masthead from "@/components/blog/Masthead.astro";
 import RelatedPosts from "@/components/blog/RelatedPosts.astro";
 import { getAllPosts } from "@/data/post";
+import { siteConfig, socialLinks } from "@/site.config";
 
 import BaseLayout from "./Base.astro";
 
@@ -19,6 +20,39 @@ const { remarkPluginFrontmatter } = await render(post);
 const readingTime: string = remarkPluginFrontmatter.readingTime;
 
 const allPosts = await getAllPosts();
+
+// Construct full URLs for structured data
+const canonicalURL = new URL(`/blog/${post.id}`, siteConfig.url).href;
+const imageURL = new URL(socialImage, siteConfig.url).href;
+
+// JSON-LD structured data for blog posts
+const structuredData = {
+	"@context": "https://schema.org",
+	"@type": "BlogPosting",
+	headline: title,
+	description: description,
+	image: imageURL,
+	url: canonicalURL,
+	datePublished: publishDate.toISOString(),
+	...(updatedDate && { dateModified: updatedDate.toISOString() }),
+	inLanguage: siteConfig.lang,
+	...(post.data.tags && { keywords: post.data.tags.join(", ") }),
+	author: {
+		"@type": "Person",
+		name: siteConfig.author,
+		url: siteConfig.url,
+		sameAs: socialLinks.map((link) => link.link),
+	},
+	publisher: {
+		"@type": "Person",
+		name: siteConfig.author,
+		url: siteConfig.url,
+	},
+	mainEntityOfPage: {
+		"@type": "WebPage",
+		"@id": canonicalURL,
+	},
+};
 ---
 
 <BaseLayout
@@ -29,6 +63,12 @@ const allPosts = await getAllPosts();
 		title,
 	}}
 >
+	<script
+		slot="head"
+		is:inline
+		type="application/ld+json"
+		set:html={JSON.stringify(structuredData)}
+	/>
 	<article class="wrap-break-word" data-pagefind-body>
 		<div id="blog-hero" class="mb-12">
 			<Masthead content={post} readingTime={readingTime} />
