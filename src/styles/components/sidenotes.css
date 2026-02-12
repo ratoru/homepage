@@ -11,7 +11,7 @@
 
 /* The Number Reference [1] */
 .sidenote-number {
-	@apply inline-block h-8 cursor-pointer align-baseline font-medium text-link;
+	@apply text-link inline-block h-8 cursor-pointer align-baseline font-medium;
 	counter-increment: sidenote-counter;
 }
 
@@ -26,7 +26,7 @@ input.margin-toggle {
 
 /* Clickable Label */
 label.margin-toggle {
-	@apply cursor-pointer select-none text-link;
+	@apply text-link cursor-pointer select-none;
 }
 
 /* Margin Note Symbol (⊕) */
@@ -37,7 +37,7 @@ label.margin-toggle {
 /* The Note Content (Hidden by default) */
 .sidenote-definition,
 .marginnote-definition {
-	@apply relative my-4 mx-[2.5%] float-left clear-both hidden w-[95%] border-l-2 border-gray-300 pl-2 text-sm text-muted dark:border-gray-700;
+	@apply text-muted relative float-left clear-both mx-[2.5%] my-4 hidden w-[95%] border-l-2 border-gray-300 pl-2 text-sm dark:border-gray-700;
 }
 
 /* Show Content when Checkbox is Checked */
@@ -48,7 +48,7 @@ label.margin-toggle {
 
 /* Number inside the expanded content */
 .sidenote-definition::before {
-	@apply relative -top-0.5 pr-1 text-[0.6rem] font-bold text-link content-[counter(sidenote-counter)];
+	@apply text-link relative -top-0.5 pr-1 text-[0.6rem] font-bold content-[counter(sidenote-counter)];
 }
 
 /* ---------------------------------------------------------
@@ -60,7 +60,7 @@ label.margin-toggle {
 @media (min-width: 1100px) {
 	.prose-sidenotes .sidenote-definition,
 	.prose-sidenotes .marginnote-definition {
-		@apply relative m-0 block clear-right float-right border-none p-0 text-xs leading-5 text-muted;
+		@apply text-muted relative float-right clear-right m-0 block border-none p-0 text-xs leading-5;
 
 		/* GEOMETRY:
        - The note is inside the prose container

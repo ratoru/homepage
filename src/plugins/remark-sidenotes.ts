@@ -22,7 +22,9 @@ interface SidenoteNode extends Parent {
 	type: "sidenote";
 	data: {
 		hName: string;
-		hProperties: Record<string, unknown>;
+		hProperties?: {
+			className?: string[];
+		};
 	};
 	children: Array<BlockContent | DefinitionContent | PhrasingContent>;
 }
@@ -160,7 +162,7 @@ const remarkSidenotes: Plugin<[SidenoteOptions?], Root> = (options = {}) => {
 		});
 
 		// Pass 2: Transform references and inline notes
-		visit(tree, ["footnoteReference", "footnote"], (node, index, parent) => {
+		visit(tree, ["footnoteReference", "footnote"] as any, (node: any, index, parent) => {
 			if (!parent || index === undefined) return;
 
 			let children: Array<BlockContent | DefinitionContent | PhrasingContent> = [];
@@ -178,7 +180,7 @@ const remarkSidenotes: Plugin<[SidenoteOptions?], Root> = (options = {}) => {
 
 				// Unwrap paragraph if it's the only child (prevents <p> inside <span>)
 				children =
-					def.children.length === 1 && def.children[0].type === "paragraph"
+					def.children.length === 1 && def.children[0] && def.children[0].type === "paragraph"
 						? def.children[0].children
 						: def.children;
 
@@ -203,7 +205,7 @@ const remarkSidenotes: Plugin<[SidenoteOptions?], Root> = (options = {}) => {
 			const replacement = createSidenoteNode(identifier, isMarginNote, children, marginSymbol);
 
 			// Replace the original node
-			parent.children.splice(index, 1, replacement);
+			(parent.children as any).splice(index, 1, replacement);
 		});
 
 		// Pass 3: Cleanup definitions

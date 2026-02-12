@@ -6,7 +6,7 @@
 
 /* Base Figure */
 figure {
-	@apply flex flex-col items-center my-8 w-full;
+	@apply my-8 flex w-full flex-col items-center;
 }
 
 /* Reset margins for direct children */
@@ -24,7 +24,7 @@ figure img {
 figure.no-border img,
 figure.code img,
 figure.diagram img {
-	@apply border-0 shadow-none rounded-none;
+	@apply rounded-none border-0 shadow-none;
 }
 
 /* Caption: Bottom Position (default) */
@@ -40,12 +40,12 @@ figure > figcaption {
  * Breaks out of container to span full viewport width
  */
 figure.fullwidth {
-	@apply relative w-[100vw] left-1/2 -ml-[50vw];
+	@apply relative left-1/2 -ml-[50vw] w-[100vw];
 }
 
 /* Constrain and center content inside fullwidth figures */
 figure.fullwidth > * {
-	@apply w-full max-w-[1200px] mx-auto px-4;
+	@apply mx-auto w-full max-w-[1200px] px-4;
 }
 
 /* Video wrapper for embedded videos (YouTube, etc.) */
@@ -55,7 +55,7 @@ figure.fullwidth > * {
 }
 
 .video-wrapper > iframe {
-	@apply absolute top-0 left-0 w-full h-full;
+	@apply absolute top-0 left-0 h-full w-full;
 }
 
 /* Content type modifiers */
