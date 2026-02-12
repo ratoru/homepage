@@ -72,3 +72,24 @@ const socialImageURL = new URL(ogImage ? ogImage : "/assets/portrait.webp", Astr
 <link href="/rss.xml" title="Blog" rel="alternate" type="application/rss+xml" />
 
 <meta content={Astro.generator} name="generator" />
+
+{/*Umami Metrics*/}
+<script
+	async
+	is:inline
+	src="https://cloud.umami.is/script.js"
+	data-website-id="52bb3366-65a0-43e1-af80-0c5745eac30f"
+	data-auto-track="false"></script>
+<script>
+	if (document.visibilityState === "visible") {
+		addEventListener("load", () => window.umami?.track());
+	} else {
+		addEventListener(
+			"visibilitychange",
+			() => {
+				if (document.visibilityState === "visible") window.umami?.track();
+			},
+			{ once: true },
+		);
+	}
+</script>

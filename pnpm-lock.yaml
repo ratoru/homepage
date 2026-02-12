@@ -123,6 +123,9 @@ importers:
       '@types/mdast':
         specifier: ^4.0.4
         version: 4.0.4
+      '@types/umami':
+        specifier: ^2.10.1
+        version: 2.10.1
       autoprefixer:
         specifier: ^10.4.24
         version: 10.4.24(postcss@8.5.6)
@@ -1099,6 +1102,9 @@ packages:
 
   '@types/sax@1.2.7':
     resolution: {integrity: sha512-rO73L89PJxeYM3s3pPPjiPgVVcymqU490g0YO5n5By0k2Erzj6tay/4lr1CHAAU4JyOWd1rpQ8bCf6cZfHU96A==}
+
+  '@types/umami@2.10.1':
+    resolution: {integrity: sha512-CvOEMq+BFOUXj8yciq4hPsdOt0o9KBg5jQXnF1FrdOMKZMxJiwryyZNLa9Ud2NVO6nXSwU22YMKR3E+Xhbo+DA==}
 
   '@types/unist@2.0.11':
     resolution: {integrity: sha512-CmBKiL6NNo/OqgmMn95Fk9Whlp2mtvIv+KNpQKN2F4SjvrEesubTRWGYSg+BnWZOnlCaSTU1sMpsBOzgbYhnsA==}
@@ -4102,6 +4108,8 @@ snapshots:
   '@types/sax@1.2.7':
     dependencies:
       '@types/node': 17.0.45
+
+  '@types/umami@2.10.1': {}
 
   '@types/unist@2.0.11': {}
 
