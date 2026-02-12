@@ -1,4 +1,4 @@
-import type { Code, Image } from "mdast";
+import type { Paragraph } from "mdast";
 import type { ContainerDirective } from "mdast-util-directive";
 import type { Plugin } from "unified";
 import type { Node } from "unist";
@@ -12,10 +12,10 @@ const isMediaNode = (node: Node): boolean => {
   }
 
   // 2. Check for Image inside Paragraph (The Trap)
-  if (node.type === 'paragraph' && (node as any).children) {
-    const children = (node as any).children;
+  if (node.type === 'paragraph') {
+    const paragraph = node as Paragraph;
     // It's media if the paragraph has exactly 1 child, and that child is an image
-    if (children.length === 1 && children[0].type === 'image') {
+    if (paragraph.children.length === 1 && paragraph.children[0].type === 'image') {
       return true;
     }
   }
@@ -108,7 +108,7 @@ export const remarkDirectiveFigure: Plugin = () => {
 			const allClasses = [...existingClasses, ...contentTypeClasses].filter(Boolean);
 
 			// Transform the directive into a figure element
-			directive.children = newChildren as any;
+			directive.children = newChildren as typeof directive.children;
 			directive.data = {
 				...directive.data,
 				hName: "figure",

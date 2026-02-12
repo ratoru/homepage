@@ -84,6 +84,7 @@
 	@import "./components/admonition.css";
 	@import "./components/figure.css";
 	@import "./components/github-card.css";
+	@import "./components/quote-attribution.css";
 	@import "./components/sidenotes.css";
 
 	.cactus-link {

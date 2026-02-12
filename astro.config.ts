@@ -19,6 +19,7 @@ import remarkMath from "remark-math";
 import { remarkAdmonitions } from "./src/plugins/remark-admonitions"; /* Add admonitions */
 import { remarkDirectiveFigure } from "./src/plugins/remark-directive-figure";
 import { remarkGithubCard } from "./src/plugins/remark-github-card";
+import { remarkQuoteAttribution } from "./src/plugins/remark-quote-attribution";
 import { remarkReadingTime } from "./src/plugins/remark-reading-time";
 import remarkSidenotes from "./src/plugins/remark-sidenotes";
 import { expressiveCodeOptions, siteConfig } from "./src/site.config";
@@ -87,6 +88,7 @@ export default defineConfig({
 			remarkDirectiveFigure,
 			remarkGithubCard,
 			remarkAdmonitions,
+			remarkQuoteAttribution,
 			remarkSidenotes,
 			remarkMath,
 		],
