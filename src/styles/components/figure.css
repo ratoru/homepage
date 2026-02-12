@@ -1,0 +1,64 @@
+/*
+ * Figure Directive Component Styles
+ * Supports :::figure{.fullwidth} markdown directive
+ * Supports :::figure{.no-border} markdown directive
+ */
+
+/* Base Figure */
+figure {
+	@apply flex flex-col items-center my-8 w-full;
+}
+
+/* Reset margins for direct children */
+figure > * {
+	@apply my-0;
+}
+
+/* Images - default styling with borders */
+figure img {
+	@apply h-auto rounded-lg shadow-sm;
+	border: 1px solid var(--color-border, rgb(229 231 235));
+}
+
+/* Remove borders for specific cases */
+figure.no-border img,
+figure.code img,
+figure.diagram img {
+	@apply border-0 shadow-none rounded-none;
+}
+
+/* Caption: Bottom Position (default) */
+figure > figcaption {
+	@apply !mt-0 text-center !text-(--global-text);
+}
+
+/* Caption: Top Position */
+/* figure > figcaption:first-child { */
+/* } */
+
+/* Full Width Modifier
+ * Breaks out of container to span full viewport width
+ */
+figure.fullwidth {
+	@apply relative w-[100vw] left-1/2 -ml-[50vw];
+}
+
+/* Constrain and center content inside fullwidth figures */
+figure.fullwidth > * {
+	@apply w-full max-w-[1200px] mx-auto px-4;
+}
+
+/* Video wrapper for embedded videos (YouTube, etc.) */
+.video-wrapper {
+	@apply relative w-full;
+	aspect-ratio: 16 / 9;
+}
+
+.video-wrapper > iframe {
+	@apply absolute top-0 left-0 w-full h-full;
+}
+
+/* Content type modifiers */
+figure.code pre {
+	@apply my-0 border-0 shadow-none;
+}

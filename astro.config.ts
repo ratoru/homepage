@@ -17,6 +17,7 @@ import rehypeMathml from "@daiji256/rehype-mathml";
 import remarkDirective from "remark-directive"; /* Handle ::: directives as nodes */
 import remarkMath from "remark-math";
 import { remarkAdmonitions } from "./src/plugins/remark-admonitions"; /* Add admonitions */
+import { remarkDirectiveFigure } from "./src/plugins/remark-directive-figure";
 import { remarkGithubCard } from "./src/plugins/remark-github-card";
 import { remarkReadingTime } from "./src/plugins/remark-reading-time";
 import remarkSidenotes from "./src/plugins/remark-sidenotes";
@@ -83,6 +84,7 @@ export default defineConfig({
 		remarkPlugins: [
 			remarkReadingTime,
 			remarkDirective,
+			remarkDirectiveFigure,
 			remarkGithubCard,
 			remarkAdmonitions,
 			remarkSidenotes,
