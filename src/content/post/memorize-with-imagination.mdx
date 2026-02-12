@@ -5,6 +5,7 @@ publishDate: 2025-04-20
 tags:
   - memory
 ---
+
 import CardDeck from "@/components/mdx/CardDeck.astro";
 
 By the end of this article, you'll learn how to memorize the following three cards with one image. What image you ask? **Donald Duck moshes with phones.**
@@ -43,7 +44,7 @@ For really long chains of information, this will become quite annoying. Luckily,
 
 ### Memory Palace (Method of Loci)
 
-> The **method of loci** is a technique for memorizing information by placing a mnemonic image for each item to be remembered at a point along an imaginary journey. The information can then be recalled in a specific order by mentally walking the same route through the imaginary journey and converting the mnemonic images back into the facts that they represent. _Loci_ is the plural for of the Latin word, _locus_, meaning place or location. [^1]
+> The **method of loci** is a technique for memorizing information by placing a mnemonic image for each item to be remembered at a point along an imaginary journey. The information can then be recalled in a specific order by mentally walking the same route through the imaginary journey and converting the mnemonic images back into the facts that they represent. _Loci_ is the plural for of the Latin word, _locus_, meaning place or location.[^1]
 
 [^1]: [Art Of Memory](https://artofmemory.com/blog/method-of-loci/)
 
@@ -52,6 +53,7 @@ Think of a location you know very well, for example your childhood home. This wi
 Imagine you are floating through the house, looking at all the familiar quirks of your home. Note places where you are going to put images. If you run out of rooms, you can split the rooms into smaller places following your gaze through the room. Or, you can go into the yard, etc.
 
 Most importantly, follow these rules.
+
 - You should always follow the same journey through your mind palace.
 - Imagine the place as quiet to begin with. Your images are going to bring it to life.
 
@@ -67,19 +69,19 @@ If you like, you could associate a fixed image with each number directly. I am g
 
 A popular number-to-sound mapping is called the Major System. Here is my slight adaption of the Major System.
 
-| Digit | Consonants | Mnemonic |
-| --- | --- | --- |
-| 0 | s, z, soft c | z is the first letter of zero. The other letters have a similar sound. |
-| 1 | t, d | d & t have one downstroke and sound similar (some people include th here) |
-| 2 | n | n looks something like 2 on its side and has 2 downstrokes |
-| 3 | m | M looks like a 3 on its side and has three downstrokes |
-| 4 | r | 4 and R are almost mirror images of each other, R is the last letter of "fouR" |
-| 5 | l | L is the Roman Numeral for 50 |
-| 6 | sh, soft ch, j, soft g, zh | g looks like an upside-down 6, cursive j looks kind of like a 6 |
-| 7 | k, hard c, hard g, q, qu | capital K looks like two sevens stuck together |
-| 8 | f, v, (th) | cursive f looks like 8, v is a vocalize f (some people include th here) |
-| 9 | p, b | P looks like a mirror-image of 9. b sounds similar look like a rotated 9 |
-| Ignored | Vowel sounds, w,h,y | These sounds are ignored in the traditional Major System |
+| Digit   | Consonants                 | Mnemonic                                                                       |
+| ------- | -------------------------- | ------------------------------------------------------------------------------ |
+| 0       | s, z, soft c               | z is the first letter of zero. The other letters have a similar sound.         |
+| 1       | t, d                       | d & t have one downstroke and sound similar (some people include th here)      |
+| 2       | n                          | n looks something like 2 on its side and has 2 downstrokes                     |
+| 3       | m                          | M looks like a 3 on its side and has three downstrokes                         |
+| 4       | r                          | 4 and R are almost mirror images of each other, R is the last letter of "fouR" |
+| 5       | l                          | L is the Roman Numeral for 50                                                  |
+| 6       | sh, soft ch, j, soft g, zh | g looks like an upside-down 6, cursive j looks kind of like a 6                |
+| 7       | k, hard c, hard g, q, qu   | capital K looks like two sevens stuck together                                 |
+| 8       | f, v, (th)                 | cursive f looks like 8, v is a vocalize f (some people include th here)        |
+| 9       | p, b                       | P looks like a mirror-image of 9. b sounds similar look like a rotated 9       |
+| Ignored | Vowel sounds, w,h,y        | These sounds are ignored in the traditional Major System                       |
 
 ### Building some images
 
@@ -114,11 +116,11 @@ Your image would be "Nero mopping with a chain." Make it vivid: Nero frantically
 
 A PAO system is very personal since you need to be the one remembering all the connections. So, sharing my entire PAO system here would be useless. Instead, I'll share some excerpts here:
 
-| Number | Person | Action | Object |
-|----|----|----|----|
-| 36 | Michael Jordan | Mosh | Match |
-| 51 | Larry David | Light | Lid |
-| 82 | Thanos | Fanning | Phone |
+| Number | Person         | Action  | Object |
+| ------ | -------------- | ------- | ------ |
+| 36     | Michael Jordan | Mosh    | Match  |
+| 51     | Larry David    | Light   | Lid    |
+| 82     | Thanos         | Fanning | Phone  |
 
 Thus, the number `825136` becomes "Thanos lighting a match." But remember to make the image memorable! Maybe the match is so big, Thanos cannot pick it up and is using all infinity stones to create a fire strong enough to light the match.
 
@@ -126,27 +128,27 @@ Thus, the number `825136` becomes "Thanos lighting a match." But remember to mak
 
 There are many ways to create associations between the cards and memorable images. I'll just present the one I use.
 
-
 We can encode each card as a number from `00` to `99` [^2]. This let's us reuse the associations we've created in our PAO system for cards! First let's assign each suit a number.
 
 [^2]: [Encoding as numbers](https://forum.artofmemory.com/t/pao-card-system-vs-pao-0-99/80711/11).
 
-| Suit Number | Suit Name | Reasoning |
-|-------------|-----------|-----------|
-| 1 | Spades ♠ | Spade has one tip. |
-| 2 | Hearts ♥ | Heart has two halves. |
-| 3 | Clubs ♣ | Club has three leaves. |
-| 4 | Diamonds ♦ | Diamond has four corners. |
+| Suit Number | Suit Name  | Reasoning                 |
+| ----------- | ---------- | ------------------------- |
+| 1           | Spades ♠   | Spade has one tip.        |
+| 2           | Hearts ♥   | Heart has two halves.     |
+| 3           | Clubs ♣    | Club has three leaves.    |
+| 4           | Diamonds ♦ | Diamond has four corners. |
 
 We will also have to assign some numbers to the face cards Jack, Queen, King. We will give each one of them a
 
-| Face Number | Card | Reasoning |
-|-------------|-----------|-----------|
-| 6 | Jack  | Jack starts with J sound. |
-| 7 | King  | King starts with K sound. |
-| 8 | Queen | Cliche “female form” is hourglass 8. |
+| Face Number | Card  | Reasoning                            |
+| ----------- | ----- | ------------------------------------ |
+| 6           | Jack  | Jack starts with J sound.            |
+| 7           | King  | King starts with K sound.            |
+| 8           | Queen | Cliche “female form” is hourglass 8. |
 
 To convert a card to a number...
+
 - Read numbered cards (Ace to 10) as "Number of Suit".
   - `4♥` is read as "4 of hearts" and corresponds to the number 42.
   - `7♣` is read as "7 of clubs" and corresponds to the number 73.
@@ -168,7 +170,8 @@ Try decoding it into the 3 cards I showed at the beginning. Click on each card t
 
 ## Rediscovering imagination
 
-> All the time you’re doing this, you’re oiling the memory machine. You’re exercising creativity. You’re allowing your imagination to do what it’s best at doing: being highly inventive. You’re freeing up the mechanism by which memory works—association—and it’s starting to get faster. Not only are you exercising your memory so that it becomes more efficient in many ways, you’re also becoming smarter, because you’re gaining knowledge. Associations are starting to become automatic. Sometimes it’s so fast that you don’t even know how you’ve come up with one. -- Dominic O'Brien.
+> All the time you’re doing this, you’re oiling the memory machine. You’re exercising creativity. You’re allowing your imagination to do what it’s best at doing: being highly inventive. You’re freeing up the mechanism by which memory works—association—and it’s starting to get faster. Not only are you exercising your memory so that it becomes more efficient in many ways, you’re also becoming smarter, because you’re gaining knowledge. Associations are starting to become automatic. Sometimes it’s so fast that you don’t even know how you’ve come up with one.
+> -- Dominic O'Brien.
 
 If you become exhausted doing all of this, don't worry. You are exercising a muscle you haven't flexed since you were a child. You will get better with practice.
 
@@ -178,4 +181,3 @@ For less specialized memorization I recommend building these habits:
 - Get interested
 - Make connections
 - Practice and renew
-

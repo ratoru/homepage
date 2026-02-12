@@ -3,6 +3,7 @@ import fs from "node:fs";
 import { rehypeHeadingIds } from "@astrojs/markdown-remark";
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
+import rehypeMathml from "@daiji256/rehype-mathml";
 import tailwind from "@tailwindcss/vite";
 import { defineConfig } from "astro/config";
 import expressiveCode from "astro-expressive-code";
@@ -14,9 +15,13 @@ import rehypeExternalLinks from "rehype-external-links";
 import rehypeUnwrapImages from "rehype-unwrap-images";
 // Remark plugins
 import remarkDirective from "remark-directive"; /* Handle ::: directives as nodes */
+import remarkMath from "remark-math";
 import { remarkAdmonitions } from "./src/plugins/remark-admonitions"; /* Add admonitions */
+import { remarkDirectiveFigure } from "./src/plugins/remark-directive-figure";
 import { remarkGithubCard } from "./src/plugins/remark-github-card";
+import { remarkQuoteAttribution } from "./src/plugins/remark-quote-attribution";
 import { remarkReadingTime } from "./src/plugins/remark-reading-time";
+import remarkSidenotes from "./src/plugins/remark-sidenotes";
 import { expressiveCodeOptions, siteConfig } from "./src/site.config";
 
 // https://astro.build/config
@@ -75,8 +80,18 @@ export default defineConfig({
 				},
 			],
 			rehypeUnwrapImages,
+			rehypeMathml,
 		],
-		remarkPlugins: [remarkReadingTime, remarkDirective, remarkGithubCard, remarkAdmonitions],
+		remarkPlugins: [
+			remarkReadingTime,
+			remarkDirective,
+			remarkDirectiveFigure,
+			remarkGithubCard,
+			remarkAdmonitions,
+			remarkQuoteAttribution,
+			remarkSidenotes,
+			remarkMath,
+		],
 		remarkRehype: {
 			footnoteLabelProperties: {
 				className: [""],

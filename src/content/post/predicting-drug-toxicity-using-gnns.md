@@ -102,15 +102,15 @@ In this project, we will be specifically experimenting with the aggregation step
 
 GCNs operate by changing the messages between neighboring nodes' features, gathering these changed messages (e.g., by averaging), and then applying non-linear adjustments to this combined information to generate the unique vectors that represent the specific node you're focusing on.
 
-We use PyG's built-in `GCNConv` layer to achieve this message aggregation. Below, you can see how the embedding is formed, with the summation of all the information from incoming nodes followed by some activation [6].
+We use PyG's built-in `GCNConv` layer to achieve this message aggregation. Below, you can see how the embedding is formed, with the summation of all the information from incoming nodes followed by some activation [6]. $a + b = 5$
 
-{% math formula="h_v^{(l)} = \\sigma (\\sum_{u \\in N(v)} W^{(l)} \\frac{h_u^{(l-1)}}{|N(v)|})" /%}
+$$h_v^{(l)} = \sigma \left(\sum_{u \in N(v)} W^{(l)} \frac{h_u^{(l-1)}}{|N(v)|}\right)$$
 
 ### GraphSAGE
 
 Now, we will be trying out GraphSAGE. GraphSAGE works by creating node embeddings, gathering info from their nearby area through a bunch of sampling and combining steps. What's cool about GraphSAGE is that it lets you choose different ways to combine this info, which is handy for customizing the model for specific jobs. To make this work, we used PyG's built-in `SAGEConv` layer, which performs aggregation according to the math below [7].
 
-{% math formula="h_v^{(l)} = \\sigma \\left(W^{(l)} * CONCAT(h_v^{(l-1)}, AGG(\\{h_u^{(l-1)}, \\forall u \\in N(v) \\})) \\right)" /%}
+$$h_v^{(l)} = \sigma \left(W^{(l)} \cdot \text{CONCAT}(h_v^{(l-1)}, \text{AGG}(\{h_u^{(l-1)}, \forall u \in N(v) \})) \right)$$
 
 ### Graph Attention Networks (GAT)
 
@@ -118,7 +118,7 @@ Finally, we will be trying out a GAT. GATs use attention tricks, so the model ca
 
 We used PyG's built-in implementation `GATConv` to achieve the desired layer, which is founded of the following math [8].
 
-{% math formula="h_v^{(l)} = \\sigma\\left(\\sum_{u \\in N(v)} \\alpha_{vu} W^{(l)} h_u^{(l-1)}\\right)" /%}
+$$h_v^{(l)} = \sigma\left(\sum_{u \in N(v)} \alpha_{vu} W^{(l)} h_u^{(l-1)}\right)$$
 
 ## Our Implementation
 
@@ -350,7 +350,7 @@ Luckily, we already have everything we need to batch our graphs in our dataset w
 
 **Normalization** during training has been shown to lead to faster convergence and more stable training. Specifically, we are going to use BatchNorm and GraphNorm. According to the research paper GraphNorm achieves better performance on graph classification benchmarks than BatchNorm and LayerNorm [1]. The normalization applied to each xi is as follows. Note that α symbolizes parameters that learn how much information to keep in the mean.
 
-{% math formula="\\mathbf{x}^{\\prime}_i = \\frac{\\mathbf{x} - \\alpha \\odot \\textrm{E}[\\mathbf{x}]} {\\sqrt{\\textrm{Var}[\\mathbf{x} - \\alpha \\odot \\textrm{E}[\\mathbf{x}]] + \\epsilon}} \\odot \\gamma + \\beta" /%}
+$$\mathbf{x}^{\prime}_i = \frac{\mathbf{x} - \alpha \odot \textrm{E}[\mathbf{x}]} {\sqrt{\textrm{Var}[\mathbf{x} - \alpha \odot \textrm{E}[\mathbf{x}]] + \epsilon}} \odot \gamma + \beta$$
 
 ## Results
 

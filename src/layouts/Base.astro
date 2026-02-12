@@ -8,7 +8,6 @@ import { siteConfig } from "@/site.config";
 import type { SiteMeta } from "@/types";
 
 // Font setup
-import "@fontsource-variable/source-sans-3";
 import "@fontsource-variable/alegreya";
 
 interface Props {
@@ -23,14 +22,18 @@ const {
 <html class="scroll-smooth" lang={siteConfig.lang}>
 	<head>
 		<BaseHead articleDate={articleDate} description={description} ogImage={ogImage} title={title} />
+		<slot name="head" />
 	</head>
 	<body
-		class="bg-global-bg text-global-text mx-auto flex min-h-screen max-w-3xl flex-col px-4 pt-16 font-normal antialiased sm:px-8"
+		class="bg-global-bg text-global-text grid min-h-screen w-full grid-cols-[1fr_minmax(0,65ch)_1fr] grid-rows-[auto_1fr_auto] px-4 pt-16 font-normal antialiased *:col-start-2 sm:px-8 lg:gap-x-8"
 	>
 		<ThemeProvider />
 		<SkipLink />
 		<Header />
-		<main id="main">
+		<main
+			id="main"
+			class="col-span-full col-start-1! grid grid-cols-subgrid content-start *:col-start-2"
+		>
 			<slot />
 		</main>
 		<Footer />

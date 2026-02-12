@@ -2,7 +2,9 @@
 import { type CollectionEntry, render } from "astro:content";
 
 import Masthead from "@/components/blog/Masthead.astro";
-import TOC from "@/components/blog/TOC.astro";
+import RelatedPosts from "@/components/blog/RelatedPosts.astro";
+import { getAllPosts } from "@/data/post";
+import { siteConfig, socialLinks } from "@/site.config";
 
 import BaseLayout from "./Base.astro";
 
@@ -14,8 +16,43 @@ const { post } = Astro.props;
 const { ogImage, title, description, updatedDate, publishDate } = post.data;
 const socialImage = ogImage ?? `/og-image/${post.id}.png`;
 const articleDate = updatedDate?.toISOString() ?? publishDate.toISOString();
-const { headings, remarkPluginFrontmatter } = await render(post);
+const { remarkPluginFrontmatter } = await render(post);
 const readingTime: string = remarkPluginFrontmatter.readingTime;
+
+const allPosts = await getAllPosts();
+
+// Construct full URLs for structured data
+const canonicalURL = new URL(`/blog/${post.id}`, siteConfig.url).href;
+const imageURL = new URL(socialImage, siteConfig.url).href;
+
+// JSON-LD structured data for blog posts
+const structuredData = {
+	"@context": "https://schema.org",
+	"@type": "BlogPosting",
+	headline: title,
+	description: description,
+	image: imageURL,
+	url: canonicalURL,
+	datePublished: publishDate.toISOString(),
+	...(updatedDate && { dateModified: updatedDate.toISOString() }),
+	inLanguage: siteConfig.lang,
+	...(post.data.tags && { keywords: post.data.tags.join(", ") }),
+	author: {
+		"@type": "Person",
+		name: siteConfig.author,
+		url: siteConfig.url,
+		sameAs: socialLinks.map((link) => link.link),
+	},
+	publisher: {
+		"@type": "Person",
+		name: siteConfig.author,
+		url: siteConfig.url,
+	},
+	mainEntityOfPage: {
+		"@type": "WebPage",
+		"@id": canonicalURL,
+	},
+};
 ---
 
 <BaseLayout
@@ -26,17 +63,23 @@ const readingTime: string = remarkPluginFrontmatter.readingTime;
 		title,
 	}}
 >
-	<article class="grow break-words" data-pagefind-body>
-		<div id="blog-hero" class="mb-12"><Masthead content={post} readingTime={readingTime} /></div>
-		<div class="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between">
-			{!!headings.length && <TOC headings={headings} />}
-			<div
-				class="prose prose-headings:font-semibold prose-headings:text-accent-2 prose-headings:before:absolute prose-headings:before:-ms-4 prose-headings:before:text-gray-600 prose-headings:hover:before:text-accent sm:prose-headings:before:content-['#'] sm:prose-th:before:content-none"
-			>
-				<slot />
-			</div>
+	<script
+		slot="head"
+		is:inline
+		type="application/ld+json"
+		set:html={JSON.stringify(structuredData)}
+	/>
+	<article class="wrap-break-word" data-pagefind-body>
+		<div id="blog-hero" class="mb-12">
+			<Masthead content={post} readingTime={readingTime} />
+		</div>
+		<div
+			class="prose prose-sidenotes prose-headings:font-semibold prose-headings:text-accent-2 prose-headings:before:absolute prose-headings:before:-ms-4 prose-headings:before:text-gray-600 prose-headings:hover:before:text-accent sm:prose-headings:before:content-['#'] sm:prose-th:before:content-none"
+		>
+			<slot />
 		</div>
 	</article>
+	<RelatedPosts currentPost={post} allPosts={allPosts} />
 	<button
 		class="hover:border-link fixed end-4 bottom-8 z-90 flex h-10 w-10 translate-y-28 cursor-pointer items-center justify-center rounded-full border-2 border-transparent bg-zinc-200 text-3xl opacity-0 transition-all transition-discrete duration-300 data-[show=true]:translate-y-0 data-[show=true]:opacity-100 sm:end-8 sm:h-12 sm:w-12 dark:bg-zinc-700"
 		data-show="false"
