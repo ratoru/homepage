@@ -110,4 +110,4 @@ $$
 
 ## Credit
 
-Up to date with [Astro Theme Cactus](https://github.com/chrismwilliams/astro-theme-cactus/releases) v6.10.0.
+Up to date with [Astro Theme Cactus](https://github.com/chrismwilliams/astro-theme-cactus/releases) v6.11.0.
