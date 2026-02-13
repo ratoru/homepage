@@ -46,7 +46,7 @@ One of the first decisions you will have to make is wether to buy pre-soldered o
 
 Buying a pre-soldered keyboard can save you a lot of time and soldering mistakes. Of course, you will have to pay for the service in return.
 
-A popular pre-built keyboard is the [Moonlander](https://www.zsa.io/moonlander/). If you buy a keyboard like this, you will also not have to compile your own firmware.
+A popular pre-built keyboard is the [Moonlander](https://www.zsa.io/moonlander). If you buy a keyboard like this, you will also not have to compile your own firmware.
 
 Nowadays, a lot of vendors also offer soldering services for the DIY keyboards. I think this is an appealing option that you should consider! These keyboards tend to still be cheaper than the `Moonlander`, but you save yourself a lot of time and a fixed costs investment into soldering equipment.
 
@@ -54,7 +54,7 @@ Nowadays, a lot of vendors also offer soldering services for the DIY keyboards. 
 
 There are many open source, DIY keyboard designs. [Awesome Split Keyboards](https://github.com/diimdeep/awesome-split-keyboards) on GitHub has a comprehensive list of keyboards and collection of useful links.
 
-Once you have picked the keyboard you want to build, you will need a range of [components](https://docs.splitkb.com/hc/en-us/articles/6269948925084-Aurora-Build-Guide-2a-What-s-what-) and soldering equipment. I would expect the total cost to land somewhere between $150 and $300 dollars. Some of the biggest price factors will be:
+Once you have picked the keyboard you want to build, you will need a range of [components](https://docs.splitkb.com/product-guides/aurora-series/build-guide/what-is-what) and soldering equipment. I would expect the total cost to land somewhere between $150 and $300 dollars. Some of the biggest price factors will be:
 
 - Do you own soldering equipment? The equipment might cost you around $60 dollars. At that point, you should at least consider pre-soldered keyboards.
 - Do you want "designer" key caps? These can cost between $50-$100.
@@ -82,7 +82,7 @@ The keyboard in the picture is the [Kyria](https://github.com/splitkb/kyria). It
 
 Other popular keyboards are the ...
 
-- [Iris](https://keeb.io/products/iris-keyboard-split-ergonomic-keyboard)
+- [Iris](https://keeb.io/products/iris-se-kit)
 - [Corne](https://github.com/foostan/crkbd/tree/main)
 - [Lily58](https://github.com/kata0510/Lily58)
 
@@ -106,7 +106,7 @@ Beware of the sound when buying. A lot of people in the community enjoy having l
 
 ### Rotary Encoders
 
-Some of the custom keyboards support rotary encoders. They are small knobs that you can turn or press to scroll, regulate volume, etc.. Read [this guide](https://docs.splitkb.com/hc/en-us/articles/360010513760-How-can-I-use-a-rotary-encoder-) to see what they are useful for and whether you would like to buy one.
+Some of the custom keyboards support rotary encoders. They are small knobs that you can turn or press to scroll, regulate volume, etc.. Read [this guide](https://docs.splitkb.com/frequently-asked-questions/about-split-keyboards/functionality/encoders) to see what they are useful for and whether you would like to buy one.
 
 ## Keycaps
 

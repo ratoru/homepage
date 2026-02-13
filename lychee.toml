@@ -1,0 +1,14 @@
+exclude = [
+  # LinkedIn actively blocks bots and returns a fake '999' status code
+  "https://linkedin.com/.*",
+  "https://www.linkedin.com/.*",
+
+  # Other trouble makers
+  "https://medium.com/.*",
+  "https://thingiverse.com/.*",
+  "https://www.thingiverse.com/.*",
+  "https://www.raycast.com/.*",
+
+  # Ignore my own 404 page
+  "https://ratoru.com/404.*"
+]

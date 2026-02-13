@@ -14,7 +14,7 @@ Custom layouts enable you to create keys that select the entire word under your 
 At the end, you will have all the tools you need to customize your own layout.
 
 :::note
-This is part 2/3 of my cutom keyboard layout series. I recommend you read [part 1](https://ratoru.com/blog/layout-base) before continuing.
+This is part 2/3 of my cutom keyboard layout series. I recommend you read [part 1](https://ratoru.com/blog/choose-the-right-base-layout) before continuing.
 :::
 
 ## Example layouts
@@ -40,7 +40,7 @@ You can add many additional layers to your keyboard. These layers cover numbers,
 
 Once again, depending on your use case you can combine or separate these layers further as needed. The navigation layer is especially popular. You should read this excellent blog post introducing the [Extend Layer](https://dreymar.colemak.org/layers-extend.html). The numbers layer mainly comes down to preference.
 
-As a programmer the symbols layer is crucial to me. While there are many heavily optimized keyboard layouts for letters, it is much harder to find a good one for symbols. [Designing a Symbol Layer](https://getreuer.info/posts/keyboards/symbol-layer/index.html) by Getreuer is the best writeup on the topic I could find. Additionally, you should take a look at the [character frequencies of programming languages](http://xahlee.info/comp/computer_language_char_distribution.html) to inform where you put your symbols. The [Arensito layout](http://www.pvv.org/~hakonhal/main.cgi/keyboard) also has a good programming layout.
+As a programmer the symbols layer is crucial to me. While there are many heavily optimized keyboard layouts for letters, it is much harder to find a good one for symbols. [Designing a Symbol Layer](https://getreuer.info/posts/keyboards/symbol-layer/index.html) by Getreuer is the best writeup on the topic I could find. Additionally, you should take a look at the [character frequencies of programming languages](http://xahlee.info/comp/computer_language_char_distribution.html) to inform where you put your symbols. The [Arensito layout](https://www.pvv.ntnu.no/~hakonhal/main.cgi/keyboard) also has a good programming layout.
 
 Below are the layers I came up with.
 
@@ -50,7 +50,7 @@ Below are the layers I came up with.
 
 ## Extra Functionality
 
-It is time to get familiar with some of the basic functionality that `QMK Firmware` provides. We use [QMK](https://qmk.fm/) to program our mechanical keyboards. Thomas Baart has a great series that goes over the [basics of QMK](https://thomasbaart.nl/category/mechanical-keyboards/firmware/qmk/qmk-basics/). Skim through it to get a rough understanding of what we are about to do. Don't worry about the actual code, we will do that in Part 3.
+It is time to get familiar with some of the basic functionality that `QMK Firmware` provides. We use [QMK](https://qmk.fm/) to program our mechanical keyboards. Thomas Baart has a great series that goes over the [basics of QMK](https://docs.qmk.fm/newbs_learn_more_resources). Skim through it to get a rough understanding of what we are about to do. Don't worry about the actual code, we will do that in Part 3.
 
 One of the most commonly used features is called home row mods. QMK's `mod-taps` allows us to place the modifiers `⇧ Shift`, `⎈ Control`, `⎇ Alt`, and `◆ GUI` on the home row. Configuring home row mods to prevent accidental triggers is known to be tricky. Before deciding whether home row mods are the right thing for you, read through Precondition's [home row mods guide](https://precondition.github.io/home-row-mods), which is the source of truth regarding this topic. Additionally, check out [Achordion](https://getreuer.info/posts/keyboards/achordion/index.html), which aims to make home row mods more consistent.
 

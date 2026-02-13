@@ -48,7 +48,7 @@ Therapeutics Data Commons provides many different datasets on toxic drugs that a
 
 1. Import the dataset. We use `tdc`, a library from Therapeutics Data Commons, to import the datasets we are going to use throughout this colab.
 2. Split data into train, and test set. tdc provides us with a convenient method for splitting our data into a training, validation, and test set called `get_split()`. For our purposes, we do not need a seperate validation set, so we will combine it with the training set.
-3. SMILE to graph conversion. We are going to use Open Graph Benchmarks's [smiles2graph implementation](https://medium.com/r/?url=https%3A%2F%2Fgithub.com%2Fsnap-stanford%2Fogb%2Fblob%2Fmaster%2Fogb%2Futils%2Fmol.py). It uses `rdkit`'s `MolFromSmiles` function to convert the SMILE's code into a graph. [4]
+3. SMILE to graph conversion. We are going to use Open Graph Benchmarks's [smiles2graph implementation](https://github.com/snap-stanford/ogb/blob/master/ogb/utils/mol.py). It uses `rdkit`'s `MolFromSmiles` function to convert the SMILE's code into a graph. [4]
 4. Convert to Data format. From there we just need to convert the output into PyG's Data and DataLoader format. Implementation can be found in `drug2data` and `create_data_loaders`.
 5. Display information. We should always take a look at our dataset before using it. This will be very useful later on.
 

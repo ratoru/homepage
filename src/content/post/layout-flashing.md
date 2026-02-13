@@ -44,7 +44,7 @@ This compilaton method lets you avoid installing `qmk` on your local machine. Yo
 Remember that you can always ask for help in your keyboard's Discord.
 :::
 
-This depends on the type of controller you bought. If your controller uses `uf2` files, you can avoid `QMK Toolbox` or the `QMK CLI` all together. Follow [these steps](https://docs.splitkb.com/hc/en-us/articles/6330981035676-Aurora-Build-Guide-20-Flashing-Firmware) for the flashing process.
+This depends on the type of controller you bought. If your controller uses `uf2` files, you can avoid `QMK Toolbox` or the `QMK CLI` all together. Follow [these steps](https://docs.splitkb.com/product-guides/aurora-series/build-guide/flashing-firmware) for the flashing process.
 
 If you have to use `QMK Toolbox` or the command line to flash your keyboard, follow the [official docs](https://docs.qmk.fm/#/newbs_flashing).
 
