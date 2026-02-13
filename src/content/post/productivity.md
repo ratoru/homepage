@@ -30,12 +30,6 @@ Controlling tabs: `cmd + t` to open a new tab, `cmd + w` to close a tab, `contro
 
 <a name="learn-more" />
 
-## Learning More With CheatSheet
-
-Technichally, you can look up all the short cuts by scrolling through the menu bar of each app.
-To help you discover new short cuts in a more user friendly way, download [CheatSheet](https://www.mediaatelier.com/CheatSheet/).
-This little app allows you to pull up a list of all available commands by holding down `cmd`.
-
 ## [Raycast](https://www.raycast.com)
 
 Now, this is what you're really here for. Raycast is a supercharged spotlight alternative. It's quite similar to [Alfred](https://www.alfredapp.com/), but provides slighlty more functionality

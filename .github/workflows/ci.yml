@@ -40,3 +40,10 @@ jobs:
         # ensure build works
       - name: Run Astro build
         run: pnpm build
+
+        # ensure no broken links in the build
+      - name: Run Link Checker (Lychee)
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: '--root-dir ${{ github.workspace }}/dist --exclude-all-private dist'
+          fail: true

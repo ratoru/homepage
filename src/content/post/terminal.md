@@ -28,20 +28,19 @@ Fish is also its own scripting language that deviates slightly from the bash sta
 
 Some tips for installing fish: If you install fish by running `brew install fish`, fish might be installed into `/opt/homebrew/bin` instead of the location `/usr/local/bin/fish` often referenced in tutorials. In this case remember to use the correct path when adding to `/etc/shells` and running `chsh -s`. Once fish is your default shell, your `$PATH` environment variable will most likely be almost empty. Add back all the important paths with [fish_add_path](https://fishshell.com/docs/current/cmds/fish_add_path.html#cmd-fish-add-path). You should be all set after!
 
-Want to learn more about fish? Check out this [list](https://project-awesome.org/fisherman/awesome-fish-shell) for more info.
+Want to learn more about fish? Check out this [list](https://github.com/jorgebucaran/awsm.fish) for more info.
 
 Want to become better at using the command-line? Read [the art of command-line](https://github.com/jlevy/the-art-of-command-line).
 
 ### Command-line Tools 🔨
 
+- [ripgrep](https://github.com/BurntSushi/ripgrep) - fast `grep` command
+- [z](https://github.com/jethrokuan/z#z) - fish version of `z`. Used to jump around. Can be installed with fish's plugin manager [fisher](https://github.com/jorgebucaran/fisher).
+- [eza](https://github.com/eza-community/eza) - modern `ls` replacement
 - [fzf](https://github.com/junegunn/fzf#-) - command-line fuzzy finder. Just hit ctrl-r and start typing snippets of the command you'd like to use. Any previously used commands that look similar will pop up. Most useful utility on this list.
 - [bat](https://github.com/sharkdp/bat) - a prettier version of `cat`
 - [fd](https://github.com/sharkdp/fd#fd) - a simple and fast alternative to `find`
 - [tldr](https://github.com/tldr-pages/tldr/#) - simplified man pages
-- [z](https://github.com/jethrokuan/z#z) - fish version of `z`. Used to jump around. Can be installed with fish's plugin manager [fisher](https://github.com/jorgebucaran/fisher).
-
-- [ripgrep](https://github.com/BurntSushi/ripgrep) - fast `grep` command
-- [exa](https://the.exa.website/) - modern `ls` replacement
 
 ### [iTerm2](https://iterm2.com/)
 
@@ -57,7 +56,7 @@ Starship is a fast, customizable, minimalistic prompt that can be used with any 
 
 A nice theme brings it all together. To install these download the `.itermcolors` file and double-click it. Next, open iTerm and navigate to Preferences, Profiles, Colors. Then click on Color Presets and select the newly installed theme. Here are my favorite themes.
 
-- [Nord](https://github.com/arcticicestudio/nord-iterm2) - Beautiful, subtle color scheme.
+- [Nord](https://github.com/nordtheme/iterm2) - Beautiful, subtle color scheme.
 
 ![iterm-color](../../assets/blog/terminal/iterm-color.webp)
 
