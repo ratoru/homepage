@@ -27,13 +27,13 @@ Here are some of my personal opinions regarding custom keyboards. I hope you can
 
 Make sure that the thumb cluster is actually comfortable for you. I have a basically unused Corne because I realized too late that I don't like the thumb keys on it. For me the keys need to be further out like they are on the Kyria.
 
-I find that I can make good use of 3 keys on each thumb, and this has become my preference. I use one as a key and two as layer toggles per hand. I can fit all the keys I could possibly need on the base layer and 4 additonal layers.
+I find that I can make good use of 3 keys on each thumb, and this has become my preference. I use one as a key and two as layer toggles per hand. I can fit all the keys I could possibly need on the base layer and 4 additional layers.
 
-Lastly, I only noticed after many layout iteratons that you can assign different keys to the thumbs on each layer. It has been quite useful. Completely obvious once you see it to be honest!
+Lastly, I only noticed after many layout iterations that you can assign different keys to the thumbs on each layer. It has been quite useful. Completely obvious once you see it to be honest!
 
 ## Other thoughts
 
-- Having too many keys is not a real problem apart from asthetics. There is a big trend towards building 34-key keyboards. In retrospect, it is always easier to not use keys that are on your board instead of not having them. If I were to buy my first board, I would buy one with more than 34 keys.
+- Having too many keys is not a real problem apart from aesthetics. There is a big trend towards building 34-key keyboards. In retrospect, it is always easier to not use keys that are on your board instead of not having them. If I were to buy my first board, I would buy one with more than 34 keys.
 - I do not remap any app specific keybindings to my new base layer. In `neovim` I try to use larger motions to navigate the text, and if I really need `hjkl`, I switch to my naviation layer.
 - Developing your own keymap with QMK has become significantly easier since the introduction of the `qmk-userspace`. Make sure to periodically update your `qmk_firmware` folder to get the latest features.
 

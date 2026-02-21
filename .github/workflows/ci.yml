@@ -47,3 +47,6 @@ jobs:
         with:
           args: '--root-dir ${{ github.workspace }}/dist --exclude-all-private dist'
           fail: true
+
+      - name: Check typos
+        uses: crate-ci/typos@v1

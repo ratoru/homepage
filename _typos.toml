@@ -1,0 +1,2 @@
+[files]
+extend-exclude = ["public/rss/styles.xsl", "biome.json"]

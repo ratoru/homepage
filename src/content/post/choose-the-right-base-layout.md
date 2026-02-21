@@ -78,7 +78,7 @@ Modern layout analyzers use a few key statistics to analyze the effectiveness of
 
 Designing an ideal layout basically comes down to optimizing these statistics for a given text. At some point the layout designer will have to start making tradeoffs, at which point it is down to personal preference. For English layouts a common trend has emerged among new layouts. They have a vowel block on the right hand for high alternation. You will see this if you look at layouts like `Gallium` and `Graphite` [^3].
 
-[^3]: The adventerous are also exploring keymaps with _magic keys_ like `Magic Sturdy`. A magic key outputs a different key depending on the previous key. This lets you write bad bigrams or trigrams in a layout through the magic key, thereby avoiding the problem.
+[^3]: The adventurous are also exploring keymaps with _magic keys_ like `Magic Sturdy`. A magic key outputs a different key depending on the previous key. This lets you write bad bigrams or trigrams in a layout through the magic key, thereby avoiding the problem.
 
 This is the Gallium layout and its statistics breakdown.
 
@@ -142,4 +142,4 @@ I recommend at least trying a different layout, although you won't get any good 
 
 ## Next steps
 
-Now it is time to customize your layout for your specific keyboard. Aditionally, you need to add symbols, numbers, and all the other things that don't fit on your keybaord. Along the way you will be able to create keys that select entire words or type `../` with one press. I show you how to do it in [part 2 of this guide](https://ratoru.com/blog/layout-customizing).
+Now it is time to customize your layout for your specific keyboard. Additionally, you need to add symbols, numbers, and all the other things that don't fit on your keyboard. Along the way you will be able to create keys that select entire words or type `../` with one press. I show you how to do it in [part 2 of this guide](https://ratoru.com/blog/layout-customizing).
