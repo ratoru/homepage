@@ -27,7 +27,7 @@ I want all my lighting logic to be stored in the RAM of the microcontroller and 
 In case you have old RGB underglow settings, make sure you wipe the EEPROM using a [designated keycode](https://docs.qmk.fm/#/keycodes?id=quantum-keycodes) or [Bootmagic Lite](https://docs.qmk.fm/#/feature_bootmagic?id=bootmagic-lite).
 :::
 
-This guide is for RGB lighting (= underglow). This feature is different (and requires seperate setup) from RGB Matrix (= per-key lighting). You can see my [full keymap on GitHub](https://github.com/ratoru/qmk_keymap).
+This guide is for RGB lighting (= underglow). This feature is different (and requires separate setup) from RGB Matrix (= per-key lighting). You can see my [full keymap on GitHub](https://github.com/ratoru/qmk_keymap).
 
 Start by adding the following to your `rules.mk`. The last two lines were necessary for my keymap to work properly, but depend on your exact setup.
 

@@ -12,7 +12,7 @@ I will show you how to put together all the files you need to get your custom la
 Your hands will thank you for the beautiful keyboard layout you created for them.
 
 :::note
-This is part 3/3 of my cutom keyboard layout series. I recommend you read [part 2](https://ratoru.com/blog/layout-customizing) before continuing.
+This is part 3/3 of my custom keyboard layout series. I recommend you read [part 2](https://ratoru.com/blog/layout-customizing) before continuing.
 :::
 
 ## Create the necessary files
@@ -30,7 +30,7 @@ Lastly, I recommend you decrease the size of your firmware by following [this gu
 
 ## Compile using GitHub Actions
 
-This compilaton method lets you avoid installing `qmk` on your local machine. You can see it at work in my [qmk repo](https://github.com/ratoru/qmk_userspace/tree/main). The QMK docs cover setting up the repository, well. Unfortunately, there is barely any information on how to customize it properly. If you get stuck, I recommend asking in the QMK Discord. In July 2023 you had to do the following steps to get custom macros to work with GitHub Actions:
+This compilation method lets you avoid installing `qmk` on your local machine. You can see it at work in my [qmk repo](https://github.com/ratoru/qmk_userspace/tree/main). The QMK docs cover setting up the repository, well. Unfortunately, there is barely any information on how to customize it properly. If you get stuck, I recommend asking in the QMK Discord. In July 2023 you had to do the following steps to get custom macros to work with GitHub Actions:
 
 - Place `process_record_user` in `source.c`.
 - Add `SRC += source.c` to `rules.mk`.

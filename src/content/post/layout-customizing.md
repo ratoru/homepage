@@ -14,7 +14,7 @@ Custom layouts enable you to create keys that select the entire word under your 
 At the end, you will have all the tools you need to customize your own layout.
 
 :::note
-This is part 2/3 of my cutom keyboard layout series. I recommend you read [part 1](https://ratoru.com/blog/choose-the-right-base-layout) before continuing.
+This is part 2/3 of my custom keyboard layout series. I recommend you read [part 1](https://ratoru.com/blog/choose-the-right-base-layout) before continuing.
 :::
 
 ## Example layouts
@@ -63,7 +63,7 @@ One of the most commonly used features is called home row mods. QMK's `mod-taps`
 
 Aside from official features you can also write custom functions that execute when a key is pressed. Getreuer once again has a great [guide covering macros](https://getreuer.info/posts/keyboards/macros/index.html). Here are my favorite ones.
 
-- [Word Selection](https://getreuer.info/posts/keyboards/select-word/index.html). Select entire current word. `viw` in Vim.
+- [Word Selection](https://getreuer.info/posts/keyboards/select-word/index.html). Select entire current word. `view` in Vim.
 - [Layer Lock Key](https://getreuer.info/posts/keyboards/layer-lock/index.html). Keeps you in the current layer until disabled.
 - [TD_DOT](https://github.com/precondition/dactyl-manuform-keymap#keymap-tricks). Double tap the dot key to produce `. [One-Shot Shift]`
 - Key that produces `../`.

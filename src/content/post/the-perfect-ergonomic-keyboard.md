@@ -40,7 +40,7 @@ To begin you will need to get an overview of [keyboard terminology](https://blog
 
 The regular mechanical keyboard community places a lot of emphasis on sound, look, and feel. This is less important to me. You can always upgrade your keyboard with the latest and greatest. Comfort is dictated by the physical layout of the keyboard. Changing this layout will require an expensive new purchase, though. To avoid spending money on a keyboard that does not fit your hands, you can use [this website](https://jhelvy.shinyapps.io/splitkbcompare/) to print out the layout of each keyboard. I highly recommend putting your fingers on the paper to figure out whether pressing the keys is comfortable. Take special care to analyze the thumb cluster. Personally, I really dislike the tucked in thumb clusters of keyboards like the `Corne`.
 
-One of the first decisions you will have to make is wether to buy pre-soldered or DIY. Let's take a look at the options.
+One of the first decisions you will have to make is whether to buy pre-soldered or DIY. Let's take a look at the options.
 
 ### Pre-soldered Keyboards
 
@@ -59,7 +59,7 @@ Once you have picked the keyboard you want to build, you will need a range of [c
 - Do you own soldering equipment? The equipment might cost you around $60 dollars. At that point, you should at least consider pre-soldered keyboards.
 - Do you want "designer" key caps? These can cost between $50-$100.
 
-I went for a relatively basic setup and payed $200. This is much cheaper than prebuilt ergonomic keyboards like the `Moonlander`.
+I went for a relatively basic setup and paid $200. This is much cheaper than prebuilt ergonomic keyboards like the `Moonlander`.
 
 Soldering took a novice like me roughly 10 hours! If soldering is not fun for you, it's another reason to consider buying pre-soldered.
 
