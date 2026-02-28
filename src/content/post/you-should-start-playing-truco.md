@@ -57,7 +57,7 @@ with the official rules, you can always reference that page.
 | Basic Terminology | Definition                                                                                              |
 | ----------------- | ------------------------------------------------------------------------------------------------------- |
 | Trick             | One round of each player placing down 1 card each.                                                      |
-| Suite             | The color of a given card.                                                                              |
+| Suit             | The color of a given card.                                                                              |
 | Trump Card        | A special card that has a higher value than other cards.                                                |
 | Round             | All the tricks and betting that happens between each shuffle.                                           |
 | Game              | All the rounds that are played until a team wins.                                                       |
@@ -78,12 +78,12 @@ Truco is played with **2, 4, or 6 players**[^rec]. The teams are predetermined a
 
 1. The first team to 30 points wins.
 2. Betting can occur throughout the round to increase the point value of the round.
-3. After each round, the points are added to the teams's totals, the dealer rotates, and new cards are dealt.
+3. After each round, the points are added to the teams' totals, the dealer rotates, and new cards are dealt.
 4. A round (ignoring betting) consists of...
    1. Each player gets dealt 3 cards.
    2. 3 tricks are played one after another.
    3. The person to the right of the dealer (`el mano`) starts.
-   4. Counter-clockwise and one after another each player plays one card face up[^3]. You can play whatever card you want.
+   4. Counter-clockwise and one after another, each player plays one card face up[^3]. You can play whatever card you want.
    5. The winner starts the next trick. If it was a tie, the same person starts.
 
 [^3]: Traditionally, cards are placed face up directly in front of you. This lets everyone see all previously played cards. I prefer placing all cards on top of each other in the middle, and giving the winner the trick face down. This rewards card counting.
@@ -152,7 +152,7 @@ You calculate your score as follows:
 
 - Each card is worth its number, except for 10, 11, and 12 which are worth 0.
 - Pick two cards in your hand and add them together. That will be your score.
-- If you have two cards of the same suite, you can add 20 to your score.
+- If you have two cards of the same suit, you can add 20 to your score.
 
 Thus, the highest possible Envido is a suited 6 and 7, which will score as $6 + 7 + 20 = 33$.
 A suited 11 and 5 will score as $0 + 5 + 20 = 25$[^score].
@@ -197,7 +197,7 @@ worth 2 points.
 
 If an `Envido` bet gets accepted, the last person to raise starts by calling out
 their number. Then, counter-clockwise players can either say their number or
-`son bueanas`. `Son bueanas` admits that you cannot beat the current highest
+`son buenas`. `Son buenas` admits that you cannot beat the current highest
 Envido. Once everyone has responded, the winner is clear and the trick playing
 continues. Ties go to the player closest to the `mano`.
 
@@ -252,7 +252,7 @@ If you called `Envido`, you can be asked to prove your `Envido` score even if yo
 ### Flor betting
 
 I **do not** play with Flor. It's a complicated form of betting when you have 3
-cards of the same suite. Unlike Envido, Flor must be called when you have it and
+cards of the same suit. Unlike Envido, Flor must be called when you have it and
 must not be called otherwise. This makes it a purely luck based mechanic, which
 I decided to remove from the game. Playing without flor is a variant called `sin
 flor` and not super uncommon.
@@ -297,7 +297,7 @@ can catch the other team's signals to give you an advantage.
 | 2                         | Blow a kiss                     |
 | 1                         | Open your mouth                 |
 | Bad cards                 | Close both eyes                 |
-| Good `Envido`             | Tilt you head                   |
+| Good `Envido`             | Tilt your head                   |
 
 If both teams agree to it, each team can instead create their own set of
 signals. Now, the game becomes a little bit more about code cracking than
@@ -323,7 +323,7 @@ Y       X
 - Signals are exchanged. Specifically, _X_ signals to _Y_ to call `Envido` by tilting the head.
 - _A_ plays the 6 of Coins.
 - _X_ plays the 7 of Cups.
-- _B_ playes the 3 of Cups and calls `Truco`.
+- _B_ plays the 3 of Cups and calls `Truco`.
 - _Y_ responds by calling `Envido`. (_Y_ has not played a card yet, and `Envido` takes precedence.)
 - _A_ declines by responding `No Quiero`. (1 point to team _XY_)
 - Now, _XY_ needs to respond to the `Truco` bet. They accept with `Quiero` and _Y_ plays the 3 of Swords.
