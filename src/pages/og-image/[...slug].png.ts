@@ -4,7 +4,7 @@ import satori, { type SatoriOptions } from "satori";
 import FiraCodeBold from "@/assets/fira-code-700.ttf";
 import FiraCode from "@/assets/fira-code-regular.ttf";
 import { getAllPosts } from "@/data/post";
-import { siteConfig } from "@/site.config";
+import { ogMarkup } from "./_ogMarkup";
 
 const ogOptions: SatoriOptions = {
 	// debug: true,
@@ -35,131 +35,7 @@ export async function GET(context: APIContext) {
 	//   month: "long",
 	//   weekday: "long",
 	// });
-	const svg = await satori(
-		{
-			type: "div",
-			props: {
-				style: {
-					background: "#fefbfb",
-					width: "100%",
-					height: "100%",
-					display: "flex",
-					alignItems: "center",
-					justifyContent: "center",
-				},
-				children: [
-					{
-						type: "div",
-						props: {
-							style: {
-								position: "absolute",
-								top: "-1px",
-								right: "-1px",
-								border: "4px solid #000",
-								background: "#ecebeb",
-								opacity: "0.9",
-								borderRadius: "4px",
-								display: "flex",
-								justifyContent: "center",
-								margin: "2.5rem",
-								width: "88%",
-								height: "80%",
-							},
-						},
-					},
-					{
-						type: "div",
-						props: {
-							style: {
-								border: "4px solid #000",
-								background: "#fefbfb",
-								borderRadius: "4px",
-								display: "flex",
-								justifyContent: "center",
-								margin: "2rem",
-								width: "88%",
-								height: "80%",
-							},
-							children: {
-								type: "div",
-								props: {
-									style: {
-										display: "flex",
-										flexDirection: "column",
-										justifyContent: "space-between",
-										margin: "20px",
-										width: "90%",
-										height: "90%",
-									},
-									children: [
-										{
-											type: "p",
-											props: {
-												style: {
-													fontSize: 72,
-													fontWeight: "bold",
-													maxHeight: "84%",
-													overflow: "hidden",
-												},
-												children: title,
-											},
-										},
-										{
-											type: "div",
-											props: {
-												style: {
-													display: "flex",
-													justifyContent: "space-between",
-													width: "100%",
-													marginBottom: "8px",
-													fontSize: 28,
-												},
-												children: [
-													{
-														type: "span",
-														props: {
-															children: [
-																"by ",
-																{
-																	type: "span",
-																	props: {
-																		style: { color: "transparent" },
-																		children: '"',
-																	},
-																},
-																{
-																	type: "span",
-																	props: {
-																		style: {
-																			overflow: "hidden",
-																			fontWeight: "bold",
-																		},
-																		children: siteConfig.author,
-																	},
-																},
-															],
-														},
-													},
-													{
-														type: "span",
-														props: {
-															style: { overflow: "hidden", fontWeight: "bold" },
-															children: siteConfig.title,
-														},
-													},
-												],
-											},
-										},
-									],
-								},
-							},
-						},
-					},
-				],
-			},
-		},
-		ogOptions,
-	);
+	const svg = await satori(ogMarkup(title), ogOptions);
 	const pngBuffer = new Resvg(svg).render().asPng();
 	const png = new Uint8Array(pngBuffer);
 	return new Response(png, {
@@ -173,6 +49,7 @@ export async function GET(context: APIContext) {
 export async function getStaticPaths() {
 	const posts = await getAllPosts();
 	return posts
+		.values()
 		.filter(({ data }) => !data.ogImage)
 		.map((post) => ({
 			params: { slug: post.id },
@@ -180,5 +57,6 @@ export async function getStaticPaths() {
 				pubDate: post.data.updatedDate ?? post.data.publishDate,
 				title: post.data.title,
 			},
-		}));
+		}))
+		.toArray();
 }
