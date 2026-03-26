@@ -337,7 +337,7 @@ def test(self, model, loader: DataLoader):
 
 Since we want to optimize our GPU utilization, we are going to batch the graphs before inputting them into a GNN. Our graphs in the datasets are small, so this is good idea. PyTorch Geometric achieves parallelization across a number of examples by stacking adjacency matrices in a diagonal fashion (creating a giant graph that holds multiple isolated subgraphs). Node and target features are simply concatenated in the node dimension:[^1]
 
-[^1]: Source [Stanford CS 224W](https%3A%2F%2Fcolab.research.google.com%2Fdrive%2F1I8a0DfQ3fI7Njc62__mVXUlcAleUclnb%3Fusp%3Dsharing%23scrollTo%3DqeORu4Zrs8Zy)
+[^1]: Source [Stanford CS 224W](https://colab.research.google.com/drive/1I8a0DfQ3fI7Njc62__mVXUlcAleUclnb?usp=sharing#scrollTo=qeORu4Zrs8Zy)
 
 ![Graph Batch, Source: CS 224W Colab 3](../../assets/blog/gnns/graph_batch.webp)
 
