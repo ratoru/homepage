@@ -1,2 +1,5 @@
 [files]
 extend-exclude = ["public/rss/styles.xsl", "biome.json"]
+
+[default.extend-words]
+Flor = "Flor"

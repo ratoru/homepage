@@ -57,7 +57,7 @@ with the official rules, you can always reference that page.
 | Basic Terminology | Definition                                                                                              |
 | ----------------- | ------------------------------------------------------------------------------------------------------- |
 | Trick             | One round of each player placing down 1 card each.                                                      |
-| Suit             | The color of a given card.                                                                              |
+| Suit              | The color of a given card.                                                                              |
 | Trump Card        | A special card that has a higher value than other cards.                                                |
 | Round             | All the tricks and betting that happens between each shuffle.                                           |
 | Game              | All the rounds that are played until a team wins.                                                       |
@@ -254,8 +254,8 @@ If you called `Envido`, you can be asked to prove your `Envido` score even if yo
 I **do not** play with Flor. It's a complicated form of betting when you have 3
 cards of the same suit. Unlike Envido, Flor must be called when you have it and
 must not be called otherwise. This makes it a purely luck based mechanic, which
-I decided to remove from the game. Playing without flor is a variant called `sin
-flor` and not super uncommon.
+I decided to remove from the game. Playing without Flor is a variant called `sin
+Flor` and quite common.
 
 ## 6 Players
 
@@ -297,7 +297,7 @@ can catch the other team's signals to give you an advantage.
 | 2                         | Blow a kiss                     |
 | 1                         | Open your mouth                 |
 | Bad cards                 | Close both eyes                 |
-| Good `Envido`             | Tilt your head                   |
+| Good `Envido`             | Tilt your head                  |
 
 If both teams agree to it, each team can instead create their own set of
 signals. Now, the game becomes a little bit more about code cracking than
