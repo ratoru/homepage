@@ -27,6 +27,7 @@ import { expressiveCodeOptions, siteConfig } from "./src/site.config";
 // https://astro.build/config
 export default defineConfig({
 	site: siteConfig.url,
+	security: { csp: true },
 	integrations: [
 		expressiveCode(expressiveCodeOptions),
 		icon(),
