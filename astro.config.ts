@@ -99,9 +99,6 @@ export default defineConfig({
     },
   },
   vite: {
-    optimizeDeps: {
-      exclude: ["@resvg/resvg-js"],
-    },
     plugins: [tailwind(), rawFonts([".ttf", ".woff"])],
   },
 });
