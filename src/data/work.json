@@ -1,38 +1,50 @@
 [
-	{
-		"name": "Verkada",
-		"type": "Full Time",
-		"info": "Won internal award for 'most likely to improve users's security' by improving runtime Kubernetes security. Developed agentic workflows to make the security team more efficient.",
-		"tags": ["Security", "AI Agents", "Kubernetes", "Terraform"],
-		"links": [
-			{
-				"website": "https://www.verkada.com/"
-			}
-		],
-		"img": "/src/assets/main/work/verkada.webp"
-	},
-	{
-		"name": "Raycast Extensions",
-		"type": "Open Source",
-		"info": "Multiple open source Raycast extensions with over 15k downloads. Google Maps Search allows you to quickly open Google Maps directions, for example from your current location to your home.",
-		"tags": ["React", "Javascript", "Open Source"],
-		"links": [
-			{
-				"website": "https://www.raycast.com/ratoru"
-			}
-		],
-		"img": "/src/assets/main/work/raycast-extension.webp"
-	},
-	{
-		"name": "Parallel Computing",
-		"type": "Stanford CS Research",
-		"info": "Tested a new language for implicit dataflow parallelism. Achieved a 20x reduction of run time by running parallel computations on GPUs using CUDA.",
-		"tags": ["CUDA", "Parallelism", "Research"],
-		"links": [
-			{
-				"website": "https://ratoru.com/assets/curis-research.webp"
-			}
-		],
-		"img": "/src/assets/main/work/curis-research.webp"
-	}
+  {
+    "name": "Verkada",
+    "type": "Full Time",
+    "info": "Built in-house version of Serval. Reduced infra cost of 400 TB per month log ingestion pipeline by over 50%. Set up Kubernetes security monitoring.",
+    "tags": [
+      "Security",
+      "AI Agents",
+      "Kubernetes",
+      "Terraform"
+    ],
+    "links": [
+      {
+        "website": "https://www.verkada.com/"
+      }
+    ],
+    "img": "/src/assets/main/work/verkada.webp"
+  },
+  {
+    "name": "BSides SF",
+    "type": "Conference Talk",
+    "info": "Presented at BSides SF 2026, one of the most important security conferences, about how to use create your own security focused coding agents.",
+    "tags": [
+      "Coding Agents",
+      "Detection and Response"
+    ],
+    "links": [
+      {
+        "website": "https://www.youtube.com/watch?v=nRJQEtOj_Vc"
+      }
+    ],
+    "img": "/src/assets/main/work/bsides-sf-2026.webp"
+  },
+  {
+    "name": "Parallel Computing",
+    "type": "Stanford CS Research",
+    "info": "Tested a new language for implicit dataflow parallelism. Achieved a 20x reduction of run time by running parallel computations on GPUs using CUDA.",
+    "tags": [
+      "CUDA",
+      "Parallelism",
+      "Research"
+    ],
+    "links": [
+      {
+        "website": "https://ratoru.com/assets/curis-research.webp"
+      }
+    ],
+    "img": "/src/assets/main/work/curis-research.webp"
+  }
 ]
