@@ -1,0 +1,44 @@
+{
+	"9780593983751": {
+		"title": "There Is No Antimemetics Division",
+		"author": "qntm",
+		"cover": "/book-covers/9780593983751.webp",
+		"year": "2025",
+		"pages": 272
+	},
+	"9781668011577": {
+		"title": "When Everyone Knows That Everyone Knows ...",
+		"author": "Steven Pinker",
+		"cover": "/book-covers/9781668011577.webp",
+		"year": "2025",
+		"pages": 364
+	},
+	"9781324090625": {
+		"title": "Poison for Breakfast",
+		"author": "Lemony Snicket",
+		"cover": "/book-covers/9781324090625.webp",
+		"year": "2021",
+		"pages": 168
+	},
+	"9781529944792": {
+		"title": "Tomorrow, and Tomorrow, and Tomorrow",
+		"author": "Gabrielle Zevin",
+		"cover": "/book-covers/9781529944792.webp",
+		"year": "2024",
+		"pages": 0
+	},
+	"9780316055437": {
+		"title": "The Goldfinch",
+		"author": "Donna Tartt",
+		"cover": "/book-covers/9780316055437.webp",
+		"year": "2013",
+		"pages": 771
+	},
+	"9789163828997": {
+		"title": "One Piece 1",
+		"author": "尾田栄一郎",
+		"cover": "/book-covers/9789163828997.webp",
+		"year": "2003",
+		"pages": 210
+	}
+}

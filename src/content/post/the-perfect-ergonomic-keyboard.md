@@ -4,7 +4,7 @@ description: "Everything you need to know to pick the right ergonomic keyboard."
 tags: ["keyboard"]
 publishDate: 2023-07-22
 updatedDate: 2025-05-31
-pinned: true
+pinned: false
 ---
 
 ![keyboards](../../assets/blog/keyboard/keyboard.webp)

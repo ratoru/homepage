@@ -4,6 +4,7 @@ subtitle: "An Introduction"
 description: "The Argentinean card game combines the trick based gameplay of Skat and Schafkopf with the betting complexity of Poker."
 tags: ["truco"]
 publishDate: 2026-02-16
+pinned: true
 ---
 
 Truco is my favorite card game.

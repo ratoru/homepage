@@ -1,0 +1,116 @@
+.book-card {
+	@apply bg-global-text/5 flex items-stretch gap-4 rounded-md p-4;
+
+	.book-cover {
+		@apply block w-20 flex-none self-start sm:w-24;
+
+		img {
+			@apply h-auto w-full rounded shadow-md;
+			aspect-ratio: 2 / 3;
+			object-fit: cover;
+		}
+	}
+
+	.book-body {
+		@apply flex min-w-0 flex-1 flex-col justify-between gap-3;
+	}
+
+	.book-head {
+		@apply flex flex-col gap-1;
+	}
+
+	.book-titlerow {
+		@apply flex items-start gap-2;
+	}
+
+	.book-title {
+		@apply text-accent-2 min-w-0 flex-1 font-serif text-xl font-semibold no-underline;
+
+		&:hover {
+			@apply decoration-link underline underline-offset-2;
+		}
+	}
+
+	/* Tabler `book-2` icon as a mask, mirroring the GitHub card's icon; tints with currentColor. */
+	.book-link {
+		@apply text-muted flex-none self-start transition-colors;
+
+		&:hover {
+			@apply text-link;
+		}
+
+		.book-link-icon {
+			@apply block h-6 w-6 bg-current;
+			mask:
+				url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M19 4v16h-12a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12'/><path d='M19 16h-12a2 2 0 0 0 -2 2'/><path d='M9 8h6'/></svg>")
+				center / 22px auto no-repeat;
+		}
+	}
+
+	.book-author,
+	.book-meta {
+		@apply text-sm;
+	}
+
+	/* Two aligned rating rows: [label] [stars] [value]. The personal row's label is empty,
+	 * so it stays just stars + value while still occupying the label column for alignment. */
+	.book-ratings {
+		@apply gap-x-2.5 gap-y-1 text-sm;
+		display: grid;
+		grid-template-columns: auto auto auto;
+		align-items: center;
+		justify-items: start;
+		justify-content: start;
+	}
+
+	.book-rating {
+		display: contents;
+	}
+
+	.book-rating-label {
+		@apply text-muted text-sm;
+	}
+
+	.book-rating-value {
+		@apply font-semibold tabular-nums;
+	}
+
+	.book-rating--goodreads {
+		.book-rating-value {
+			@apply text-muted font-medium;
+		}
+	}
+
+	/* Fractional star row: a single gradient clipped to text fills `--rating`/5 of the stars. */
+	.stars {
+		--pct: calc(var(--rating) / 5 * 100%);
+		--star-on: var(--color-accent);
+		--star-off: color-mix(in oklab, var(--color-global-text) 22%, transparent);
+		@apply relative inline-block leading-none;
+		letter-spacing: 0.08em;
+
+		&:before {
+			content: "★★★★★";
+			background: linear-gradient(90deg, var(--star-on) var(--pct), var(--star-off) var(--pct));
+			-webkit-background-clip: text;
+			background-clip: text;
+			-webkit-text-fill-color: transparent;
+			color: transparent;
+		}
+
+		/* Goodreads-style tooltip explaining the rating on hover. */
+		&[data-tip]:hover:after {
+			content: attr(data-tip);
+			@apply bg-accent-2 text-global-bg absolute left-0 z-10 rounded px-2 py-1 text-xs font-medium normal-case shadow-sm;
+			bottom: calc(100% + 0.4rem);
+			white-space: nowrap;
+			letter-spacing: normal;
+			pointer-events: none;
+		}
+	}
+
+	.stars--sm {
+		--star-on: var(--color-muted);
+		@apply text-xs;
+	}
+}

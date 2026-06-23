@@ -1,46 +1,33 @@
 [
-  {
-    "name": "Raycast Extensions",
-    "info": "Multiple open source Raycast extensions with over 45k downloads. Google Maps Search allows you to quickly open Google Maps directions, for example from your current location to your home.",
-    "tags": [
-      "React",
-      "TypeScript",
-      "Open Source"
-    ],
-    "links": [
-      {
-        "website": "https://www.raycast.com/ratoru"
-      }
-    ]
-  },
-  {
-    "name": "Pintos - A simple operating system",
-    "info": "Pintos is a simple OS framework for the 80x86 architecture. I implemented basic support for kernel threads, loading and running user programs, a file system, and virtual memory.",
-    "tags": [
-      "C",
-      "OS",
-      "File System",
-      "Virtual Memory"
-    ],
-    "links": [
-      {
-        "website": "https://web.stanford.edu/class/cs140/projects/pintos/pintos.pdf"
-      }
-    ]
-  },
-  {
-    "name": "An Airplane Journey",
-    "info": "An immersive web experience made with R3F and Drei. Explores 3D websites and Blender modeling skills. For someone special in my life. :)",
-    "tags": [
-      "React Three Fiber",
-      "GSAP",
-      "Blender"
-    ],
-    "links": [
-      {
-        "github": "https://github.com/ratoru/airplane-journey",
-        "website": "https://fortracy.ratoru.com/"
-      }
-    ]
-  }
+	{
+		"name": "Raycast Extensions",
+		"info": "Multiple open source Raycast extensions with over 45k downloads. Google Maps Search allows you to quickly open Google Maps directions, for example from your current location to your home.",
+		"tags": ["React", "TypeScript", "Open Source"],
+		"links": [
+			{
+				"website": "https://www.raycast.com/ratoru"
+			}
+		]
+	},
+	{
+		"name": "Pintos - A simple operating system",
+		"info": "Pintos is a simple OS framework for the 80x86 architecture. I implemented basic support for kernel threads, loading and running user programs, a file system, and virtual memory.",
+		"tags": ["C", "OS", "File System", "Virtual Memory"],
+		"links": [
+			{
+				"website": "https://web.stanford.edu/class/cs140/projects/pintos/pintos.pdf"
+			}
+		]
+	},
+	{
+		"name": "An Airplane Journey",
+		"info": "An immersive web experience made with R3F and Drei. Explores 3D websites and Blender modeling skills. For someone special in my life. :)",
+		"tags": ["React Three Fiber", "GSAP", "Blender"],
+		"links": [
+			{
+				"github": "https://github.com/ratoru/airplane-journey",
+				"website": "https://fortracy.ratoru.com/"
+			}
+		]
+	}
 ]
