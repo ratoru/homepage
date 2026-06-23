@@ -53,11 +53,11 @@ export function normalizeIsbn(isbn: string): string {
 }
 
 interface FetchedMeta {
-	title?: string;
-	author?: string;
-	coverUrl?: string;
-	year?: string;
-	pages?: number;
+	title?: string | undefined;
+	author?: string | undefined;
+	coverUrl?: string | undefined;
+	year?: string | undefined;
+	pages?: number | undefined;
 }
 
 /**

@@ -19,7 +19,7 @@ const RATING_WORDS = [
 /** Word for a (possibly fractional) rating, biased to the achieved level (4.5 → "really liked it"). */
 function ratingWord(rating: number): string {
 	const i = Math.min(5, Math.max(1, Math.floor(rating + 0.25)));
-	return RATING_WORDS[i];
+	return RATING_WORDS[i]!;
 }
 
 /** Render a fractional star row driven by the `--rating` custom property in CSS. */
@@ -51,8 +51,8 @@ function ratingRow(
 
 interface CardOptions {
 	meta: BookMeta;
-	rating?: number;
-	goodreads?: number;
+	rating?: number | undefined;
+	goodreads?: number | undefined;
 	url: string;
 }
 
