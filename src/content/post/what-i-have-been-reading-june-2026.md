@@ -66,7 +66,7 @@ fights, and the fastest way to catch up. Overall, I took around 3 months to catc
 Do not consume any One Piece related material during that time, or you will
 get spoilered.
 
-**I absolutely recommend reading this one!**
+**I absolutely recommend diving into One Piece!**
 
 ::book{isbn="9781529944792" rating=5 goodreads=4.11 url="https://www.goodreads.com/book/show/217255756-tomorrow-and-tomorrow-and-tomorrow"}
 

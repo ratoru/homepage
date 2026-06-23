@@ -90,6 +90,28 @@ Text with a reference[^label] to a margin note.
 [^label]: Content of the margin note.
 ```
 
+### Book Cards
+
+Embed a rich book card with cover art, metadata, and ratings, resolved at build time from an ISBN:
+
+```markdown
+::book{isbn="9780756404741" url="https://www.goodreads.com/book/show/..." rating=4.5 goodreads=4.52}
+```
+
+| Attribute    | Required | Description                                                            |
+| :----------- | :------- | :--------------------------------------------------------------------- |
+| `isbn`       | Yes      | ISBN-10 or ISBN-13 (hyphens optional)                                  |
+| `url`        | No       | Link for the card; defaults to a Goodreads search for the ISBN         |
+| `rating`     | No       | Your personal rating (1–5, fractional ok)                              |
+| `goodreads`  | No       | Goodreads community rating (1–5, fractional ok)                        |
+| `title`      | No       | Override the fetched title                                             |
+| `author`     | No       | Override the fetched author                                            |
+| `cover`      | No       | Override the fetched cover image URL                                   |
+| `year`       | No       | Override the publication year (useful for classics)                    |
+| `pages`      | No       | Override the page count                                                |
+
+Metadata is fetched from Open Library and cached in `src/data/book-cache.json`. Cover images are downloaded, optimized to WebP, and stored in `public/book-covers/`. Delete a book's cache entry or cover file to force a refresh.
+
 ### Mathematical Notation
 
 LaTeX-style math rendering with MathML for modern browsers:
