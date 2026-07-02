@@ -1,6 +1,6 @@
 import fs from "node:fs";
 // Rehype plugins
-import { rehypeHeadingIds } from "@astrojs/markdown-remark";
+import { rehypeHeadingIds, unified } from "@astrojs/markdown-remark";
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import rehypeMathml from "@daiji256/rehype-mathml";
@@ -70,35 +70,37 @@ export default defineConfig({
 		}),
 	],
 	markdown: {
-		rehypePlugins: [
-			rehypeHeadingIds,
-			[rehypeAutolinkHeadings, { behavior: "wrap", properties: { className: ["not-prose"] } }],
-			[
-				rehypeExternalLinks,
-				{
-					rel: ["noreferrer", "noopener"],
-					target: "_blank",
-				},
+		processor: unified({
+			remarkPlugins: [
+				remarkReadingTime,
+				remarkDirective,
+				remarkDirectiveFigure,
+				remarkGithubCard,
+				remarkBookCard,
+				remarkAdmonitions,
+				remarkQuoteAttribution,
+				remarkSidenotes,
+				remarkMath,
 			],
-			rehypeUnwrapImages,
-			rehypeMathml,
-		],
-		remarkPlugins: [
-			remarkReadingTime,
-			remarkDirective,
-			remarkDirectiveFigure,
-			remarkGithubCard,
-			remarkBookCard,
-			remarkAdmonitions,
-			remarkQuoteAttribution,
-			remarkSidenotes,
-			remarkMath,
-		],
-		remarkRehype: {
-			footnoteLabelProperties: {
-				className: [""],
+			rehypePlugins: [
+				rehypeHeadingIds,
+				[rehypeAutolinkHeadings, { behavior: "wrap", properties: { className: ["not-prose"] } }],
+				[
+					rehypeExternalLinks,
+					{
+						rel: ["noreferrer", "noopener"],
+						target: "_blank",
+					},
+				],
+				rehypeUnwrapImages,
+				rehypeMathml,
+			],
+			remarkRehype: {
+				footnoteLabelProperties: {
+					className: [""],
+				},
 			},
-		},
+		}),
 	},
 	vite: {
 		plugins: [tailwind(), rawFonts([".ttf", ".woff"])],
