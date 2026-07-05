@@ -7,7 +7,7 @@ updatedDate: 2025-05-31
 pinned: true
 ---
 
-![kyria-heatmap](../../assets/blog/layout/kyria-heatmap.webp)
+![kyria-heatmap](../assets/layout/kyria-heatmap.webp)
 
 I have healthier hands and am a more efficient typer because I designed my own keyboard layout.
 
@@ -43,9 +43,9 @@ Certain letters and bigrams appear much more often in text or code than others. 
 
 The three most popular layouts are `Qwerty`, `Dvorak`, and `Colemak(-DH)`. The images below are heatmaps for these three layouts that were generated using 10000 sentences from Wikipedia. The first time I saw these heatmaps, I was shocked. I recommend you watch [this video](https://youtu.be/gRtS-XACO6o?t=42) to learn a little bit about the history of these (and other) layouts.
 
-![qwerty-heatmap](../../assets/blog/layout/qwerty-heatmap.webp)
-![dvorak-heatmap](../../assets/blog/layout/dvorak-heatmap.webp)
-![colemak-dh-heatmap](../../assets/blog/layout/colemak-dh-heatmap.webp)
+![qwerty-heatmap](../assets/layout/qwerty-heatmap.webp)
+![dvorak-heatmap](../assets/layout/dvorak-heatmap.webp)
+![colemak-dh-heatmap](../assets/layout/colemak-dh-heatmap.webp)
 
 Unfortunately, every English keyboard runs on `Qwerty`, so switching layouts does have drawbacks. Read through Pascal Getreuer's excellent article on [alternate keyboard layouts](https://getreuer.info/posts/keyboards/alt-layouts/index.html) and decide whether you want to learn one.
 

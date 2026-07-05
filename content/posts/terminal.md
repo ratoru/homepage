@@ -6,7 +6,7 @@ tags:
   - devx
 ---
 
-![terminal-setup](../../assets/blog/terminal/terminal-setup.webp)
+![terminal-setup](../assets/terminal/terminal-setup.webp)
 
 ## The Terminal
 
@@ -58,11 +58,11 @@ A nice theme brings it all together. To install these download the `.itermcolors
 
 - [Nord](https://github.com/nordtheme/iterm2) - Beautiful, subtle color scheme.
 
-![iterm-color](../../assets/blog/terminal/iterm-color.webp)
+![iterm-color](../assets/terminal/iterm-color.webp)
 
 - [Snazzy](https://github.com/sindresorhus/iterm2-snazzy) - Slightly more vibrant than Nord.
 
-![snazzy-color](../../assets/blog/terminal/snazzy-color.webp)
+![snazzy-color](../assets/terminal/snazzy-color.webp)
 
 Other good options are Raycast Light / Dark. A full list can be found [here](https://github.com/mbadolato/iTerm2-Color-Schemes#screenshots).
 

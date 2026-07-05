@@ -5,7 +5,7 @@ tags: ["keyboard"]
 publishDate: 2023-07-24
 ---
 
-![kyria-layout](../../assets/blog/layout/kyria-layout.webp)
+![kyria-layout](../assets/layout/kyria-layout.webp)
 
 Now that you have a basic layout, it is time to give your layout superpowers and adapt it to your specific keyboard.
 
@@ -44,9 +44,9 @@ As a programmer the symbols layer is crucial to me. While there are many heavily
 
 Below are the layers I came up with.
 
-![symbol-layer](../../assets/blog/layout/symbol-layer.webp)
-![navigation-layer](../../assets/blog/layout/navigation-layer.webp)
-![number-layer](../../assets/blog/layout/number-layer.webp)
+![symbol-layer](../assets/layout/symbol-layer.webp)
+![navigation-layer](../assets/layout/navigation-layer.webp)
+![number-layer](../assets/layout/number-layer.webp)
 
 ## Extra Functionality
 

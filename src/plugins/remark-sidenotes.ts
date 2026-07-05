@@ -162,6 +162,7 @@ const remarkSidenotes: Plugin<[SidenoteOptions?], Root> = (options = {}) => {
 		});
 
 		// Pass 2: Transform references and inline notes
+		// biome-ignore lint/suspicious/noExplicitAny: unist-util-visit doesn't type multi-type selectors
 		visit(tree, ["footnoteReference", "footnote"] as any, (node: any, index, parent) => {
 			if (!parent || index === undefined) return;
 
@@ -205,6 +206,7 @@ const remarkSidenotes: Plugin<[SidenoteOptions?], Root> = (options = {}) => {
 			const replacement = createSidenoteNode(identifier, isMarginNote, children, marginSymbol);
 
 			// Replace the original node
+			// biome-ignore lint/suspicious/noExplicitAny: parent.children union type doesn't include splice
 			(parent.children as any).splice(index, 1, replacement);
 		});
 

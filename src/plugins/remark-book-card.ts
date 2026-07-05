@@ -19,6 +19,7 @@ const RATING_WORDS = [
 /** Word for a (possibly fractional) rating, biased to the achieved level (4.5 → "really liked it"). */
 function ratingWord(rating: number): string {
 	const i = Math.min(5, Math.max(1, Math.floor(rating + 0.25)));
+	// biome-ignore lint/style/noNonNullAssertion: i is clamped to 1–5, always a valid index
 	return RATING_WORDS[i]!;
 }
 

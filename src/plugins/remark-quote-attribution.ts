@@ -27,7 +27,7 @@ export const remarkQuoteAttribution: Plugin<[], Root> = () => {
 			const lastParagraph = node.children[node.children.length - 1];
 
 			// Only process if the last child is a paragraph
-			if (!lastParagraph || lastParagraph.type !== "paragraph") return;
+			if (lastParagraph?.type !== "paragraph") return;
 
 			// 2. Find the specific child node containing the attribution marker
 			const childIndex = lastParagraph.children.findIndex((child) => {

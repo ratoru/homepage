@@ -12,10 +12,6 @@ const {
 	content: { data },
 	readingTime,
 } = Astro.props;
-
-const dateTimeOptions: Intl.DateTimeFormatOptions = {
-	month: "long",
-};
 ---
 
 {
@@ -39,14 +35,14 @@ const dateTimeOptions: Intl.DateTimeFormatOptions = {
 {data.subtitle && <p class="text-muted mt-4 mb-6 text-xl">{data.subtitle}</p>}
 <div class="text-muted mt-4 flex flex-wrap items-center gap-x-3 gap-y-2">
 	<p>
-		<FormattedDate date={data.publishDate} dateTimeOptions={dateTimeOptions} /> ·{" "}
+		<FormattedDate date={data.publishDate} /> ·{" "}
 		{readingTime}
 	</p>
 	{
 		data.updatedDate && (
 			<span class="bg-quote/5 text-quote rounded-lg px-2 py-1">
 				Updated:
-				<FormattedDate class="ms-1" date={data.updatedDate} dateTimeOptions={dateTimeOptions} />
+				<FormattedDate class="ms-1" date={data.updatedDate} />
 			</span>
 		)
 	}

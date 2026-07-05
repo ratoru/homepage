@@ -7,7 +7,7 @@ updatedDate: 2025-05-31
 pinned: false
 ---
 
-![keyboards](../../assets/blog/keyboard/keyboard.webp)
+![keyboards](../assets/keyboard/keyboard.webp)
 
 I hated mechanical keyboards until I discovered ergonomic keyboards.
 
@@ -135,7 +135,7 @@ I enjoy using the MT3 and DSA profile. If you do buy MT3 keycaps, make sure to b
 
 ## Assembly
 
-![keyboard-no-keys](../../assets/blog/keyboard/keyboard-no-keys.webp)
+![keyboard-no-keys](../assets/keyboard/keyboard-no-keys.webp)
 
 Follow the assembly guide of your keyboard. They are usually very good. I had very little previous soldering experience and managed. Assembly will take time, though. I highly recommend asking questions in the corresponding community. I asked questions in the `splitkb` Discord server and received a lot of help.
 
@@ -149,6 +149,6 @@ Do you want to completely max out the ergonomics stat of your keyboard? Then, yo
 
 If you lost some keys during this article, you will need a new layout! Be warned, though. A custom keyboard layout is another rabbit hole. While you wait for your order to deliver, I recommend you get started on designing one. Afterwards, all that's left to do is flash your firmware. Here you can see the keymap for my Aurora Sweep:
 
-![sweep-hrm-layout](../../assets/blog/layout/sweep-hrm.webp)
+![sweep-hrm-layout](../assets/layout/sweep-hrm.webp)
 
 I'll show you how to make your own in my [3-part guide on custom keyboard layouts](https://ratoru.com/blog/choose-the-right-base-layout).

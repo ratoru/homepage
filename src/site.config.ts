@@ -6,7 +6,6 @@ export const siteConfig: SiteConfig = {
 	author: "Raphael Ruban",
 	// Date.prototype.toLocaleDateString() parameters, found in src/utils/date.ts.
 	date: {
-		locale: "en-GB",
 		options: {
 			day: "numeric",
 			month: "short",

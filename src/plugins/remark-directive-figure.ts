@@ -76,6 +76,7 @@ export const remarkDirectiveFigure: Plugin<[], Root> = () => {
 						hName: "figcaption",
 					},
 					children: captionNodes,
+					// biome-ignore lint/suspicious/noExplicitAny: hast node shape not captured by mdast types
 				} as any;
 			}
 
