@@ -15,16 +15,16 @@
     "new-post": "node scripts/new-post.js"
   },
   "dependencies": {
-    "@astrojs/markdown-remark": "^7.2.2",
+    "@astrojs/markdown-remark": "^7.3.0",
     "@astrojs/mdx": "^7.0.5",
     "@astrojs/rss": "4.0.19",
-    "@astrojs/sitemap": "3.7.3",
+    "@astrojs/sitemap": "3.7.4",
     "@daiji256/rehype-mathml": "^1.2.2",
     "@fontsource-variable/alegreya": "^5.3.0",
     "@tailwindcss/vite": "4.3.3",
-    "astro": "^7.1.6",
+    "astro": "^7.2.10",
     "astro-expressive-code": "^0.44.1",
-    "astro-icon": "^1.1.5",
+    "astro-icon": "^1.2.0",
     "astro-robots-txt": "^1.0.0",
     "astro-webmanifest": "^1.0.0",
     "cssnano": "^8.0.2",
@@ -37,9 +37,9 @@
     "rehype-unwrap-images": "^1.0.0",
     "remark-directive": "^4.0.0",
     "remark-math": "^6.0.0",
-    "satori": "0.29.0",
+    "satori": "0.33.4",
     "satori-html": "^0.3.2",
-    "sharp": "^0.35.3",
+    "sharp": "^0.35.4",
     "unified": "^11.0.5",
     "unist-builder": "^4.0.0",
     "unist-util-select": "^5.1.0",
@@ -47,13 +47,13 @@
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.10",
-    "@biomejs/biome": "^2.5.6",
+    "@biomejs/biome": "^2.5.11",
     "@iconify-json/tabler": "^1.2.38",
     "@pagefind/component-ui": "^1.5.2",
     "@tailwindcss/typography": "^0.5.20",
     "@types/hast": "^3.0.5",
     "@types/mdast": "^4.0.4",
-    "@types/node": "^26.1.2",
+    "@types/node": "^26.4.0",
     "@types/umami": "^2.10.1",
     "autoprefixer": "^10.5.4",
     "pagefind": "^1.5.2",
@@ -73,7 +73,7 @@
     ],
     "overrides": {
       "@iconify/tools": "^5.0.3",
-      "sharp": "^0.35.3"
+      "sharp": "^0.35.4"
     }
   }
 }
