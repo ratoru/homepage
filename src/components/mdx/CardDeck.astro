@@ -18,24 +18,20 @@ const { open } = Astro.props;
 		<div class="card-flipper relative h-full w-full transition-transform duration-700 transform-3d">
 			<!-- Front of card -->
 			<div class="card-front absolute h-full w-full backface-hidden">
-				{
-					open ? (
-						<Image src={spadesA} alt="Ace of Spades" />
-					) : (
-						<Image src={cardBack} alt="Back of a Card" />
-					)
-				}
+				{open ? (
+					<Image src={spadesA} alt="Ace of Spades" />
+				) : (
+					<Image src={cardBack} alt="Back of a Card" />
+				)}
 			</div>
 
 			<!-- Back of card -->
 			<div class="card-back absolute h-full w-full rotate-y-180 backface-hidden">
-				{
-					open ? (
-						<Image src={cardBack} alt="Back of a Card" />
-					) : (
-						<Image src={spadesA} alt="Ace of Spades" />
-					)
-				}
+				{open ? (
+					<Image src={cardBack} alt="Back of a Card" />
+				) : (
+					<Image src={spadesA} alt="Ace of Spades" />
+				)}
 			</div>
 		</div>
 	</div>
@@ -44,24 +40,20 @@ const { open } = Astro.props;
 		<div class="card-flipper relative h-full w-full transition-transform duration-700 transform-3d">
 			<!-- Front of card -->
 			<div class="card-front absolute h-full w-full backface-hidden">
-				{
-					open ? (
-						<Image src={clubsJ} alt="Jack of Clubs" />
-					) : (
-						<Image src={cardBack} alt="Back of a Card" />
-					)
-				}
+				{open ? (
+					<Image src={clubsJ} alt="Jack of Clubs" />
+				) : (
+					<Image src={cardBack} alt="Back of a Card" />
+				)}
 			</div>
 
 			<!-- Back of card -->
 			<div class="card-back absolute h-full w-full rotate-y-180 backface-hidden">
-				{
-					open ? (
-						<Image src={cardBack} alt="Back of a Card" />
-					) : (
-						<Image src={clubsJ} alt="Jack of Clubs" />
-					)
-				}
+				{open ? (
+					<Image src={cardBack} alt="Back of a Card" />
+				) : (
+					<Image src={clubsJ} alt="Jack of Clubs" />
+				)}
 			</div>
 		</div>
 	</div>
@@ -70,24 +62,20 @@ const { open } = Astro.props;
 		<div class="card-flipper relative h-full w-full transition-transform duration-700 transform-3d">
 			<!-- Front of card -->
 			<div class="card-front absolute h-full w-full backface-hidden">
-				{
-					open ? (
-						<Image src={hearts8} alt="Eight of Hearts" />
-					) : (
-						<Image src={cardBack} alt="Back of a Card" />
-					)
-				}
+				{open ? (
+					<Image src={hearts8} alt="Eight of Hearts" />
+				) : (
+					<Image src={cardBack} alt="Back of a Card" />
+				)}
 			</div>
 
 			<!-- Back of card -->
 			<div class="card-back absolute h-full w-full rotate-y-180 backface-hidden">
-				{
-					open ? (
-						<Image src={cardBack} alt="Back of a Card" />
-					) : (
-						<Image src={hearts8} alt="Eight of Hearts" />
-					)
-				}
+				{open ? (
+					<Image src={cardBack} alt="Back of a Card" />
+				) : (
+					<Image src={hearts8} alt="Eight of Hearts" />
+				)}
 			</div>
 		</div>
 	</div>

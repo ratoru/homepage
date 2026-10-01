@@ -1,6 +1,7 @@
 import { h as _h, type Properties } from "hastscript";
 import type { Node, Paragraph as P } from "mdast";
 import type { Directives } from "mdast-util-directive";
+import type {} from "mdast-util-to-hast";
 
 /** Checks if a node is a directive. */
 export function isNodeDirective(node: Node): node is Directives {
@@ -12,11 +13,10 @@ export function isNodeDirective(node: Node): node is Directives {
 }
 
 /** From Astro Starlight: Function that generates an mdast HTML tree ready for conversion to HTML by rehype. */
-// biome-ignore lint/suspicious/noExplicitAny: children array can contain any type of content
-export function h(el: string, attrs: Properties = {}, children: any[] = []): P {
+export function h(el: string, attrs: Properties = {}, children: unknown[] = []): P {
 	const { properties, tagName } = _h(el, attrs);
 	return {
-		children,
+		children: children as P["children"],
 		data: { hName: tagName, hProperties: properties },
 		type: "paragraph",
 	};

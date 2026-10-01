@@ -3,12 +3,8 @@ import { Icon } from "astro-icon/components";
 import honorableMentions from "@/data/honorable-mentions.json";
 ---
 
-<section
-	class="col-span-full grid grid-cols-2 gap-4 space-y-6 py-12 md:grid-cols-4 md:gap-8 md:py-24 lg:grid-cols-12 lg:space-y-12 xl:py-40"
->
-	<header
-		class="space-y leading-heading col-span-full lg:space-y-2 xl:flex xl:flex-col xl:items-center"
-	>
+<section class="col-span-full grid grid-cols-2 gap-4 space-y-6 py-12 md:grid-cols-4 md:gap-8 md:py-24 lg:grid-cols-12 lg:space-y-12 xl:py-40">
+	<header class="space-y leading-heading col-span-full lg:space-y-2 xl:flex xl:flex-col xl:items-center">
 		<p class="leading-heading text-sm tracking-wide uppercase md:text-base lg:text-lg">
 			any other projects?
 		</p>
@@ -18,46 +14,44 @@ import honorableMentions from "@/data/honorable-mentions.json";
 	</header>
 
 	<div class="col-span-full grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-24 lg:grid-cols-12">
-		{
-			honorableMentions.map((h) => (
-				<div class="border-muted col-span-full space-y-6 rounded-3xl border-2 p-6 leading-normal md:col-span-2 md:grid md:space-y-8 md:px-8 md:py-6 lg:col-span-4 lg:transition-all lg:ease-out lg:hover:scale-[1.03]">
-					<div>
-						{h.links.map((link) => (
-							<div class="flex flex-row flex-nowrap justify-end space-x-4">
-								{"github" in link && link.github && (
-									<a href={link.github} target="_blank" class="hover:text-accent hover:rotate-6">
-										<span class="sr-only">Project's GitHub</span>
-										<Icon
-											aria-hidden="true"
-											class="h-5 w-5"
-											focusable="false"
-											name="tabler:brand-github"
-										/>
-									</a>
-								)}
-								{link.website && (
-									<a href={link.website} target="_blank" class="hover:text-accent hover:rotate-6">
-										<span class="sr-only">Project's Website</span>
-										<Icon
-											aria-hidden="true"
-											class="h-5 w-5"
-											focusable="false"
-											name="tabler:external-link"
-										/>
-									</a>
-								)}
-							</div>
-						))}
-						<h2 class="text-global-text mt-4 text-lg font-bold md:mt-6 md:text-xl">{h.name}</h2>
-						<p class="text-global-text mt-3 text-base md:mt-4">{h.info}</p>
-					</div>
-					<div class="text-muted space-x-4 text-sm md:self-end">
-						{h.tags.map((tag) => {
-							return <span>{tag}</span>;
-						})}
-					</div>
+		{honorableMentions.map((h) => (
+			<div class="border-muted col-span-full space-y-6 rounded-3xl border-2 p-6 leading-normal md:col-span-2 md:grid md:space-y-8 md:px-8 md:py-6 lg:col-span-4 lg:transition-all lg:ease-out lg:hover:scale-[1.03]">
+				<div>
+					{h.links.map((link) => (
+						<div class="flex flex-row flex-nowrap justify-end space-x-4">
+							{"github" in link && link.github && (
+								<a href={link.github} target="_blank" class="hover:text-accent hover:rotate-6">
+									<span class="sr-only">Project's GitHub</span>
+									<Icon
+										aria-hidden="true"
+										class="h-5 w-5"
+										focusable="false"
+										name="tabler:brand-github"
+									/>
+								</a>
+							)}
+							{link.website && (
+								<a href={link.website} target="_blank" class="hover:text-accent hover:rotate-6">
+									<span class="sr-only">Project's Website</span>
+									<Icon
+										aria-hidden="true"
+										class="h-5 w-5"
+										focusable="false"
+										name="tabler:external-link"
+									/>
+								</a>
+							)}
+						</div>
+					))}
+					<h2 class="text-global-text mt-4 text-lg font-bold md:mt-6 md:text-xl">{h.name}</h2>
+					<p class="text-global-text mt-3 text-base md:mt-4">{h.info}</p>
 				</div>
-			))
-		}
+				<div class="text-muted space-x-4 text-sm md:self-end">
+					{h.tags.map((tag) => {
+						return <span>{tag}</span>;
+					})}
+				</div>
+			</div>
+		))}
 	</div>
 </section>
